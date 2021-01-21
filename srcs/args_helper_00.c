@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:10:38 by gemerald          #+#    #+#             */
-/*   Updated: 2020/11/05 18:43:36 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/21 21:46:01 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,14 @@ int		is_correct_flag(char f)
 
 void	set_flag(char f, t_args *args)
 {
-	if (f == 'o')
-		args->flag_o++;
-	if (f == 'n')
-		args->flag_n++;
-	if (f == 'u')
-		args->flag_u++;
-	if (f == 'U')
-		args->flag_big_u++;
-	if (f == 'j')
-		args->flag_j++;
+	if (f == 'p')
+		args->flag_p++;
+	if (f == 'q')
+		args->flag_q++;
+	if (f == 'r')
+		args->flag_r++;
+	if (f == 's')
+		args->flag_s++;
 }
 
 void	find_args(char *str, t_args *args)
@@ -57,8 +55,19 @@ void	find_args(char *str, t_args *args)
 			set_flag(str[i], args);
 		else
 		{
-			ft_lstadd(&args->bad_argums, ft_lstnew(str, ft_strlen(str) + 1));
+			ft_lstadd_back(&args->bad_argums, ft_lstnew(str, ft_strlen(str) + 1));
 			break ;
 		}
 	}
+}
+
+int     take_command(char *command, t_args *args)
+{
+	if (!ft_strcmp("md5", command))
+		args->is_md5 = TRUE;
+	if (!ft_strcmp("sha256", command))
+		args->is_sha256 = TRUE;
+	if (!args->is_md5 && !args->is_sha256)
+		return (FAIL);
+	return (SUCCESS);
 }

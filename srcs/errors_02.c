@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nm.h                                               :+:      :+:    :+:   */
+/*   errors_02.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/21 21:08:09 by gemerald         ###   ########.fr       */
+/*   Created: 2021/01/21 21:46:06 by gemerald          #+#    #+#             */
+/*   Updated: 2021/01/21 21:49:05 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NM_NM_H
-# define NM_NM_H
+#include "ft_ssl.h"
 
-# include "libft.h"
-# include "errors.h"
-# include "printf.h"
-# include "args.h"
-# include "handler_info.h"
-# include "constants.h"
-
-void *ft_safe_memalloc(size_t size, char *function_name);
-void	ft_lstadd_back(t_list **alst, t_list *new);
-
-#endif
+void print_incorrect_command(char *command)
+{
+	ft_putstr_fd("ft_ssl: Error: '", 2);
+	ft_putstr_fd(command, 2);
+	ft_putendl_fd("' is an invalid command.\n", 2);
+	print_commands();
+}

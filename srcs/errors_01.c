@@ -6,34 +6,36 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 22:37:58 by gemerald          #+#    #+#             */
-/*   Updated: 2020/11/05 18:45:30 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/21 20:49:09 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
-int		print_usage(t_args *args)
+int		print_usage()
 {
-	ft_printf("usage:\n");
-	ft_printf("\t\t%s ", args->is_outool ? "ft_otool" : "ft_nm");
-	ft_printf("-[o | n | u | U | j] <name>\n");
+	ft_putendl(USAGE_STRING);
+	return (FALSE);
+}
+
+int     print_commands()
+{
+	ft_putendl(STD_COMMANDS);
+	ft_putendl(DIGEST_COMMANDS);
+	ft_putendl(CIPHER_COMMANDS);
 	return (FALSE);
 }
 
 void	error_print_multiple_flags(t_args *args)
 {
-	ft_putstr_fd("nm-otool: for the ", 2);
-	if (args->flag_o > 1)
-		ft_putstr_fd("-print-file-name", 2);
-	if (args->flag_big_u > 1)
-		ft_putstr_fd("-defined-only", 2);
-	if (args->flag_j > 1)
-		ft_putstr_fd("-just-symbol-name", 2);
-	if (args->flag_u > 1)
-		ft_putstr_fd("-undefined-only", 2);
-	if (args->flag_n > 1)
-		ft_putstr_fd("-numeric-sort", 2);
-	ft_putstr_fd(" option: may only occur zero or one times!\n", 2);
+	ft_putstr_fd("ft_ssl: for the ", 2);
+	if (args->flag_p > 1)
+		ft_putstr_fd("-print-stdin-stdout ", 2);
+	if (args->flag_q > 1)
+		ft_putstr_fd("-quiet-mode ", 2);
+	if (args->flag_r > 1)
+		ft_putstr_fd("-reverse-format-output ", 2);
+	ft_putstr_fd("option: may only occur zero or one times!\n", 2);
 }
 
 void	error_print_bad_argums(t_args *args)
@@ -43,9 +45,17 @@ void	error_print_bad_argums(t_args *args)
 	iter = args->bad_argums;
 	while (iter)
 	{
-		ft_putstr_fd("nm-otool: Unknown command line argument '-", 2);
+		ft_putstr_fd("ft_ssl: Unknown command line argument '-", 2);
 		ft_putstr_fd(iter->content, 2);
 		ft_putstr_fd("'\n", 2);
 		iter = iter->next;
 	}
+}
+
+void    error_safe_memalloc(char *funtion_name)
+{
+	ft_putstr_fd("ft_ssl: ", 2);
+	ft_putstr_fd("can't allocate mem in function ", 2);
+	ft_putstr_fd(funtion_name, 2);
+	ft_putstr_fd("\n", 2);
 }

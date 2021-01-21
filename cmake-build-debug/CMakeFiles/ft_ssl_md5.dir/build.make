@@ -1663,6 +1663,45 @@ CMakeFiles/ft_ssl_md5.dir/srcs/free_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ssl_md5.dir/srcs/free_utils.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gemerald/afterIntern/ft_ssl_md5/srcs/free_utils.c -o CMakeFiles/ft_ssl_md5.dir/srcs/free_utils.c.s
 
+CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.o: CMakeFiles/ft_ssl_md5.dir/flags.make
+CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.o: ../srcs/ft_safe_memalloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gemerald/afterIntern/ft_ssl_md5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.o   -c /Users/gemerald/afterIntern/ft_ssl_md5/srcs/ft_safe_memalloc.c
+
+CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gemerald/afterIntern/ft_ssl_md5/srcs/ft_safe_memalloc.c > CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.i
+
+CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gemerald/afterIntern/ft_ssl_md5/srcs/ft_safe_memalloc.c -o CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.s
+
+CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.o: CMakeFiles/ft_ssl_md5.dir/flags.make
+CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.o: ../srcs/ft_lstadd_back.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gemerald/afterIntern/ft_ssl_md5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.o   -c /Users/gemerald/afterIntern/ft_ssl_md5/srcs/ft_lstadd_back.c
+
+CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gemerald/afterIntern/ft_ssl_md5/srcs/ft_lstadd_back.c > CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.i
+
+CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gemerald/afterIntern/ft_ssl_md5/srcs/ft_lstadd_back.c -o CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.s
+
+CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.o: CMakeFiles/ft_ssl_md5.dir/flags.make
+CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.o: ../srcs/errors_02.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gemerald/afterIntern/ft_ssl_md5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.o   -c /Users/gemerald/afterIntern/ft_ssl_md5/srcs/errors_02.c
+
+CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gemerald/afterIntern/ft_ssl_md5/srcs/errors_02.c > CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.i
+
+CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gemerald/afterIntern/ft_ssl_md5/srcs/errors_02.c -o CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.s
+
 # Object files for target ft_ssl_md5
 ft_ssl_md5_OBJECTS = \
 "CMakeFiles/ft_ssl_md5.dir/ft_lftprintf/includes/libft/ft_atoi.c.o" \
@@ -1786,7 +1825,10 @@ ft_ssl_md5_OBJECTS = \
 "CMakeFiles/ft_ssl_md5.dir/srcs/args_helper_00.c.o" \
 "CMakeFiles/ft_ssl_md5.dir/srcs/errors_00.c.o" \
 "CMakeFiles/ft_ssl_md5.dir/srcs/errors_01.c.o" \
-"CMakeFiles/ft_ssl_md5.dir/srcs/free_utils.c.o"
+"CMakeFiles/ft_ssl_md5.dir/srcs/free_utils.c.o" \
+"CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.o" \
+"CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.o" \
+"CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.o"
 
 # External object files for target ft_ssl_md5
 ft_ssl_md5_EXTERNAL_OBJECTS =
@@ -1913,9 +1955,12 @@ ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/args_helper_00.c.o
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/errors_00.c.o
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/errors_01.c.o
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/free_utils.c.o
+ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.o
+ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.o
+ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.o
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/build.make
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gemerald/afterIntern/ft_ssl_md5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Linking C executable ft_ssl_md5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gemerald/afterIntern/ft_ssl_md5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Linking C executable ft_ssl_md5"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ft_ssl_md5.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

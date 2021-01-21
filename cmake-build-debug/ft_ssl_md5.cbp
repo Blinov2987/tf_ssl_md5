@@ -449,22 +449,16 @@
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/includes/errors.h">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/includes/file_info.h">
-			<Option target="ft_ssl_md5"/>
-		</Unit>
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/includes/ft_ssl.h">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/includes/headers.h">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/includes/handler_info.h">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/includes/libft.h">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/includes/printf.h">
-			<Option target="ft_ssl_md5"/>
-		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/includes/stubs.h">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/srcs/args_finder.c">
@@ -479,7 +473,16 @@
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/srcs/errors_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/srcs/errors_02.c">
+			<Option target="ft_ssl_md5"/>
+		</Unit>
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/srcs/free_utils.c">
+			<Option target="ft_ssl_md5"/>
+		</Unit>
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/srcs/ft_lstadd_back.c">
+			<Option target="ft_ssl_md5"/>
+		</Unit>
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/srcs/ft_safe_memalloc.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_md5/srcs/main.c">

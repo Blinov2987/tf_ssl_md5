@@ -130,7 +130,7 @@ add_executable(ft_ssl_md5
         includes/args.h
         includes/constants.h
         includes/errors.h
-        includes/file_info.h
+        includes/handler_info.h
         includes/libft.h
         includes/ft_ssl.h
         includes/printf.h
@@ -139,4 +139,5 @@ add_executable(ft_ssl_md5
         srcs/args_helper_00.c
         srcs/errors_00.c
         srcs/errors_01.c
-        srcs/free_utils.c)
+        srcs/free_utils.c
+        srcs/ft_safe_memalloc.c srcs/ft_lstadd_back.c srcs/errors_02.c)
