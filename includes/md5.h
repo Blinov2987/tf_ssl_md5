@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:01:37 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/22 19:18:49 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/23 15:11:13 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,10 @@ typedef struct s_md5_var_handler
 	uint32_t g;
 	uint32_t swap;
 } t_handler;
+
+void   before_round(t_handler *handler);
+void after_round(t_handler *handler);
+void    init_hash_buf(t_handler *handler);
+t_list *fill_hash_512(t_handler *handler);
 
 #endif

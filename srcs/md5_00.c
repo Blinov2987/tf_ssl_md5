@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:26:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/23 12:25:51 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/23 15:03:14 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void md5_process(t_args *args)
 //		ft_lstadd_back(&file_stream, buffered_file_reader(args));
 	out_stream = md5(args->strings->content, args->strings->content_size);
 	print_hex(out_stream->content, out_stream->content_size);
+	free(out_stream->content);
+	free(out_stream);
 
 }
 
@@ -47,10 +49,10 @@ void print_hex(uint8_t *mem, size_t size)
 		if (ft_strlen(byte) == 1)
 			ft_putchar('0');
 		ft_putstr(byte);
+		free(byte);
 		i++;
 	}
 	ft_putchar('\n');
-	ft_putendl("acbd18db4cc2f85cedef654fccc4a4d8");
 }
 
 void test_func(void)
