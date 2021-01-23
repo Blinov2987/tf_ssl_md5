@@ -32,11 +32,11 @@ void	pars_args(int ac, char **av, int *cur_position, t_args *args)
 		if ((current_strings < args->flag_s) && *cur_position < (ac - 1))
 		{
 			(*cur_position)++;
-			ft_lstadd_back(&args->strings, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position]) + 1));
+			ft_lstadd_back(&args->strings, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position])));
 		}
 	}
 	else
-		ft_lstadd_back(&args->filenames, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position]) + 1));
+		ft_lstadd_back(&args->filenames, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position])));
 }
 
 t_args	*take_args(int ac, char **av)
