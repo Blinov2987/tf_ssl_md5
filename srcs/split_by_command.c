@@ -6,16 +6,75 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:24:37 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/22 19:26:09 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/24 16:25:05 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
+void stdin_process(t_output *output, t_list *(*hash_func)(void *, size_t))
+{
+	ft_lstadd_back(&output->stdin_stream, buffered_reader(0));
+	ft_lstadd_back(&output->stdin_hash,
+			hash_func(output->stdin_stream->content,
+					output->stdin_stream->content_size));
+}
+
+void string_process(t_args *args, t_output *output,
+		t_list *(*hash_func)(void *, size_t))
+{
+	t_list *tmp;
+
+	output->string_stream = args->strings;
+	tmp = args->strings;
+	while (tmp)
+	{
+		ft_lstadd_back(&output->string_hash,
+				hash_func(tmp->content,	tmp->content_size));
+		tmp = tmp->next;
+	}
+}
+
+void file_process(t_args *args, t_output *output,
+		t_list *(*hash_func)(void *, size_t))
+{
+	t_list *tmp;
+
+	output->filenames = args->filenames;
+	ft_lstadd_back(&output->file_stream, buffered_file_reader(args));
+	tmp = output->file_stream;
+	while (tmp)
+	{
+		ft_lstadd_back(&output->file_hash,
+				hash_func(tmp->content,	tmp->content_size));
+		tmp = tmp->next;
+	}
+}
+
+t_output process(t_args *args, t_list *(*hash_func)(void *, size_t))
+{
+	t_output output;
+
+	ft_bzero(&output, sizeof(t_output));
+	if (args->flag_p || (!args->flag_p && !args->flag_s &&
+							!args->flag_q && !args->flag_r && !args->filenames))
+		stdin_process(&output, hash_func);
+	if (args->strings)
+		string_process(args, &output, hash_func);
+	if (args->filenames)
+		file_process(args, &output, hash_func);
+	return (output);
+}
+
 void entrance_to_hash(t_args *args)
 {
+	t_output output;
+	t_list *(*hash_func)(void *, size_t);
+
 	if (args->is_md5)
-		md5_process(args);
+		hash_func = &md5;
 	if (args->is_sha256)
-		sha256_process(args);
+		hash_func = &sha256;
+	output = process(args, hash_func);
+	print_output(args, &output);
 }

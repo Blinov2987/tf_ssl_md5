@@ -20,10 +20,10 @@ int	error_file_corrupt(char *file_name)
 	return (FALSE);
 }
 
-int	error_open_file(char *file_name)
+int	error_open_file(char *file_name, size_t size)
 {
 	ft_putstr_fd("ft_ssl: error: ", 2);
-	ft_putstr_fd(file_name, 2);
+	ft_print_by_size(file_name, size, 2);
 	ft_putstr_fd(": No such file or directory.\n", 2);
 	return (FALSE);
 }

@@ -6,37 +6,13 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:26:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/23 15:03:14 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/24 15:26:16 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
-void print_hex(uint8_t *mem, size_t size);
-
-void md5_process(t_args *args)
-{
-	t_list *out_stream;
-	t_list *stdin_stream;
-	t_list *file_stream;
-
-
-
-	stdin_stream = NULL;
-	file_stream = NULL;
-
-//	if (args->flag_p)
-//		ft_lstadd_back(&stdin_stream, buffered_reader(0));
-//	if (args->filenames)
-//		ft_lstadd_back(&file_stream, buffered_file_reader(args));
-	out_stream = md5(args->strings->content, args->strings->content_size);
-	print_hex(out_stream->content, out_stream->content_size);
-	free(out_stream->content);
-	free(out_stream);
-
-}
-
-void print_hex(uint8_t *mem, size_t size)
+void print_hex(uint8_t *mem, size_t size, int fd)
 {
 	size_t i;
 	char *byte;
@@ -47,23 +23,9 @@ void print_hex(uint8_t *mem, size_t size)
 	{
 		byte = ft_itoa_base(mem[i], 16);
 		if (ft_strlen(byte) == 1)
-			ft_putchar('0');
-		ft_putstr(byte);
+			ft_putchar_fd('0', fd);
+		ft_putstr_fd(byte, fd);
 		free(byte);
 		i++;
 	}
-	ft_putchar('\n');
-}
-
-void test_func(void)
-{
-	//	out_stream = file_stream;
-//	while (out_stream)
-//	{
-//		write(2, out_stream->content, out_stream->content_size);
-//		out_stream = out_stream->next;
-//	}
-
-//	stdin_stream = buffered_reader(0);
-//	write(2, stdin_stream->content, stdin_stream->content_size);
 }

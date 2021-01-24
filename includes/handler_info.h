@@ -13,8 +13,6 @@
 #ifndef NM_FILE_INFO_H
 # define NM_FILE_INFO_H
 
-typedef struct s_output		t_output;
-
 typedef struct				s_file
 {
 	char					*name;
@@ -23,12 +21,6 @@ typedef struct				s_file
 	void					*start;
 }							t_file;
 
-struct						s_output
-{
-	char				*name;
-	char                *command_type;
-	char                *hash;
-};
 
 void						free_file(t_file **file);
 

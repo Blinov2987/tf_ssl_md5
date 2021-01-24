@@ -140,4 +140,4 @@ add_executable(ft_ssl_md5
         srcs/errors_00.c
         srcs/errors_01.c
         srcs/free_utils.c
-        srcs/ft_safe_memalloc.c srcs/ft_lstadd_back.c srcs/errors_02.c includes/md5.h srcs/split_by_command.c srcs/md5_00.c srcs/sha256_00.c srcs/stdin_stream.c srcs/reader_helper.c srcs/md5_01.c srcs/hashing_utils.c srcs/md5_02.c srcs/sha256_01.c includes/sha256.h srcs/sha256_02.c srcs/sha256_03.c srcs/sha256_04.c)
+        srcs/ft_safe_memalloc.c srcs/ft_lstadd_back.c srcs/errors_02.c includes/md5.h srcs/split_by_command.c srcs/md5_00.c srcs/sha256_00.c srcs/stdin_stream.c srcs/reader_helper.c srcs/md5_01.c srcs/hashing_utils.c srcs/md5_02.c srcs/sha256_01.c includes/sha256.h srcs/sha256_02.c srcs/sha256_03.c srcs/sha256_04.c srcs/print_output_00.c)
