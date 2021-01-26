@@ -23,6 +23,7 @@ typedef struct		s_args
 	char			flag_s;
 	uint8_t         is_md5;
 	uint8_t         is_sha256;
+	uint8_t         is_sha512;
 	t_list			*bad_argums;
 	t_list			*filenames;
 	t_list          *strings;

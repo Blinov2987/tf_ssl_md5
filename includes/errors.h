@@ -19,7 +19,7 @@ int		print_usage();
 int     print_commands();
 void    print_incorrect_command(char *command);
 int		error_file_corrupt(char *file_name);
-int		error_open_file(char *file_name, size_t size);
+int		error_open_file(char *file_name);
 int		error_bad_file_descriptor(char *file_name);
 int		error_read_file(char *file_name);
 int		error_recognize_file(char *file_name);

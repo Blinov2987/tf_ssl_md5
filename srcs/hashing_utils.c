@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 15:04:00 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/23 20:32:43 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/26 19:58:32 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ t_list *append_mem_len(void *to_hash_mem, size_t to_hash_size, size_t mod_len)
 	t_list *result;
 
 	offset = mod_len - to_hash_size % mod_len;
+	if (offset <= mod_len / 8)
+		offset += 64;
 	hash_size = to_hash_size + offset;
 	hash_mem = (uint8_t *)ft_safe_memalloc(hash_size, "append_mem_len");
 	ft_mem_copy(hash_mem, to_hash_mem, to_hash_size);

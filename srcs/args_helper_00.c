@@ -67,7 +67,9 @@ int     take_command(char *command, t_args *args)
 		args->is_md5 = TRUE;
 	if (!ft_strcmp("sha256", command))
 		args->is_sha256 = TRUE;
-	if (!args->is_md5 && !args->is_sha256)
+	if (!ft_strcmp("sha512", command))
+		args->is_sha512 = TRUE;
+	if (!args->is_md5 && !args->is_sha256 && !args->is_sha512)
 		return (FAIL);
 	return (SUCCESS);
 }

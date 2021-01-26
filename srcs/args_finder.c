@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:10:03 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/21 21:56:13 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/26 18:26:42 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	pars_args(int ac, char **av, int *cur_position, t_args *args)
 		if ((current_strings < args->flag_s) && *cur_position < (ac - 1))
 		{
 			(*cur_position)++;
-			ft_lstadd_back(&args->strings, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position])));
+			ft_lstadd_back(&args->strings, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position]) + 1));
 		}
 	}
 	else
-		ft_lstadd_back(&args->filenames, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position])));
+		ft_lstadd_back(&args->filenames, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position]) + 1));
 }
 
 t_args	*take_args(int ac, char **av)
@@ -64,6 +64,21 @@ t_args	*take_args(int ac, char **av)
 	return (args);
 }
 
+void    decrease_string_size(t_list *list)
+{
+	t_list *tmp;
+
+	if (!list)
+		return ;
+	tmp = list;
+	while (tmp)
+	{
+		if (tmp->content_size)
+			tmp->content_size -= 1;
+		tmp = tmp->next;
+	}
+}
+
 int		validate_args(t_args **args, int ac)
 {
 	if (!(*args))
@@ -78,5 +93,7 @@ int		validate_args(t_args **args, int ac)
 			error_print_bad_argums(*args);
 		return (FAIL);
 	}
+	decrease_string_size((*args)->filenames);
+	decrease_string_size((*args)->strings);
 	return (SUCCESS);
 }

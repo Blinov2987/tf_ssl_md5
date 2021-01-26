@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:24:37 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/24 16:25:05 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/26 19:52:57 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void string_process(t_args *args, t_output *output,
 	t_list *tmp;
 
 	output->string_stream = args->strings;
-	tmp = args->strings;
+	args->strings = NULL;
+	tmp = output->string_stream;
 	while (tmp)
 	{
 		ft_lstadd_back(&output->string_hash,
@@ -38,16 +39,20 @@ void string_process(t_args *args, t_output *output,
 void file_process(t_args *args, t_output *output,
 		t_list *(*hash_func)(void *, size_t))
 {
-	t_list *tmp;
+	t_list *streams;
 
 	output->filenames = args->filenames;
 	ft_lstadd_back(&output->file_stream, buffered_file_reader(args));
-	tmp = output->file_stream;
-	while (tmp)
+	args->filenames = NULL;
+	streams = output->file_stream;
+	while (streams)
 	{
-		ft_lstadd_back(&output->file_hash,
-				hash_func(tmp->content,	tmp->content_size));
-		tmp = tmp->next;
+		if (streams->content)
+			ft_lstadd_back(&output->file_hash,
+					hash_func(streams->content,	streams->content_size));
+		else
+			ft_lstadd_back(&output->file_hash, ft_lstnew(NULL,	0));
+		streams = streams->next;
 	}
 }
 
@@ -75,6 +80,9 @@ void entrance_to_hash(t_args *args)
 		hash_func = &md5;
 	if (args->is_sha256)
 		hash_func = &sha256;
+	if (args->is_sha512)
+		hash_func = &sha512;
 	output = process(args, hash_func);
 	print_output(args, &output);
+	free_output(&output);
 }

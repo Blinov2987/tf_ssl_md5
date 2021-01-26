@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 20:39:32 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/24 18:40:06 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/26 18:38:25 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_list *buffered_reader(int fd)
 
 	if (fd < 0)
 		return (NULL);
-	ft_bzero(&buf, 129);
+	ft_bzero(&buf, 128);
 	asylum = NULL;
 	mem_zone = NULL;
 	size = 0;
@@ -71,6 +71,7 @@ t_list *buffered_reader(int fd)
 	}
 	if (!asylum)
 		return (ft_lstnew(NULL, 0));
+	mem_zone = concat_list(asylum, size);
 	return (mem_zone);
 }
 
@@ -79,16 +80,13 @@ t_list *buffered_file_reader(t_args *args)
 	int fd;
 	t_list *output_stream;
 	t_list *files;
-	char filename[200];
 	char buf;
 
 	output_stream = NULL;
 	files = args->filenames;
 	while (files)
 	{
-		ft_bzero(filename, 200);
-		ft_mem_copy(filename, files->content, files->content_size);
-		fd = open(filename, O_RDONLY);
+		fd = open(files->content, O_RDONLY);
 		if (fd > 2 && !(read(fd, &buf, 0)))
 		{
 			ft_lstadd_back(&output_stream, buffered_reader(fd));

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 16:09:11 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/24 19:11:49 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/26 19:49:25 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void print_algo(t_args *args)
 		algo = "MD5 ";
 	if (args->is_sha256)
 		algo = "SHA256 ";
+	if (args->is_sha512)
+		algo = "SHA512 ";
 	ft_putstr(algo);
 }
 
@@ -68,25 +70,25 @@ void print_strings(t_args *args, t_output *output)
 
 void print_files(t_args *args, t_output *output)
 {
-	t_list *stream;
+	t_list *filenames;
 	t_list *hash;
 
-	stream = output->filenames;
+	filenames = output->filenames;
 	hash = output->file_hash;
-	while (stream)
+	while (filenames)
 	{
 		if (hash && hash->content)
 		{
 			print_algo(args);
 			ft_putstr("(");
-			ft_print_by_size(stream->content, stream->content_size, 1);
+			ft_print_by_size(filenames->content, filenames->content_size, 1);
 			ft_putstr(") = ");
 			print_hex(hash->content, hash->content_size, 1);
 			ft_putchar('\n');
 		}
 		else
-			error_open_file(stream->content, stream->content_size);
-		stream = stream->next;
+			error_open_file(filenames->content);
+		filenames = filenames->next;
 		if (hash)
 			hash = hash->next;
 	}
@@ -98,7 +100,7 @@ void print_strings_and_files(t_args *args, t_output *output)
 	print_files(args, output);
 }
 
-void revers_print_strings(t_args *args, t_output *output)
+void revers_print_strings(t_output *output)
 {
 	t_list *stream;
 	t_list *hash;
@@ -118,33 +120,33 @@ void revers_print_strings(t_args *args, t_output *output)
 	}
 }
 
-void revers_print_files(t_args *args, t_output *output)
+void revers_print_files(t_output *output)
 {
-	t_list *stream;
+	t_list *filenames;
 	t_list *hash;
 
-	stream = output->filenames;
+	filenames = output->filenames;
 	hash = output->file_hash;
-	while (stream)
+	while (filenames)
 	{
 		if (hash->content)
 		{
 			print_hex(hash->content, hash->content_size, 1);
 			ft_putstr(" ");
-			ft_print_by_size(stream->content, stream->content_size, 1);
+			ft_print_by_size(filenames->content, filenames->content_size, 1);
 			ft_putchar('\n');
 		}
 		else
-			error_open_file(stream->content, stream->content_size);
-		stream = stream->next;
+			error_open_file(filenames->content);
+		filenames = filenames->next;
 		hash = hash->next;
 	}
 }
 
-void revers_print_string_and_files(t_args *args, t_output *output)
+void revers_print_string_and_files(t_output *output)
 {
-	revers_print_strings(args, output);
-	revers_print_files(args, output);
+	revers_print_strings(output);
+	revers_print_files(output);
 }
 
 void silent_print(t_output *output)
@@ -173,7 +175,7 @@ void silent_print(t_output *output)
 			ft_putchar('\n');
 		}
 		else
-			error_open_file(stream->content, stream->content_size);
+			error_open_file(stream->content);
 		tmp = tmp->next;
 		stream = stream->next;
 	}
@@ -187,7 +189,7 @@ void print_output(t_args *args, t_output *output)
 	{
 		print_stdin(args, output);
 		if (args->flag_r)
-			revers_print_string_and_files(args, output);
+			revers_print_string_and_files(output);
 		else
 			print_strings_and_files(args, output);
 	}

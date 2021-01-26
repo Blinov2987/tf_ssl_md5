@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "args.h"
-#include "handler_info.h"
+#include "ft_ssl.h"
 
 void	free_list(void *mem, size_t size)
 {
@@ -46,4 +44,15 @@ void	free_file(t_file **file)
 		free(*file);
 		(*file) = NULL;
 	}
+}
+
+void    free_output(t_output *output)
+{
+	ft_lstdel(&output->stdin_stream, &free_list);
+	ft_lstdel(&output->stdin_hash, &free_list);
+	ft_lstdel(&output->string_stream, &free_list);
+	ft_lstdel(&output->string_hash, &free_list);
+	ft_lstdel(&output->filenames, &free_list);
+	ft_lstdel(&output->file_stream, &free_list);
+	ft_lstdel(&output->file_hash, &free_list);
 }

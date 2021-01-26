@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/24 17:18:52 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/26 21:24:11 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_list *append_mem_len(void *to_hash_mem, size_t to_hash_size, size_t mod_len);
 void fill_chunk_512(uint32_t *chunk, uint8_t *mem);
 void take_byte_from_int(uint8_t *mem, uint32_t val);
 uint32_t take_int_from_byte(uint8_t *mem);
+uint64_t swap64(uint64_t val);
 
 t_list  *take_stdin(t_args *args, t_list *stream, t_list *(*hash_function)(void *, size_t));
 
@@ -55,7 +56,11 @@ t_list *sha256(void *mem, size_t size);
 void md5_process(t_args *args);
 t_list *md5(void *to_hash_mem, size_t to_hash_size);
 
+t_list *sha512(void *to_hash_mem, size_t to_hash_size);
+
 void print_output(t_args *args, t_output *output);
 void ft_print_by_size(char *str, size_t size, int fd);
+
+void    free_output(t_output *output);
 
 #endif
