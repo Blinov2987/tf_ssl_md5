@@ -6,24 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 15:34:23 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/24 13:36:32 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:11:07 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "sha256.h"
 
-uint64_t swap64(uint64_t val) {
-	uint64_t x;
-
-	x = val;
-	x = (x & 0xffffffff00000000) >> 32 | (x & 0x00000000ffffffff) << 32;
-	x = (x & 0xffff0000ffff0000) >> 16 | (x & 0x0000ffff0000ffff) << 16;
-	x = (x & 0xff00ff00ff00ff00) >>  8 | (x & 0x00ff00ff00ff00ff) <<  8;
-	return (x);
-}
-
-static void make_round(t_handler *hndlr, uint32_t words[64])
+static void	make_round(t_handler *hndlr, uint32_t words[64])
 {
 	int round;
 
@@ -32,8 +22,9 @@ static void make_round(t_handler *hndlr, uint32_t words[64])
 	{
 		if (round > 15)
 			word_gen(words, round);
-		hndlr->temp1 = hndlr->h + sum1(hndlr->e) + chan(hndlr->e, hndlr->f, hndlr->g)
-		               + g_const[round] + words[round];
+		hndlr->temp1 = hndlr->h + sum1(hndlr->e)
+						+ chan(hndlr->e, hndlr->f, hndlr->g)
+						+ g_const[round] + words[round];
 		hndlr->temp2 = sum0(hndlr->a) + maj(hndlr->a, hndlr->b, hndlr->c);
 		hndlr->h = hndlr->g;
 		hndlr->g = hndlr->f;
@@ -46,15 +37,7 @@ static void make_round(t_handler *hndlr, uint32_t words[64])
 	}
 }
 
-uint32_t take_int_from_byte_sha256(uint8_t *mem)
-{
-	return ((uint32_t) mem[0] << 24
-	        | ((uint32_t) mem[1] << 16)
-	        | ((uint32_t) mem[2] << 8)
-	        | ((uint32_t) mem[3]));
-}
-
-void fill_chunk_sha256(uint32_t *chunk, uint8_t *mem)
+void		fill_chunk_sha256(uint32_t *chunk, uint8_t *mem)
 {
 	int i;
 	int current_mem;
@@ -65,16 +48,15 @@ void fill_chunk_sha256(uint32_t *chunk, uint8_t *mem)
 	{
 		chunk[i] = take_int_from_byte_sha256(&mem[current_mem]);
 		current_mem += 4;
-
 	}
 }
 
-t_list *sha256_rounds(uint8_t *mem, size_t size)
+t_list		*sha256_rounds(uint8_t *mem, size_t size)
 {
-	t_handler handler;
-	size_t offset;
-	uint32_t chunk[64];
-	t_list *result;
+	t_handler	handler;
+	size_t		offset;
+	uint32_t	chunk[64];
+	t_list		*result;
 
 	ft_bzero(&handler, sizeof(t_handler));
 	ft_bzero(chunk, 256);
@@ -92,13 +74,14 @@ t_list *sha256_rounds(uint8_t *mem, size_t size)
 	return (result);
 }
 
-t_list *append_mem_len_sha256(void *to_hash_mem, size_t to_hash_size, size_t mod_len)
+t_list		*append_mem_len_sha256(void *to_hash_mem,
+				size_t to_hash_size, size_t mod_len)
 {
-	uint8_t *hash_mem;
-	size_t hash_size;
-	size_t offset;
-	size_t bit_len;
-	t_list *result;
+	uint8_t		*hash_mem;
+	size_t		hash_size;
+	size_t		offset;
+	size_t		bit_len;
+	t_list		*result;
 
 	offset = mod_len - to_hash_size % mod_len;
 	if (offset <= mod_len / 8)
@@ -115,13 +98,14 @@ t_list *append_mem_len_sha256(void *to_hash_mem, size_t to_hash_size, size_t mod
 	return (result);
 }
 
-t_list *sha256(void *to_hash_mem, size_t to_hash_size)
+t_list		*sha256(void *to_hash_mem, size_t to_hash_size)
 {
 	t_list *appended_mem_to_hash;
 	t_list *result;
 
 	appended_mem_to_hash = append_mem_len_sha256(to_hash_mem, to_hash_size, 64);
-	result = sha256_rounds(appended_mem_to_hash->content, appended_mem_to_hash->content_size);
+	result = sha256_rounds(appended_mem_to_hash->content,
+			appended_mem_to_hash->content_size);
 	free(appended_mem_to_hash->content);
 	free(appended_mem_to_hash);
 	return (result);

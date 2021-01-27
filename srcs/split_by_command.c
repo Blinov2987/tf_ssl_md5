@@ -6,13 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:24:37 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/26 19:52:57 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:20:55 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
-void stdin_process(t_output *output, t_list *(*hash_func)(void *, size_t))
+void		stdin_process(t_output *output,
+			t_list *(*hash_func)(void *, size_t))
 {
 	ft_lstadd_back(&output->stdin_stream, buffered_reader(0));
 	ft_lstadd_back(&output->stdin_hash,
@@ -20,8 +21,8 @@ void stdin_process(t_output *output, t_list *(*hash_func)(void *, size_t))
 					output->stdin_stream->content_size));
 }
 
-void string_process(t_args *args, t_output *output,
-		t_list *(*hash_func)(void *, size_t))
+void		string_process(t_args *args, t_output *output,
+			t_list *(*hash_func)(void *, size_t))
 {
 	t_list *tmp;
 
@@ -31,13 +32,13 @@ void string_process(t_args *args, t_output *output,
 	while (tmp)
 	{
 		ft_lstadd_back(&output->string_hash,
-				hash_func(tmp->content,	tmp->content_size));
+				hash_func(tmp->content, tmp->content_size));
 		tmp = tmp->next;
 	}
 }
 
-void file_process(t_args *args, t_output *output,
-		t_list *(*hash_func)(void *, size_t))
+void		file_process(t_args *args, t_output *output,
+			t_list *(*hash_func)(void *, size_t))
 {
 	t_list *streams;
 
@@ -49,14 +50,14 @@ void file_process(t_args *args, t_output *output,
 	{
 		if (streams->content)
 			ft_lstadd_back(&output->file_hash,
-					hash_func(streams->content,	streams->content_size));
+					hash_func(streams->content, streams->content_size));
 		else
-			ft_lstadd_back(&output->file_hash, ft_lstnew(NULL,	0));
+			ft_lstadd_back(&output->file_hash, ft_lstnew(NULL, 0));
 		streams = streams->next;
 	}
 }
 
-t_output process(t_args *args, t_list *(*hash_func)(void *, size_t))
+t_output	process(t_args *args, t_list *(*hash_func)(void *, size_t))
 {
 	t_output output;
 
@@ -71,10 +72,10 @@ t_output process(t_args *args, t_list *(*hash_func)(void *, size_t))
 	return (output);
 }
 
-void entrance_to_hash(t_args *args)
+void		entrance_to_hash(t_args *args)
 {
-	t_output output;
-	t_list *(*hash_func)(void *, size_t);
+	t_output	output;
+	t_list		*(*hash_func)(void *, size_t);
 
 	if (args->is_md5)
 		hash_func = &md5;

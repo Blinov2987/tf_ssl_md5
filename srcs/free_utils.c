@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:13:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/21 21:28:12 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 19:40:42 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_file(t_file **file)
 	}
 }
 
-void    free_output(t_output *output)
+void	free_output(t_output *output)
 {
 	ft_lstdel(&output->stdin_stream, &free_list);
 	ft_lstdel(&output->stdin_hash, &free_list);

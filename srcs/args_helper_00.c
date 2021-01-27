@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:10:38 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/21 21:46:01 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 19:38:36 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,14 @@ void	find_args(char *str, t_args *args)
 			set_flag(str[i], args);
 		else
 		{
-			ft_lstadd_back(&args->bad_argums, ft_lstnew(str, ft_strlen(str) + 1));
+			ft_lstadd_back(&args->bad_argums,
+					ft_lstnew(str, ft_strlen(str) + 1));
 			break ;
 		}
 	}
 }
 
-int     take_command(char *command, t_args *args)
+int		take_command(char *command, t_args *args)
 {
 	if (!ft_strcmp("md5", command))
 		args->is_md5 = TRUE;

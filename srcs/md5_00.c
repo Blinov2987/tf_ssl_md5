@@ -6,16 +6,16 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:26:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/24 15:26:16 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 19:44:16 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
-void print_hex(uint8_t *mem, size_t size, int fd)
+void	print_hex(uint8_t *mem, size_t size, int fd)
 {
-	size_t i;
-	char *byte;
+	size_t	i;
+	char	*byte;
 
 	i = 0;
 	byte = NULL;

@@ -6,14 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 17:39:48 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/24 13:22:44 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:13:29 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "sha256.h"
 
-void init_hash_buf_sha256(t_handler *handler)
+void	init_hash_buf_sha256(t_handler *handler)
 {
 	handler->state0 += 0x6A09E667;
 	handler->state1 += 0xBB67AE85;
@@ -25,7 +25,7 @@ void init_hash_buf_sha256(t_handler *handler)
 	handler->state7 += 0x5BE0CD19;
 }
 
-void before_round_sha256(t_handler *handler)
+void	before_round_sha256(t_handler *handler)
 {
 	handler->a = handler->state0;
 	handler->b = handler->state1;
@@ -37,7 +37,7 @@ void before_round_sha256(t_handler *handler)
 	handler->h = handler->state7;
 }
 
-void after_round_sha256(t_handler *handler)
+void	after_round_sha256(t_handler *handler)
 {
 	handler->state0 += handler->a;
 	handler->state1 += handler->b;
@@ -49,7 +49,7 @@ void after_round_sha256(t_handler *handler)
 	handler->state7 += handler->h;
 }
 
-void take_byte_from_int_sha256(uint8_t *mem, uint32_t val)
+void	take_byte_from_int_sha256(uint8_t *mem, uint32_t val)
 {
 	mem[0] = (uint8_t)(val >> 24);
 	mem[1] = (uint8_t)(val >> 16);
@@ -57,13 +57,15 @@ void take_byte_from_int_sha256(uint8_t *mem, uint32_t val)
 	mem[3] = (uint8_t)(val);
 }
 
-t_list *fill_hash_buffer_sha256(t_handler *handler)
+t_list	*fill_hash_buffer_sha256(t_handler *handler)
 {
 	t_list *result;
 
-	result = (t_list *)ft_safe_memalloc(sizeof(t_list), "fill_hash_buffer_sha256");
+	result = (t_list *)ft_safe_memalloc(sizeof(t_list),
+			"fill_hash_buffer_sha256");
 	result->content_size = 32;
-	result->content = (uint8_t *)ft_safe_memalloc(32, "fill_hash_buffer_sha256");
+	result->content = (uint8_t *)ft_safe_memalloc(32,
+			"fill_hash_buffer_sha256");
 	take_byte_from_int_sha256(&result->content[0], handler->state0);
 	take_byte_from_int_sha256(&result->content[4], handler->state1);
 	take_byte_from_int_sha256(&result->content[8], handler->state2);

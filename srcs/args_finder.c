@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:10:03 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/26 18:26:42 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 19:37:59 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,14 @@ void	pars_args(int ac, char **av, int *cur_position, t_args *args)
 		if ((current_strings < args->flag_s) && *cur_position < (ac - 1))
 		{
 			(*cur_position)++;
-			ft_lstadd_back(&args->strings, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position]) + 1));
+			ft_lstadd_back(&args->strings,
+					ft_lstnew(av[*cur_position],
+						ft_strlen(av[*cur_position]) + 1));
 		}
 	}
 	else
-		ft_lstadd_back(&args->filenames, ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position]) + 1));
+		ft_lstadd_back(&args->filenames,
+				ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position]) + 1));
 }
 
 t_args	*take_args(int ac, char **av)
@@ -64,7 +67,7 @@ t_args	*take_args(int ac, char **av)
 	return (args);
 }
 
-void    decrease_string_size(t_list *list)
+void	decrease_string_size(t_list *list)
 {
 	t_list *tmp;
 

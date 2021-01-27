@@ -6,14 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 20:42:55 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/26 21:25:00 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:15:43 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "sha512.h"
 
-static void make_round(t_handler *hndlr, uint64_t words[64])
+static void	make_round(t_handler *hndlr, uint64_t words[64])
 {
 	int round;
 
@@ -22,9 +22,11 @@ static void make_round(t_handler *hndlr, uint64_t words[64])
 	{
 		if (round > 15)
 			word_gen_512(words, round);
-		hndlr->temp1 = hndlr->h + sum1_512(hndlr->e) + chan_512(hndlr->e, hndlr->f, hndlr->g)
-		               + g_const_512[round] + words[round];
-		hndlr->temp2 = sum0_512(hndlr->a) + maj_512(hndlr->a, hndlr->b, hndlr->c);
+		hndlr->temp1 = hndlr->h + sum1_512(hndlr->e)
+						+ chan_512(hndlr->e, hndlr->f, hndlr->g)
+						+ g_const_512[round] + words[round];
+		hndlr->temp2 = sum0_512(hndlr->a)
+						+ maj_512(hndlr->a, hndlr->b, hndlr->c);
 		hndlr->h = hndlr->g;
 		hndlr->g = hndlr->f;
 		hndlr->f = hndlr->e;
@@ -36,19 +38,7 @@ static void make_round(t_handler *hndlr, uint64_t words[64])
 	}
 }
 
-uint64_t take_int_from_byte_sha512(uint8_t *mem)
-{
-	return ((uint64_t) mem[0] << 56
-	        | ((uint64_t) mem[1] << 48)
-	        | ((uint64_t) mem[2] << 40)
-	        | ((uint64_t) mem[3] << 32)
-	        | ((uint64_t) mem[4] << 24)
-	        | ((uint64_t) mem[5] << 16)
-	        | ((uint64_t) mem[6] << 8)
-	        | ((uint64_t) mem[7]));
-}
-
-void fill_chunk_sha512(uint64_t *chunk, uint8_t *mem)
+void		fill_chunk_sha512(uint64_t *chunk, uint8_t *mem)
 {
 	int i;
 	int current_mem;
@@ -59,16 +49,15 @@ void fill_chunk_sha512(uint64_t *chunk, uint8_t *mem)
 	{
 		chunk[i] = take_int_from_byte_sha512(&mem[current_mem]);
 		current_mem += 8;
-
 	}
 }
 
-t_list *sha512_rounds(uint8_t *mem, size_t size)
+t_list		*sha512_rounds(uint8_t *mem, size_t size)
 {
-	t_handler handler;
-	size_t offset;
-	uint64_t chunk[128];
-	t_list *result;
+	t_handler	handler;
+	size_t		offset;
+	uint64_t	chunk[128];
+	t_list		*result;
 
 	ft_bzero(&handler, sizeof(t_handler));
 	ft_bzero(chunk, 1024);
@@ -86,13 +75,14 @@ t_list *sha512_rounds(uint8_t *mem, size_t size)
 	return (result);
 }
 
-t_list *append_mem_len_sha512(void *to_hash_mem, size_t to_hash_size, size_t mod_len)
+t_list		*append_mem_len_sha512(void *to_hash_mem,
+				size_t to_hash_size, size_t mod_len)
 {
-	uint8_t *hash_mem;
-	size_t hash_size;
-	size_t offset;
-	size_t bit_len;
-	t_list *result;
+	uint8_t	*hash_mem;
+	size_t	hash_size;
+	size_t	offset;
+	size_t	bit_len;
+	t_list	*result;
 
 	offset = mod_len - to_hash_size % mod_len;
 	if (offset <= 16)
@@ -109,13 +99,15 @@ t_list *append_mem_len_sha512(void *to_hash_mem, size_t to_hash_size, size_t mod
 	return (result);
 }
 
-t_list *sha512(void *to_hash_mem, size_t to_hash_size)
+t_list		*sha512(void *to_hash_mem, size_t to_hash_size)
 {
 	t_list *appended_mem_to_hash;
 	t_list *result;
 
-	appended_mem_to_hash = append_mem_len_sha512(to_hash_mem, to_hash_size, 128);
-	result = sha512_rounds(appended_mem_to_hash->content, appended_mem_to_hash->content_size);
+	appended_mem_to_hash = append_mem_len_sha512(to_hash_mem,
+			to_hash_size, 128);
+	result = sha512_rounds(appended_mem_to_hash->content,
+			appended_mem_to_hash->content_size);
 	free(appended_mem_to_hash->content);
 	free(appended_mem_to_hash);
 	return (result);

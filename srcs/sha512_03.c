@@ -6,14 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 21:14:29 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/26 21:19:12 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:19:06 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "sha512.h"
 
-void init_hash_buf_sha512(t_handler *handler)
+void	init_hash_buf_sha512(t_handler *handler)
 {
 	handler->state0 += 0x6a09e667f3bcc908;
 	handler->state1 += 0xbb67ae8584caa73b;
@@ -25,7 +25,7 @@ void init_hash_buf_sha512(t_handler *handler)
 	handler->state7 += 0x5be0cd19137e2179;
 }
 
-void before_round_sha512(t_handler *handler)
+void	before_round_sha512(t_handler *handler)
 {
 	handler->a = handler->state0;
 	handler->b = handler->state1;
@@ -37,7 +37,7 @@ void before_round_sha512(t_handler *handler)
 	handler->h = handler->state7;
 }
 
-void after_round_sha512(t_handler *handler)
+void	after_round_sha512(t_handler *handler)
 {
 	handler->state0 += handler->a;
 	handler->state1 += handler->b;
@@ -49,7 +49,7 @@ void after_round_sha512(t_handler *handler)
 	handler->state7 += handler->h;
 }
 
-void take_byte_from_int_sha512(uint8_t *mem, uint64_t val)
+void	take_byte_from_int_sha512(uint8_t *mem, uint64_t val)
 {
 	mem[0] = (uint8_t)(val >> 56);
 	mem[1] = (uint8_t)(val >> 48);
@@ -61,13 +61,15 @@ void take_byte_from_int_sha512(uint8_t *mem, uint64_t val)
 	mem[7] = (uint8_t)(val);
 }
 
-t_list *fill_hash_buffer_sha512(t_handler *handler)
+t_list	*fill_hash_buffer_sha512(t_handler *handler)
 {
 	t_list *result;
 
-	result = (t_list *)ft_safe_memalloc(sizeof(t_list), "fill_hash_buffer_sha512");
+	result = (t_list *)ft_safe_memalloc(sizeof(t_list),
+			"fill_hash_buffer_sha512");
 	result->content_size = 64;
-	result->content = (uint8_t *)ft_safe_memalloc(64, "fill_hash_buffer_sha512");
+	result->content = (uint8_t *)ft_safe_memalloc(64,
+			"fill_hash_buffer_sha512");
 	take_byte_from_int_sha512(&result->content[0], handler->state0);
 	take_byte_from_int_sha512(&result->content[8], handler->state1);
 	take_byte_from_int_sha512(&result->content[16], handler->state2);
