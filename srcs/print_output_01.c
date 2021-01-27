@@ -27,7 +27,7 @@ void	print_stdin(t_args *args, t_output *output)
 	}
 	if (output->stdin_stream)
 	{
-		ft_print_by_size(output->stdin_hash->content,
+		print_hex(output->stdin_hash->content,
 				output->stdin_hash->content_size, 1);
 		ft_putchar('\n');
 	}

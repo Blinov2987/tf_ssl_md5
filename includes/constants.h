@@ -20,7 +20,7 @@
 # define ARGS_SYMBOLS "pqrs"
 # define USAGE_STRING "usage: ft_ssl command [command opts] [command args]"
 # define STD_COMMANDS "Standard commands:\n"
-# define DIGEST_COMMANDS "Message Digest commands:\nmd5\nsha256\n"
+# define DIGEST_COMMANDS "Message Digest commands:\nmd5\nsha256\nsha512\n"
 # define CIPHER_COMMANDS "Cipher commands:"
 
 #endif
