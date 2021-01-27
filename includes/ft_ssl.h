@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 19:30:42 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:27:29 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_list			*sha512(void *to_hash_mem, size_t to_hash_size);
 
 void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);
+void			print_silent_files(t_list *tmp, t_list *stream);
 
 void			free_output(t_output *output);
 

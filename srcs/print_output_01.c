@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 19:03:41 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 20:04:01 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:27:29 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,15 @@ void	print_algo(t_args *args)
 	if (args->is_sha512)
 		algo = "SHA512 ";
 	ft_putstr(algo);
+}
+
+void	print_silent_files(t_list *tmp, t_list *stream)
+{
+	if (tmp->content)
+	{
+		print_hex(tmp->content, tmp->content_size, 1);
+		ft_putchar('\n');
+	}
+	else
+		error_open_file(stream->content);
 }

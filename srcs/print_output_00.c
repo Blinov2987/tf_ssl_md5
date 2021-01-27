@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 16:09:11 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 20:05:22 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:27:29 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,7 @@ void	silent_print(t_output *output)
 	stream = output->filenames;
 	while (tmp)
 	{
-		if (tmp->content)
-		{
-			print_hex(tmp->content, tmp->content_size, 1);
-			ft_putchar('\n');
-		}
-		else
-			error_open_file(stream->content);
+		print_silent_files(tmp, stream);
 		tmp = tmp->next;
 		stream = stream->next;
 	}

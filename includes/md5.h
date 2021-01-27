@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:01:37 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 19:33:03 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:26:16 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,9 @@ void			before_round(t_handler *handler);
 void			after_round(t_handler *handler);
 void			init_hash_buf(t_handler *handler);
 t_list			*fill_hash_512(t_handler *handler);
+void			md5_round_shit_before_16(t_handler *hndl, int i);
+void			md5_round_shit_before_32(t_handler *hndl, int i);
+void			md5_round_shit_before_48(t_handler *hndl, int i);
+void			md5_round_shit_before_64(t_handler *hndl, int i);
 
 #endif

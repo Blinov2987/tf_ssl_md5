@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:13:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 19:40:42 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:27:29 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,6 @@ void	free_args(t_args **args)
 		(*args)->filenames = NULL;
 		free(*args);
 		(*args) = NULL;
-	}
-}
-
-void	free_file(t_file **file)
-{
-	if (*file)
-	{
-		free(*file);
-		(*file) = NULL;
 	}
 }
 

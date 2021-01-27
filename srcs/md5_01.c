@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 09:57:09 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 19:46:12 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:38:11 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,14 @@ static void	make_round(t_handler *hndl, uint32_t chunk[])
 	i = -1;
 	while (++i < 64)
 	{
-		if (i < 16) 
-		{
-			hndl->f = (hndl->b & hndl->c) | ((~hndl->b) & hndl->d);
-			hndl->g = i;
-		} 
-		else if (i < 32) 
-		{
-			hndl->f = (hndl->d & hndl->b) | ((~hndl->d) & hndl->c);
-			hndl->g = (5 * i + 1) % 16;
-		} 
-		else if (i < 48) 
-		{
-			hndl->f = hndl->b ^ hndl->c ^ hndl->d;
-			hndl->g = (3 * i + 5) % 16;
-		} 
-		else 
-		{
-			hndl->f = hndl->c ^ (hndl->b | (~hndl->d));
-			hndl->g = (7 * i) % 16;
-		}
+		if (i < 16)
+			md5_round_shit_before_16(hndl, i);
+		else if (i < 32)
+			md5_round_shit_before_32(hndl, i);
+		else if (i < 48)
+			md5_round_shit_before_48(hndl, i);
+		else
+			md5_round_shit_before_64(hndl, i);
 		hndl->swap = hndl->d;
 		hndl->d = hndl->c;
 		hndl->c = hndl->b;
@@ -78,7 +66,8 @@ t_list		*md5(void *to_hash_mem, size_t to_hash_size)
 	t_list *result;
 
 	appended_mem_to_hash = append_mem_len(to_hash_mem, to_hash_size, 64);
-	result = md5_rounds(appended_mem_to_hash->content, appended_mem_to_hash->content_size);
+	result = md5_rounds(appended_mem_to_hash->content,
+			appended_mem_to_hash->content_size);
 	free(appended_mem_to_hash->content);
 	free(appended_mem_to_hash);
 	return (result);
