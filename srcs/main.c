@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	t_args *args;
 
 	args = take_args(ac, av);
-	if (validate_args(&args, ac))
+	if (validate_args(&args))
 		entrance_to_hash(args);
 	free_args(&args);
 	return (0);

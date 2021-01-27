@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:10:03 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 19:37:59 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:26:16 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	decrease_string_size(t_list *list)
 	}
 }
 
-int		validate_args(t_args **args, int ac)
+int		validate_args(t_args **args)
 {
 	if (!(*args))
 		return (FAIL);

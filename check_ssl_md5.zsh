@@ -24,11 +24,11 @@ for l in {1..10}; do
 
 	for cmd in {md5,sha256,sha512}; do
 		o_openssl=$(openssl $cmd $FILENAME)
-		o_ft_ssl_md5=$(./ft_ssl_md5 $cmd $FILENAME)
+		o_ft_ssl_md5=$(./ft_ssl $cmd $FILENAME)
 		if diff <(echo ${o_openssl// /}) <(echo ${o_ft_ssl_md5// /}); then; else
 			echo "\n${RED}ERROR occured with file: $FILENAME"
 			exit 1
 		fi
 	done
 done
-#rm -f .file_*
+rm -f .file_*

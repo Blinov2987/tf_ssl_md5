@@ -31,7 +31,7 @@ typedef struct		s_args
 
 t_args				*take_args(int ac, char **av);
 int					take_command(char *command, t_args *args);
-int					validate_args(t_args **args, int ac);
+int					validate_args(t_args **args);
 void				free_args(t_args **args);
 void				find_args(char *str, t_args *args);
 
