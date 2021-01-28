@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(ft_ssl_md5 C)
+project(ft_ssl_des C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -134,9 +134,34 @@ add_executable(ft_ssl_md5
         includes/ft_ssl.h
         includes/printf.h
         srcs/main.c
-        srcs/args_finder.c
-        srcs/args_helper_00.c
-        srcs/errors_00.c
-        srcs/errors_01.c
-        srcs/free_utils.c
-        srcs/ft_safe_memalloc.c srcs/ft_lstadd_back.c srcs/errors_02.c includes/md5.h srcs/split_by_command.c srcs/md5_00.c srcs/sha256_00.c srcs/reader_helper.c srcs/md5_01.c srcs/hashing_utils.c srcs/md5_02.c srcs/sha256_01.c includes/sha256.h srcs/sha256_02.c srcs/sha256_03.c srcs/sha256_04.c srcs/print_output_00.c includes/sha512.h srcs/sha512_00.c srcs/sha512_01.c srcs/sha512_02.c srcs/sha512_03.c srcs/print_output_01.c srcs/print_output_02.c srcs/sha256_00.c srcs/md5_03.c)
+        srcs/utils/args_finder.c
+        srcs/utils/args_helper_00.c
+        srcs/utils/errors_00.c
+        srcs/utils/errors_01.c
+        srcs/utils/free_utils.c
+        srcs/utils/ft_safe_memalloc.c
+        srcs/utils/ft_lstadd_back.c
+        srcs/utils/errors_02.c
+        includes/md5.h
+        srcs/utils/split_by_command.c
+        srcs/hash_func/md5_00.c
+        srcs/hash_func/sha256_00.c
+        srcs/utils/reader_helper.c
+        srcs/hash_func/md5_01.c
+        srcs/utils/hashing_utils.c
+        srcs/hash_func/md5_02.c
+        srcs/hash_func/sha256_01.c
+        includes/sha256.h
+        srcs/hash_func/sha256_02.c
+        srcs/hash_func/sha256_03.c
+        srcs/hash_func/sha256_04.c
+        srcs/utils/print_output_00.c
+        includes/sha512.h
+        srcs/hash_func/sha512_00.c
+        srcs/hash_func/sha512_01.c
+        srcs/hash_func/sha512_02.c
+        srcs/hash_func/sha512_03.c
+        srcs/utils/print_output_01.c
+        srcs/utils/print_output_02.c
+        srcs/hash_func/sha256_00.c
+        srcs/hash_func/md5_03.c srcs/cipher_func/base64.c includes/base64.h srcs/cipher_func/base64_enc_00.c)
