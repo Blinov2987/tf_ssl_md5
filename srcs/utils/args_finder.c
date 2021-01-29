@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:10:03 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 20:55:39 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/29 21:29:45 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,30 +42,15 @@ void	pars_args(int ac, char **av, int *cur_position, t_args *args)
 				ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position]) + 1));
 }
 
-t_args	*take_args(int ac, char **av)
+t_args	*take_hash_args(int ac, char **av)
 {
 	int		i;
 	t_args	*args;
 
-	if (!(args = ft_safe_memalloc(sizeof(t_args), "take_args")))
-		return (NULL);
-	if (ac < 2)
-	{
-		print_usage();
-		free(args);
-		return (NULL);
-	}
-	if (!take_command(av[1], args))
-	{
-		print_incorrect_command(av[1]);
-		free(args);
-		return (NULL);
-	}
+	args = ft_safe_memalloc(sizeof(t_args), "take_hash_args");
 	i = 1;
 	while (++i < ac)
-	{
 		pars_args(ac, av, &i, args);
-	}
 	return (args);
 }
 

@@ -37,11 +37,11 @@ void	print_algo(t_args *args)
 {
 	char *algo;
 
-	if (args->is_md5)
+	if (args->algo == MD5)
 		algo = "MD5 ";
-	if (args->is_sha256)
+	if (args->algo == SHA256)
 		algo = "SHA256 ";
-	if (args->is_sha512)
+	if (args->algo == SHA512)
 		algo = "SHA512 ";
 	ft_putstr(algo);
 }

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
+#include "base64.h"
 
 void	base64_enc_round(uint8_t *mem, uint8_t *result_mem)
 {

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 20:27:29 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/29 17:47:05 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void			ft_lstadd_back(t_list **alst, t_list *new);
 t_list			*buffered_reader(int fd);
 t_list			*buffered_file_reader(t_args *args);
 
+void			split_by_commands(int ac, char **av);
+
 void			print_hex(uint8_t *mem, size_t size, int fd);
 void			print_algo(t_args *args);
 void			print_stdin(t_args *args, t_output *output);
@@ -53,6 +55,9 @@ void			entrance_to_hash(t_args *args);
 t_list			*sha256(void *mem, size_t size);
 t_list			*md5(void *to_hash_mem, size_t to_hash_size);
 t_list			*sha512(void *to_hash_mem, size_t to_hash_size);
+
+t_list			*base64_enc(void *mem, size_t size);
+t_list			*base64_dec(void *mem, size_t size);
 
 void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 23:10:38 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 19:38:36 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/29 21:29:45 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,6 @@ int		contains_char_sym(char *str, char to_count)
 		if (str[i] == to_count)
 			return (TRUE);
 	}
-	return (FALSE);
-}
-
-int		is_correct_flag(char f)
-{
-	if (contains_char_sym(ARGS_SYMBOLS, f))
-		return (TRUE);
 	return (FALSE);
 }
 
@@ -51,7 +44,7 @@ void	find_args(char *str, t_args *args)
 	i = -1;
 	while (str[++i])
 	{
-		if (is_correct_flag(str[i]))
+		if (contains_char_sym(HASHING_FLAGS, str[i]))
 			set_flag(str[i], args);
 		else
 		{
@@ -60,17 +53,4 @@ void	find_args(char *str, t_args *args)
 			break ;
 		}
 	}
-}
-
-int		take_command(char *command, t_args *args)
-{
-	if (!ft_strcmp("md5", command))
-		args->is_md5 = TRUE;
-	if (!ft_strcmp("sha256", command))
-		args->is_sha256 = TRUE;
-	if (!ft_strcmp("sha512", command))
-		args->is_sha512 = TRUE;
-	if (!args->is_md5 && !args->is_sha256 && !args->is_sha512)
-		return (FAIL);
-	return (SUCCESS);
 }

@@ -6,84 +6,70 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:24:37 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/27 20:28:09 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/29 22:33:04 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
-void		stdin_process(t_output *output,
-			t_list *(*hash_func)(void *, size_t))
+t_cmd_type take_command_type(char *command)
 {
-	ft_lstadd_back(&output->stdin_stream, buffered_reader(0));
-	ft_lstadd_back(&output->stdin_hash,
-			hash_func(output->stdin_stream->content,
-					output->stdin_stream->content_size));
+	t_cmd_type cmd;
+
+	ft_bzero(&cmd, sizeof(t_cmd_type));
+	fill_hash_cmd(&cmd, command);
+	fill_cipher_cmd(&cmd, command);
+	return (cmd);
 }
 
-void		string_process(t_args *args, t_output *output,
-			t_list *(*hash_func)(void *, size_t))
+void	hashing_branch(t_cmd_type cmd, int ac, char **av)
 {
-	t_list *tmp;
+	t_args *args;
 
-	output->string_stream = args->strings;
-	args->strings = NULL;
-	tmp = output->string_stream;
-	while (tmp)
+	args = take_hash_args(ac, av);
+	args->type = cmd.type;
+	args->algo = cmd.algo;
+	if (validate_args(&args))
+		entrance_to_hash(args);
+	free_args(&args);
+}
+
+void	base64_branch(t_cmd_type cmd, int ac, char **av)
+{
+	t_base64_args *args;
+
+	args = take_base64_args(ac, av);
+	args->type = cmd.type;
+	args->algo = cmd.algo;
+	if (validate_args(&args))
+		entrance_to_hash(args);
+	free_args(&args);
+}
+
+void	des_branch(t_cmd_type cmd, int ac, char **av)
+{
+
+}
+
+void	split_by_commands(int ac, char **av)
+{
+	t_cmd_type cmd;
+
+	if (ac < 2)
 	{
-		ft_lstadd_back(&output->string_hash,
-				hash_func(tmp->content, tmp->content_size));
-		tmp = tmp->next;
+		print_usage();
+		return ;
 	}
-}
-
-void		file_process(t_args *args, t_output *output,
-			t_list *(*hash_func)(void *, size_t))
-{
-	t_list *streams;
-
-	output->filenames = args->filenames;
-	ft_lstadd_back(&output->file_stream, buffered_file_reader(args));
-	args->filenames = NULL;
-	streams = output->file_stream;
-	while (streams)
+	cmd = take_command_type(av[1]);
+	if (!cmd.type)
 	{
-		if (streams->content)
-			ft_lstadd_back(&output->file_hash,
-					hash_func(streams->content, streams->content_size));
-		else
-			ft_lstadd_back(&output->file_hash, ft_lstnew(NULL, 0));
-		streams = streams->next;
+		print_incorrect_command(av[1]);
+		return ;
 	}
-}
-
-t_output	process(t_args *args, t_list *(*hash_func)(void *, size_t))
-{
-	t_output output;
-
-	ft_bzero(&output, sizeof(t_output));
-	if (args->flag_p || (!args->flag_p && !args->flag_s &&
-							!args->flag_q && !args->flag_r && !args->filenames))
-		stdin_process(&output, hash_func);
-	if (args->strings)
-		string_process(args, &output, hash_func);
-	if (args->filenames)
-		file_process(args, &output, hash_func);
-	return (output);
-}
-
-void		entrance_to_hash(t_args *args)
-{
-	t_output	output;
-	t_list		*(*hash_func)(void *, size_t);
-
-	if (args->is_md5)
-		hash_func = &md5;
-	if (args->is_sha256)
-		hash_func = &sha256;
-	if (args->is_sha512)
-		hash_func = &sha512;
-	output = process(args, hash_func);
-	print_output(args, &output);
-	free_output(&output);
+	if (cmd.type == HASHING_COMMAND)
+		hashing_branch(cmd, ac, av);
+	if (cmd.type == BASE64_COMMAND)
+		base64_branch(cmd, ac, av);
+	if (cmd.type == DES_COMMAND)
+		des_branch(cmd, ac, av);
 }
