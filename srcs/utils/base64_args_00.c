@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 22:33:09 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/29 22:50:51 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/01/30 19:18:19 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,17 +88,20 @@ int		validate_args_base64(t_base64_args **args)
 {
 	if (!(*args))
 		return (FAIL);
-	if ((*args)->flag_p > 1 || (*args)->flag_q > 1 || (*args)->flag_r > 1 ||
-		(*args)->bad_argums)
+	if ((*args)->flag_d > 1 || (*args)->flag_e > 1 || (*args)->flag_o > 1 ||
+		(*args)->bad_argums || (*args)->flag_i > 1)
 	{
-		if ((*args)->flag_p > 1 || (*args)->flag_q > 1 ||
-			(*args)->flag_r > 1)
-			error_print_multiple_flags(*args);
+		if ((*args)->flag_d > 1 || (*args)->flag_e > 1 ||
+			(*args)->flag_o > 1 || (*args)->flag_i > 1)
+			error_print_multiple_flags_base64(*args);
 		if ((*args)->bad_argums)
 			error_print_bad_argums(*args);
 		return (FAIL);
 	}
-	decrease_string_size((*args)->filenames);
-	decrease_string_size((*args)->strings);
+	if ((*args)->flag_d && (*args)->flag_e)
+	{
+		error_decrypt_encrypt();
+		return (FAIL);
+	}
 	return (SUCCESS);
 }

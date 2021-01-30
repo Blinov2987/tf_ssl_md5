@@ -56,6 +56,8 @@ t_list			*sha256(void *mem, size_t size);
 t_list			*md5(void *to_hash_mem, size_t to_hash_size);
 t_list			*sha512(void *to_hash_mem, size_t to_hash_size);
 
+void			entrance_to_base64(t_base64_args *args);
+
 t_list			*base64_enc(void *mem, size_t size);
 t_list			*base64_dec(void *mem, size_t size);
 
