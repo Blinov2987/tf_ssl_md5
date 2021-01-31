@@ -34,7 +34,7 @@ void			*ft_safe_memalloc(size_t size, char *function_name);
 void			ft_mem_copy(void *dest, void *src, size_t size);
 void			ft_lstadd_back(t_list **alst, t_list *new);
 t_list			*buffered_reader(int fd);
-t_list			*buffered_file_reader(t_args *args);
+t_list			*buffered_file_reader(t_list *filenames);
 
 void			split_by_commands(int ac, char **av);
 
@@ -42,6 +42,7 @@ void			print_hex(uint8_t *mem, size_t size, int fd);
 void			print_algo(t_args *args);
 void			print_stdin(t_args *args, t_output *output);
 void			print_strings_and_files(t_args *args, t_output *output);
+void			print_output_cipher(t_base64_args *args, t_output *output);
 
 uint32_t		rotate_left(uint32_t left, uint32_t right);
 t_list			*append_mem_len(void *to_hash_mem,

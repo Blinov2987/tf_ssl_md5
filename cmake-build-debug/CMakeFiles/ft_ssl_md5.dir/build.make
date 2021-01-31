@@ -2040,6 +2040,45 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/entrance_to_base64.c -o CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.s
 
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o: CMakeFiles/ft_ssl_md5.dir/flags.make
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o: ../srcs/utils/base64_in_prism.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gemerald/afterIntern/ft_ssl_des/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o   -c /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/base64_in_prism.c
+
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/base64_in_prism.c > CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.i
+
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/base64_in_prism.c -o CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.s
+
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o: CMakeFiles/ft_ssl_md5.dir/flags.make
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o: ../srcs/utils/print_output_cipher_00.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gemerald/afterIntern/ft_ssl_des/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o   -c /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_cipher_00.c
+
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_cipher_00.c > CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.i
+
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_cipher_00.c -o CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.s
+
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o: CMakeFiles/ft_ssl_md5.dir/flags.make
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o: ../srcs/cipher_func/base64_dec_00.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gemerald/afterIntern/ft_ssl_des/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o   -c /Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/base64_dec_00.c
+
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/base64_dec_00.c > CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.i
+
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/base64_dec_00.c -o CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.s
+
 # Object files for target ft_ssl_md5
 ft_ssl_md5_OBJECTS = \
 "CMakeFiles/ft_ssl_md5.dir/ft_lftprintf/includes/libft/ft_atoi.c.o" \
@@ -2192,7 +2231,10 @@ ft_ssl_md5_OBJECTS = \
 "CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o" \
 "CMakeFiles/ft_ssl_md5.dir/srcs/utils/fill_commands_00.c.o" \
 "CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o" \
-"CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o"
+"CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o" \
+"CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o" \
+"CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o" \
+"CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o"
 
 # External object files for target ft_ssl_md5
 ft_ssl_md5_EXTERNAL_OBJECTS =
@@ -2348,9 +2390,12 @@ ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/utils/fill_commands_00.c.o
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o
+ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o
+ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o
+ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/build.make
 ft_ssl_md5: CMakeFiles/ft_ssl_md5.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gemerald/afterIntern/ft_ssl_des/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Linking C executable ft_ssl_md5"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gemerald/afterIntern/ft_ssl_des/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Linking C executable ft_ssl_md5"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ft_ssl_md5.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

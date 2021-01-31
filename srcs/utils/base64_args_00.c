@@ -42,7 +42,7 @@ static void	find_args_base64(char *str, t_base64_args *args)
 	}
 }
 
-void	pars_args(int ac, char **av, int *cur_position, t_base64_args *args)
+void	pars_args_base64(int ac, char **av, int *cur_position, t_base64_args *args)
 {
 	uint8_t input_files_count;
 	uint8_t output_files_count;
@@ -80,7 +80,7 @@ t_base64_args	*take_base64_args(int ac, char **av)
 	args = ft_safe_memalloc(sizeof(t_base64_args), "take_base64_args");
 	i = 1;
 	while (++i < ac)
-		pars_args(ac, av, &i, args);
+		pars_args_base64(ac, av, &i, args);
 	return (args);
 }
 

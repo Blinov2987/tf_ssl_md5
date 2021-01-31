@@ -43,7 +43,7 @@ void		file_process(t_args *args, t_output *output,
 	t_list *streams;
 
 	output->filenames = args->filenames;
-	ft_lstadd_back(&output->file_stream, buffered_file_reader(args));
+	ft_lstadd_back(&output->file_stream, buffered_file_reader(args->filenames));
 	args->filenames = NULL;
 	streams = output->file_stream;
 	while (streams)

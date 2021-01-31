@@ -76,7 +76,7 @@ t_list		*buffered_reader(int fd)
 	return (mem_zone);
 }
 
-t_list		*buffered_file_reader(t_args *args)
+t_list		*buffered_file_reader(t_list *filenames)
 {
 	int		fd;
 	t_list	*output_stream;
@@ -84,7 +84,7 @@ t_list		*buffered_file_reader(t_args *args)
 	char	buf;
 
 	output_stream = NULL;
-	files = args->filenames;
+	files = filenames;
 	while (files)
 	{
 		fd = open(files->content, O_RDONLY);
