@@ -95,7 +95,7 @@ int		validate_args_base64(t_base64_args **args)
 			(*args)->flag_o > 1 || (*args)->flag_i > 1)
 			error_print_multiple_flags_base64(*args);
 		if ((*args)->bad_argums)
-			error_print_bad_argums(*args);
+			error_print_bad_argums((t_args *)*args);
 		return (FAIL);
 	}
 	if ((*args)->flag_d && (*args)->flag_e)

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:24:37 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/30 19:34:59 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/02 19:50:15 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,14 @@ void	base64_branch(t_cmd_type cmd, int ac, char **av)
 
 void	des_branch(t_cmd_type cmd, int ac, char **av)
 {
+	t_des_args *args;
 
+	args = take_des_args(ac, av);
+	args->type = cmd.type;
+	args->algo = cmd.algo;
+	if (validate_args_des(&args))
+		entrance_to_des(args);
+	free_des_args(&args);
 }
 
 void	split_by_commands(int ac, char **av)

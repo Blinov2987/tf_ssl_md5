@@ -32,6 +32,30 @@ void	free_args(t_args **args)
 		ft_lstdel(&(*args)->strings, &free_list);
 		(*args)->bad_argums = NULL;
 		(*args)->filenames = NULL;
+		(*args)->strings = NULL;
+		free(*args);
+		(*args) = NULL;
+	}
+}
+
+void	free_des_args(t_des_args **args)
+{
+	if (*args)
+	{
+		ft_lstdel(&(*args)->bad_argums, &free_list);
+		ft_lstdel(&(*args)->input_files, &free_list);
+		ft_lstdel(&(*args)->output_files, &free_list);
+		ft_lstdel(&(*args)->key_in_hex, &free_list);
+		ft_lstdel(&(*args)->pass_in_ascii, &free_list);
+		ft_lstdel(&(*args)->vector, &free_list);
+		ft_lstdel(&(*args)->salt, &free_list);
+		(*args)->bad_argums= NULL;
+		(*args)->input_files = NULL;
+		(*args)->output_files = NULL;
+		(*args)->key_in_hex = NULL;
+		(*args)->pass_in_ascii = NULL;
+		(*args)->vector = NULL;
+		(*args)->salt = NULL;
 		free(*args);
 		(*args) = NULL;
 	}

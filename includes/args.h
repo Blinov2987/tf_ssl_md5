@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 10:48:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/30 19:34:59 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/02 21:59:56 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define ARGS_H
 
 # include "libft.h"
+
+# define I 0
+# define O 1
+# define S 2
+# define K 3
+# define P 4
+# define V 5
 
 typedef struct		s_cmd_type
 {
@@ -50,6 +57,10 @@ typedef struct		s_des_flags
 	char			flag_p;
 	char			flag_s;
 	char			flag_v;
+	t_list			*key_in_hex;
+	t_list			*pass_in_ascii;
+	t_list			*vector;
+	t_list			*salt;
 }					t_des_args;
 
 typedef struct		s_args
@@ -71,10 +82,13 @@ int					contains_char_sym(char *str, char to_count);
 
 t_args				*take_hash_args(int ac, char **av);
 t_base64_args 		*take_base64_args(int ac, char **av);
+t_des_args			*take_des_args(int ac, char **av);
 int					take_command(char *command, t_args *args);
 int					validate_args(t_args **args);
 int					validate_args_base64(t_base64_args **args);
+int					validate_args_des(t_des_args **args);
 void				free_args(t_args **args);
+void				free_des_args(t_des_args **args);
 void				find_args(char *str, t_args *args);
 
 void				fill_hash_cmd(t_cmd_type *cmd, char *command);
