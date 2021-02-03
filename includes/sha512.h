@@ -81,6 +81,5 @@ void			init_hash_buf_sha512(t_handler *handler);
 void			before_round_sha512(t_handler *handler);
 void			after_round_sha512(t_handler *handler);
 t_list			*fill_hash_buffer_sha512(t_handler *handler);
-uint64_t		take_int_from_byte_sha512(uint8_t *mem);
 
 #endif

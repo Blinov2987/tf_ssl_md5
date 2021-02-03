@@ -36,7 +36,7 @@ uint64_t	sum1_512(uint64_t x)
 				^ rotate_right_512(x, 41));
 }
 
-uint64_t	take_int_from_byte_sha512(uint8_t *mem)
+uint64_t	take_uint64_from_uint8(uint8_t *mem)
 {
 	return ((uint64_t)mem[0] << 56
 			| ((uint64_t)mem[1] << 48)

@@ -51,6 +51,7 @@ void			fill_chunk_512(uint32_t *chunk, uint8_t *mem);
 void			take_byte_from_int(uint8_t *mem, uint32_t val);
 uint32_t		take_int_from_byte(uint8_t *mem);
 uint64_t		swap64(uint64_t val);
+uint64_t		take_uint64_from_uint8(uint8_t *mem);
 
 void			entrance_to_hash(t_args *args);
 t_list			*sha256(void *mem, size_t size);

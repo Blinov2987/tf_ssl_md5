@@ -47,7 +47,7 @@ void		fill_chunk_sha512(uint64_t *chunk, uint8_t *mem)
 	current_mem = 0;
 	while (++i < 16)
 	{
-		chunk[i] = take_int_from_byte_sha512(&mem[current_mem]);
+		chunk[i] = take_uint64_from_uint8(&mem[current_mem]);
 		current_mem += 8;
 	}
 }
