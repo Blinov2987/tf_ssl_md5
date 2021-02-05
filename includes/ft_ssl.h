@@ -64,6 +64,7 @@ t_list			*base64_enc(void *mem, size_t size);
 t_list			*base64_dec(void *mem, size_t size);
 
 void			entrance_to_des(t_des_args *args);
+t_list			*des(void *mem, size_t size, void *key);
 
 void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);
