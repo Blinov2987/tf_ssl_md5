@@ -37,7 +37,7 @@ static const uint8_t	g_ip_out[] = {
 		33, 1, 41, 9, 49, 17, 57, 25
 };
 
-static const uint8_t	g_key_ext[] = {
+static const uint8_t	g_key_ext_in[] = {
 		57, 49, 41, 33, 25, 17, 9,
 		1, 58, 50, 42, 34, 26, 18,
 		10, 2, 59, 51, 43, 35, 27,
@@ -48,7 +48,7 @@ static const uint8_t	g_key_ext[] = {
 		21, 13, 5, 28, 20, 12, 4
 };
 
-static const uint8_t	g_key_round[] = {
+static const uint8_t	g_key_ext_out[] = {
 		14, 17, 11, 24, 1, 5,
 		3, 28, 15, 6, 21, 10,
 		23, 19, 12, 4, 26, 8,
@@ -59,7 +59,7 @@ static const uint8_t	g_key_round[] = {
 		46, 42, 50, 36, 29, 32
 };
 
-static const uint8_t	g_extend[] = {
+static const uint8_t	g_extend[48] = {
 		32, 1, 2, 3, 4, 5,
 		4, 5, 6, 7, 8, 9,
 		8, 9, 10, 11, 12, 13,
