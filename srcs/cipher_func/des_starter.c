@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:19:20 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/06 16:15:02 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/06 19:02:48 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,57 @@ uint64_t perrm_64(uint64_t num, const uint8_t ip_tab[], size_t tab_len, size_t s
 	return (result);
 }
 
+void 	fill_point_arr(uint64_t pointers, uint8_t point_arr[])
+{
+	int i;
+	int shift;
+
+	i = -1;
+	shift = 48;
+	while (++i < 8)
+	{
+		shift -= 6;
+		point_arr[i] = (pointers >> shift) & 0x3f;
+	}
+}
+
+uint8_t	take_inbox_row(uint8_t num)
+{
+	return (((num >> 5) & 2) | num & 1) * 16;
+}
+
+uint8_t take_inbox_column(uint8_t num)
+{
+	return ((num >> 1) & 0xf);
+}
+
+uint32_t boxes(uint64_t pointers)
+{
+	uint8_t point_arr[8];
+	uint32_t result;
+	uint8_t shift;
+	int i;
+
+	i = -1;
+	result = 0;
+	fill_point_arr(pointers, point_arr);
+	while (++i < 8)
+	{
+		result <<= 4;
+		shift = take_inbox_row(point_arr[i]) + take_inbox_column(point_arr[i]);
+		result += g_rounds[i][shift];
+	}
+	return (result);
+}
+
 uint32_t f_expansion(uint32_t part, uint64_t key)
 {
-	uint64_t result;
+	uint32_t result;
 	uint64_t expanded;
 
 	expanded = perrm_64(part, g_extend, 48, 32);
-	result = expanded ^ key;
-	int i = 0;
+	expanded ^= key;
+	result = boxes(expanded);
 	return (result);
 }
 
