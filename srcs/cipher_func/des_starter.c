@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:19:20 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/06 19:02:48 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/09 22:46:26 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void 	fill_point_arr(uint64_t pointers, uint8_t point_arr[])
 
 uint8_t	take_inbox_row(uint8_t num)
 {
-	return (((num >> 5) & 2) | num & 1) * 16;
+	return (((num >> 4) & 2) | num & 1) * 16;
 }
 
 uint8_t take_inbox_column(uint8_t num)
@@ -66,6 +66,8 @@ uint32_t boxes(uint64_t pointers)
 	while (++i < 8)
 	{
 		result <<= 4;
+		int row =  take_inbox_row(point_arr[i]);
+		int column = take_inbox_column(point_arr[i]);
 		shift = take_inbox_row(point_arr[i]) + take_inbox_column(point_arr[i]);
 		result += g_rounds[i][shift];
 	}
@@ -76,30 +78,32 @@ uint32_t f_expansion(uint32_t part, uint64_t key)
 {
 	uint32_t result;
 	uint64_t expanded;
+	uint32_t final;
 
 	expanded = perrm_64(part, g_extend, 48, 32);
 	expanded ^= key;
 	result = boxes(expanded);
-	return (result);
+	final = perrm_64(result, g_final_f_perm, 32, 32);
+	return (final);
 }
 
 uint64_t  make_f_net(uint64_t num, uint64_t key[])
 {
 	int i;
 	uint64_t result;
-	uint32_t left;
-	uint32_t right;
-	uint32_t left_in;
-	uint32_t right_in;
+	uint32_t left[17];
+	uint32_t right[17];
 
-	i = -1;
-	left_in = (uint32_t)(num >> 32);
-	right_in = (uint32_t)num;
-	while (++i < 16)
+	i = 0;
+	left[0] = (uint32_t)(num >> 32);
+	right[0] = (uint32_t)num;
+	while (++i < 17)
 	{
-		left = right_in;
-		right = left_in ^ f_expansion(right_in, key[i]);
+		left[i] = right[i - 1];
+		right[i] = left[i - 1] ^ f_expansion(right[i - 1], key[i - 1]);
 	}
+	result = ((uint64_t)right[16] << 32) | left[16];
+	return (result);
 }
 
 uint32_t left_shift_28b(uint32_t val, uint32_t shift)
@@ -133,6 +137,47 @@ void 	key_gen(uint64_t keys[16], uint64_t orig_key)
 	}
 }
 
+uint64_t 	pure_des_encrypt(uint64_t mem, uint64_t keys[])
+{
+	uint64_t result;
+
+	result = perrm_64(mem, g_ip_in, 64, 64);
+	result = make_f_net(result, keys);
+	result = perrm_64(result, g_ip_out, 64, 64);
+	return (result);
+}
+
+uint64_t make_decrypt_f_net(uint64_t num, uint64_t key[])
+{
+	int i;
+	uint64_t result;
+	uint32_t left[17];
+	uint32_t right[17];
+
+	i = 17;
+	right[16] = (uint32_t)(num >> 32);
+	left[16] = (uint32_t)num;
+	while (--i > 0)
+	{
+		left[i - 1] = right[i] ^ f_expansion(left[i], key[i - 1]);
+		right[i - 1] = left[i];
+//		left[i] = right[i - 1];
+//		right[i] = left[i - 1] ^ f_expansion(right[i - 1], key[i - 1]);
+	}
+	result = ((uint64_t)right[0] << 32) | left[0];
+	return (result);
+}
+
+uint64_t 	pure_des_decrypt(uint64_t mem, uint64_t keys[])
+{
+	uint64_t result;
+
+	result = perrm_64(mem, g_ip_in, 64, 64);
+	result = make_decrypt_f_net(result, keys);
+	result = perrm_64(result, g_ip_out, 64, 64);
+	return (result);
+}
+
 void 	make_des_rounds(uint64_t *mem, size_t size, uint64_t key)
 {
 	size_t round;
@@ -146,9 +191,9 @@ void 	make_des_rounds(uint64_t *mem, size_t size, uint64_t key)
 	key_gen(keys, key);
 	while (round < size)
 	{
-		current = perrm_64(mem[round], g_ip_in, 64, 64);
-		current = make_f_net(current, keys);
-		current = perrm_64(current, g_ip_out, 64, 64);
+		current = pure_des_encrypt(mem[round], keys);
+		current = pure_des_decrypt(current, keys);
+		mem[round] = current;
 		round++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 21:38:06 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/01 21:45:43 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/09 19:49:41 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static const uint8_t	g_extend[48] = {
 		28, 29, 30, 31, 32, 1
 };
 
-static const uint8_t	g_result_perm[] = {
+static const uint8_t	g_final_f_perm[32] = {
 		16, 7, 20, 21,
 		29, 12, 28, 17,
 		1, 15, 23, 26,
