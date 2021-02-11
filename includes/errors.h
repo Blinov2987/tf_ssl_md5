@@ -29,5 +29,6 @@ void	error_safe_memalloc(char *funtion_name);
 void	error_print_multiple_flags_base64(t_base64_args *args);
 void	error_print_multiple_flags_des(t_des_args *args);
 void 	error_decrypt_encrypt(void);
+void 	pass_validation_error(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 21:46:06 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/30 19:18:19 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/11 22:18:05 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,10 @@ void 	error_decrypt_encrypt(void)
 {
 	ft_putstr_fd("ft_ssl: for the cipher commands concurrent ", 2);
 	ft_putstr_fd("encryption and decryption not allow\n", 2);
+}
+
+void 	pass_validation_error(void)
+{
+	ft_putendl_fd("Verify failure", 2);
+	ft_putendl_fd("bad password read", 2);
 }

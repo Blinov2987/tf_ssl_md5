@@ -61,6 +61,20 @@ void	free_des_args(t_des_args **args)
 	}
 }
 
+void 	free_crypt_output(t_crypt_output **output)
+{
+	t_list *pointers_to_free;
+
+	pointers_to_free = (*output)->pointers_to_free;
+	while (pointers_to_free)
+	{
+		ft_lstdel(((t_list *)&pointers_to_free)->content, &free_list);
+		pointers_to_free = pointers_to_free->next;
+	}
+	ft_lstdel(&(*output)->mem, &free_list);
+	ft_lstdel(&(*output)->output_stream, &free_list);
+}
+
 void	free_output(t_output *output)
 {
 	ft_lstdel(&output->stdin_stream, &free_list);

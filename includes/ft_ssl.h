@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/29 17:47:05 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/11 19:51:49 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,7 @@
 # include "printf.h"
 # include "args.h"
 # include "constants.h"
-
-typedef struct	s_output_streams
-{
-	t_list		*stdin_stream;
-	t_list		*stdin_hash;
-	t_list		*string_stream;
-	t_list		*string_hash;
-	t_list		*filenames;
-	t_list		*file_stream;
-	t_list		*file_hash;
-}				t_output;
+# include "output.h"
 
 void			*ft_safe_memalloc(size_t size, char *function_name);
 void			ft_mem_copy(void *dest, void *src, size_t size);
@@ -64,7 +54,9 @@ t_list			*base64_enc(void *mem, size_t size);
 t_list			*base64_dec(void *mem, size_t size);
 
 void			entrance_to_des(t_des_args *args);
-t_list			*des(void *mem, size_t size, void *key);
+t_list			*des_ecb(void *mem, size_t size, void *key);
+t_list 			*get_pass_stdin(void);
+t_list 			*init_key_vector(t_des_args *args);
 
 void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);

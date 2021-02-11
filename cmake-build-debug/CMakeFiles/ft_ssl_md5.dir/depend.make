@@ -385,6 +385,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.o: ../srcs/cipher_func/base64.c
 
@@ -394,6 +395,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o: ../includes/consta
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o: ../srcs/cipher_func/base64_dec_00.c
 
@@ -403,6 +405,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o: ../includes/consta
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o: ../srcs/cipher_func/base64_enc_00.c
 
@@ -411,6 +414,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o: ../srcs/cipher_func/des.c
 
@@ -420,14 +424,25 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o: ../includes/des.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o: ../srcs/cipher_func/des_starter.c
+
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o: ../includes/args.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o: ../includes/constants.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o: ../includes/errors.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o: ../includes/ft_ssl.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o: ../includes/output.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o: ../includes/printf.h
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o: ../srcs/cipher_func/ecb.c
 
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o: ../includes/args.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o: ../srcs/hash_func/md5_00.c
 
@@ -437,6 +452,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o: ../includes/libft.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o: ../includes/md5.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o: ../srcs/hash_func/md5_01.c
 
@@ -446,6 +462,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o: ../includes/libft.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o: ../includes/md5.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o: ../srcs/hash_func/md5_02.c
 
@@ -455,6 +472,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o: ../includes/libft.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o: ../includes/md5.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o: ../srcs/hash_func/md5_03.c
 
@@ -463,6 +481,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o: ../includes/sha256.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o: ../srcs/hash_func/sha256_00.c
@@ -472,6 +491,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o: ../includes/sha256.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o: ../srcs/hash_func/sha256_01.c
@@ -489,6 +509,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o: ../includes/sha256.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o: ../srcs/hash_func/sha256_04.c
@@ -498,6 +519,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o: ../includes/sha512.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o: ../srcs/hash_func/sha512_00.c
@@ -507,6 +529,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o: ../includes/sha512.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o: ../srcs/hash_func/sha512_01.c
@@ -520,15 +543,28 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o: ../includes/sha512.h
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o: ../srcs/hash_func/sha512_03.c
+
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/generate_key.c.o: ../srcs/key_utils/generate_key.c
+
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/pass_reader.c.o: ../includes/args.h
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/pass_reader.c.o: ../includes/constants.h
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/pass_reader.c.o: ../includes/errors.h
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/pass_reader.c.o: ../includes/ft_ssl.h
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/pass_reader.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/pass_reader.c.o: ../includes/output.h
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/pass_reader.c.o: ../includes/printf.h
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/pass_reader.c.o: ../srcs/key_utils/pass_reader.c
 
 CMakeFiles/ft_ssl_md5.dir/srcs/main.c.o: ../includes/args.h
 CMakeFiles/ft_ssl_md5.dir/srcs/main.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/main.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/main.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/main.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/main.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/main.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/main.c.o: ../srcs/main.c
 
@@ -537,6 +573,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o: ../srcs/utils/args_finder.c
 
@@ -545,6 +582,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o: ../srcs/utils/args_helper_00.c
 
@@ -553,6 +591,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o: ../srcs/utils/base64_args_00.c
 
@@ -562,6 +601,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o: ../includes/constants.
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o: ../srcs/utils/base64_in_prism.c
 
@@ -570,6 +610,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o: ../srcs/utils/des_args.c
 
@@ -579,6 +620,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o: ../includes/constan
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o: ../srcs/utils/entrance_to_base64.c
 
@@ -587,6 +629,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_cipher_commands.c.o: ../include
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_cipher_commands.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_cipher_commands.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_cipher_commands.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_cipher_commands.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_cipher_commands.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_cipher_commands.c.o: ../srcs/utils/entrance_to_cipher_commands.c
 
@@ -595,6 +638,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o: ../includes/
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o: ../srcs/utils/entrance_to_hash_commands.c
 
@@ -603,6 +647,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o: ../srcs/utils/errors_00.c
 
@@ -611,6 +656,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o: ../srcs/utils/errors_01.c
 
@@ -619,6 +665,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o: ../srcs/utils/errors_02.c
 
@@ -632,6 +679,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.o: ../srcs/utils/free_utils.c
 
@@ -640,6 +688,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o: ../srcs/utils/ft_lstadd_back.c
 
@@ -648,6 +697,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o: ../includes/constants
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o: ../srcs/utils/ft_safe_memalloc.c
 
@@ -656,6 +706,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o: ../srcs/utils/hashing_utils.c
 
@@ -664,6 +715,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o: ../includes/constants.
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o: ../srcs/utils/print_output_00.c
 
@@ -672,6 +724,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o: ../includes/constants.
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o: ../srcs/utils/print_output_01.c
 
@@ -680,6 +733,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o: ../includes/constants.
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o: ../srcs/utils/print_output_02.c
 
@@ -688,6 +742,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o: ../includes/con
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o: ../srcs/utils/print_output_cipher_00.c
 
@@ -696,6 +751,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o: ../includes/constants.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o: ../srcs/utils/reader_helper.c
 
@@ -704,6 +760,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o: ../includes/constants
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o: ../srcs/utils/split_by_command.c
 
@@ -712,6 +769,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o: ../includes/constants
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o: ../includes/errors.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o: ../includes/ft_ssl.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o: ../includes/libft.h
+CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o: ../includes/output.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o: ../includes/printf.h
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o: ../srcs/utils/validate_pass_00.c
 

@@ -1,32 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   des.c                                              :+:      :+:    :+:   */
+/*   ecb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 22:23:36 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/11 20:11:59 by gemerald         ###   ########.fr       */
+/*   Created: 2021/02/11 18:33:06 by gemerald          #+#    #+#             */
+/*   Updated: 2021/02/11 18:33:06 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
-
-void		entrance_to_des(t_des_args *args)
-{
-	t_crypt_output 	output;
-	t_list		*(*cipher_func)(void *, size_t, void *);
-
-	init_key_vector(args);
-
-	uint8_t favor_mem[8] = {
-			0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef
-	};
-
-	uint8_t favor_key[8] = {
-			0x13, 0x34, 0x57, 0x79, 0x9B, 0xBC, 0xDF, 0xF1
-	};
-
-	output.mem = des_ecb(favor_mem, 8, favor_key);
-	free_output(&output);
-}

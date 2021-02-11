@@ -12,10 +12,6 @@ libft.h
 
 ../includes/constants.h
 
-../includes/des.h
-stdlib.h
--
-
 ../includes/errors.h
 args.h
 ../includes/args.h
@@ -31,6 +27,8 @@ args.h
 ../includes/args.h
 constants.h
 ../includes/constants.h
+output.h
+../includes/output.h
 
 ../includes/libft.h
 unistd.h
@@ -42,6 +40,8 @@ string.h
 fcntl.h
 -
 
+../includes/output.h
+
 ../includes/printf.h
 stdio.h
 -
@@ -52,9 +52,9 @@ stdarg.h
 fcntl.h
 -
 
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des_starter.c
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/pass_reader.c
 ft_ssl.h
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/ft_ssl.h
-des.h
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des.h
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/ft_ssl.h
+readpassphrase.h
+-
 

@@ -63,6 +63,12 @@ typedef struct		s_des_flags
 	t_list			*salt;
 }					t_des_args;
 
+typedef struct		s_key_vector
+{
+	uint64_t *keys;
+	uint64_t vector;
+}					t_key_vector;
+
 typedef struct		s_args
 {
 	uint8_t 		type;

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:19:20 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/09 22:46:26 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/11 18:27:58 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ uint64_t perrm_64(uint64_t num, const uint8_t ip_tab[], size_t tab_len, size_t s
 	{
 		result <<= 1;
 		result += (num >> (size - ip_tab[i]) & 1);
-	//	result += (num >> (ip_tab[i]));
 	}
 	return (result);
 }
@@ -45,7 +44,7 @@ void 	fill_point_arr(uint64_t pointers, uint8_t point_arr[])
 
 uint8_t	take_inbox_row(uint8_t num)
 {
-	return (((num >> 4) & 2) | num & 1) * 16;
+	return (((num >> 4) & 2) | (num & 1)) * 16;
 }
 
 uint8_t take_inbox_column(uint8_t num)
@@ -66,8 +65,6 @@ uint32_t boxes(uint64_t pointers)
 	while (++i < 8)
 	{
 		result <<= 4;
-		int row =  take_inbox_row(point_arr[i]);
-		int column = take_inbox_column(point_arr[i]);
 		shift = take_inbox_row(point_arr[i]) + take_inbox_column(point_arr[i]);
 		result += g_rounds[i][shift];
 	}
@@ -161,10 +158,8 @@ uint64_t make_decrypt_f_net(uint64_t num, uint64_t key[])
 	{
 		left[i - 1] = right[i] ^ f_expansion(left[i], key[i - 1]);
 		right[i - 1] = left[i];
-//		left[i] = right[i - 1];
-//		right[i] = left[i - 1] ^ f_expansion(right[i - 1], key[i - 1]);
 	}
-	result = ((uint64_t)right[0] << 32) | left[0];
+	result = ((uint64_t)left[0] << 32) | right[0];
 	return (result);
 }
 
@@ -182,9 +177,6 @@ void 	make_des_rounds(uint64_t *mem, size_t size, uint64_t key)
 {
 	size_t round;
 	uint64_t current;
-	uint64_t result;
-	uint32_t left;
-	uint32_t right;
 	uint64_t keys[16];
 
 	round = 0;
@@ -198,7 +190,7 @@ void 	make_des_rounds(uint64_t *mem, size_t size, uint64_t key)
 	}
 }
 
-t_list *des(void *mem, size_t size, void *key)
+t_list *des_ecb(void *mem, size_t size, void *key)
 {
 	uint64_t u_key;
 	uint64_t *appended_mem;
@@ -208,7 +200,7 @@ t_list *des(void *mem, size_t size, void *key)
 
 	u_key = take_uint64_from_uint8(key);
 	appended_size = (size + (size % 8));
-	appended_mem = ft_safe_memalloc(appended_size, "des");
+	appended_mem = ft_safe_memalloc(appended_size, "des_ecb");
 	i = 0;
 	cur_position = 0;
 	while (i < (appended_size / 8))

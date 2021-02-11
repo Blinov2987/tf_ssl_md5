@@ -101,7 +101,7 @@ t_des_args	*take_des_args(int ac, char **av)
 	int				i;
 	t_des_args 	*args;
 
-	args = ft_safe_memalloc(sizeof(t_base64_args), "take_base64_args");
+	args = ft_safe_memalloc(sizeof(t_des_args), "take_base64_args");
 	i = 1;
 	while (++i < ac)
 		pars_args_des(ac, av, &i, args);

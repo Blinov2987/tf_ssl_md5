@@ -386,6 +386,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/base64.c
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o
@@ -395,6 +396,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/base64_dec_00.c
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o
@@ -404,6 +406,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/base64_enc_00.c
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o
@@ -412,6 +415,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des.c
 CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o
@@ -421,14 +425,25 @@ CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des_starter.c
+CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o
+ ../includes/args.h
+ ../includes/constants.h
+ ../includes/errors.h
+ ../includes/ft_ssl.h
+ ../includes/libft.h
+ ../includes/output.h
+ ../includes/printf.h
+ /Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/ecb.c
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o
  ../includes/args.h
  ../includes/constants.h
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/md5_00.c
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o
@@ -438,6 +453,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o
  ../includes/ft_ssl.h
  ../includes/libft.h
  ../includes/md5.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/md5_01.c
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o
@@ -447,6 +463,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o
  ../includes/ft_ssl.h
  ../includes/libft.h
  ../includes/md5.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/md5_02.c
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o
@@ -456,6 +473,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o
  ../includes/ft_ssl.h
  ../includes/libft.h
  ../includes/md5.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/md5_03.c
 CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o
@@ -464,6 +482,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  ../includes/sha256.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha256_00.c
@@ -473,6 +492,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  ../includes/sha256.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha256_01.c
@@ -490,6 +510,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  ../includes/sha256.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha256_04.c
@@ -499,6 +520,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  ../includes/sha512.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha512_00.c
@@ -508,6 +530,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  ../includes/sha512.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha512_01.c
@@ -521,15 +544,28 @@ CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  ../includes/sha512.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha512_03.c
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/generate_key.c.o
+ /Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/generate_key.c
+CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/pass_reader.c.o
+ ../includes/args.h
+ ../includes/constants.h
+ ../includes/errors.h
+ ../includes/ft_ssl.h
+ ../includes/libft.h
+ ../includes/output.h
+ ../includes/printf.h
+ /Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/pass_reader.c
 CMakeFiles/ft_ssl_md5.dir/srcs/main.c.o
  ../includes/args.h
  ../includes/constants.h
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/main.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o
@@ -538,6 +574,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/args_finder.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o
@@ -546,6 +583,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/args_helper_00.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o
@@ -554,6 +592,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/base64_args_00.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o
@@ -563,6 +602,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_in_prism.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/base64_in_prism.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o
@@ -571,6 +611,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/des_args.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o
@@ -580,6 +621,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/entrance_to_base64.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_cipher_commands.c.o
@@ -588,6 +630,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_cipher_commands.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/entrance_to_cipher_commands.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o
@@ -596,6 +639,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/entrance_to_hash_commands.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o
@@ -604,6 +648,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/errors_00.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o
@@ -612,6 +657,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/errors_01.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o
@@ -620,6 +666,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/errors_02.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/fill_commands_00.c.o
@@ -633,6 +680,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/free_utils.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o
@@ -641,6 +689,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/ft_lstadd_back.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o
@@ -649,6 +698,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/ft_safe_memalloc.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o
@@ -657,6 +707,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/hashing_utils.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o
@@ -665,6 +716,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_00.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o
@@ -673,6 +725,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_01.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o
@@ -681,6 +734,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_02.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o
@@ -689,6 +743,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_cipher_00.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o
@@ -697,6 +752,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/reader_helper.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o
@@ -705,6 +761,7 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/split_by_command.c
 CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o
@@ -713,5 +770,6 @@ CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o
  ../includes/errors.h
  ../includes/ft_ssl.h
  ../includes/libft.h
+ ../includes/output.h
  ../includes/printf.h
  /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/validate_pass_00.c
