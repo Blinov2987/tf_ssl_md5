@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/11 19:51:49 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:52:45 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ t_list			*base64_dec(void *mem, size_t size);
 void			entrance_to_des(t_des_args *args);
 t_list			*des_ecb(void *mem, size_t size, void *key);
 t_list 			*get_pass_stdin(void);
-t_list 			*init_key_vector(t_des_args *args);
+t_key_vector 	init_key_vector(t_des_args *args);
+t_list			*get_random_bytes(void);
+void 			fill_random_values(t_des_args *args);
 
 void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);

@@ -31,6 +31,6 @@ typedef struct	s_output_streams
 	t_list		*file_hash;
 }				t_output;
 
-void			free_crypt_output(t_crypt_output **output);
+void			free_crypt_output(t_crypt_output *output);
 
 #endif

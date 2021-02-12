@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:50:22 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/02 21:23:08 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:52:45 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,12 @@ int		validate_args_des(t_des_args **args)
 	if ((*args)->flag_d && (*args)->flag_e)
 	{
 		error_decrypt_encrypt();
+		return (FAIL);
+	}
+	if ((!(*args)->key_in_hex && !(*args)->pass_in_ascii) ||
+		(!(*args)->key_in_hex && !(*args)->salt) || !(*args)->vector)
+	{
+		error_unexpected_on_key_generation();
 		return (FAIL);
 	}
 	return (SUCCESS);

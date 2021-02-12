@@ -28,6 +28,12 @@ typedef struct		s_cmd_type
 	uint8_t 		algo;
 }					t_cmd_type;
 
+typedef struct		s_key_vector
+{
+	uint64_t		*keys;
+	uint64_t		vector;
+}					t_key_vector;
+
 typedef struct		s_base64_flags
 {
 	uint8_t 		type;
@@ -61,13 +67,8 @@ typedef struct		s_des_flags
 	t_list			*pass_in_ascii;
 	t_list			*vector;
 	t_list			*salt;
+	t_key_vector	key_vector;
 }					t_des_args;
-
-typedef struct		s_key_vector
-{
-	uint64_t *keys;
-	uint64_t vector;
-}					t_key_vector;
 
 typedef struct		s_args
 {

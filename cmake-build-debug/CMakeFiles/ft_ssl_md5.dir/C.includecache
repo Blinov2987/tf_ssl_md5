@@ -52,9 +52,7 @@ stdarg.h
 fcntl.h
 -
 
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/pass_reader.c
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/free_utils.c
 ft_ssl.h
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/ft_ssl.h
-readpassphrase.h
--
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/ft_ssl.h
 
