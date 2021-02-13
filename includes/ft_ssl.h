@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/12 19:52:45 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/13 12:16:34 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void			ft_mem_copy(void *dest, void *src, size_t size);
 void			ft_lstadd_back(t_list **alst, t_list *new);
 t_list			*buffered_reader(int fd);
 t_list			*buffered_file_reader(t_list *filenames);
+uint8_t			hex_char_to_byte(uint8_t *str);
+void			pbkfd(t_list *pass, t_list *salt);
 
 void			split_by_commands(int ac, char **av);
 
