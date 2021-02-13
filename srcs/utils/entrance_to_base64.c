@@ -14,7 +14,7 @@
 #include "base64.h"
 
 
-void 		get_info_stream(t_base64_args *args, t_output *output)
+static void 		get_info_stream(t_base64_args *args, t_output *output)
 {
 	if (!args->input_files)
 		ft_lstadd_back(&output->string_stream, buffered_reader(0));
@@ -27,7 +27,7 @@ void 		get_info_stream(t_base64_args *args, t_output *output)
 
 }
 
-void		entrance_to_base64(t_base64_args *args)
+void				entrance_to_base64(t_base64_args *args)
 {
 	t_output	output;
 	t_list		*(*cipher_func)(void *, size_t);

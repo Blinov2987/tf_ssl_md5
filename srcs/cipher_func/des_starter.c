@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:19:20 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/11 18:27:58 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/13 21:58:12 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,25 +190,41 @@ void 	make_des_rounds(uint64_t *mem, size_t size, uint64_t key)
 	}
 }
 
-t_list *des_ecb(void *mem, size_t size, void *key)
+void 	convert64t_mem(uint8_t *dest, uint64_t *mem, size_t size_in_byte)
 {
-	uint64_t u_key;
-	uint64_t *appended_mem;
-	size_t 	 appended_size;
-	size_t i;
-	size_t cur_position;
+	int i;
+	int byte_ind;
 
-	u_key = take_uint64_from_uint8(key);
-	appended_size = (size + (size % 8));
-	appended_mem = ft_safe_memalloc(appended_size, "des_ecb");
+	i = -1;
+	byte_ind = 0;
+	while (++i < size_in_byte / 8)
+	{
+		take_byte_from_int_sha512(&dest[byte_ind], mem[i]);
+		byte_ind += 8;
+	}
+}
+
+t_list *des_ecb(void *mem, size_t size, t_key_vector *key_vector)
+{
+	uint64_t	*appended_mem;
+	t_list		*result;
+	size_t		i;
+	size_t		cur_position;
+
+	result = ft_safe_memalloc(sizeof(t_list), "des_ecb");
+	result->content_size = (size + (size % 8));
+	result->content = ft_safe_memalloc(result->content_size, "des_ecb");
+	appended_mem = ft_safe_memalloc(result->content_size, "des_ecb");
 	i = 0;
 	cur_position = 0;
-	while (i < (appended_size / 8))
+	while (i < (result->content_size / 8))
 	{
 		appended_mem[i] = take_uint64_from_uint8((uint8_t *)&mem[cur_position]);
 		cur_position += 8;
 		i++;
 	}
-//	ft_mem_copy(appended_mem, mem, size);
-	make_des_rounds(appended_mem, appended_size / 8, u_key);
+	make_des_rounds(appended_mem, result->content_size / 8, key_vector->keys[0]);
+	convert64t_mem(result->content, appended_mem, result->content_size);
+	free(appended_mem);
+	return (result);
 }

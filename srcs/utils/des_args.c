@@ -130,7 +130,7 @@ int		validate_args_des(t_des_args **args)
 		return (FAIL);
 	}
 	if ((!(*args)->key_in_hex && !(*args)->pass_in_ascii) ||
-		(!(*args)->key_in_hex && !(*args)->salt) || !(*args)->vector)
+		(!(*args)->key_in_hex && !(*args)->salt))
 	{
 		error_unexpected_on_key_generation();
 		return (FAIL);

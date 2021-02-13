@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 10:48:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/02 21:59:56 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/13 22:29:39 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ int					take_command(char *command, t_args *args);
 int					validate_args(t_args **args);
 int					validate_args_base64(t_base64_args **args);
 int					validate_args_des(t_des_args **args);
+int					is_hex_string(char *str, size_t len);
+int					validate_hex(t_des_args *args);
 void				free_args(t_args **args);
 void				free_des_args(t_des_args **args);
 void				find_args(char *str, t_args *args);

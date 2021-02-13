@@ -52,7 +52,7 @@ stdarg.h
 fcntl.h
 -
 
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/generate_key.c
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/validate_pass_00.c
 ft_ssl.h
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/ft_ssl.h
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/ft_ssl.h
 

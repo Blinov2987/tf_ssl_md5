@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/13 12:16:34 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/13 21:36:40 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void			ft_lstadd_back(t_list **alst, t_list *new);
 t_list			*buffered_reader(int fd);
 t_list			*buffered_file_reader(t_list *filenames);
 uint8_t			hex_char_to_byte(uint8_t *str);
-void			pbkfd(t_list *pass, t_list *salt);
+void			pbkfd(t_des_args *args, t_key_vector *key_vector);
 
 void			split_by_commands(int ac, char **av);
 
@@ -44,6 +44,9 @@ void			take_byte_from_int(uint8_t *mem, uint32_t val);
 uint32_t		take_int_from_byte(uint8_t *mem);
 uint64_t		swap64(uint64_t val);
 uint64_t		take_uint64_from_uint8(uint8_t *mem);
+void			take_byte_from_int_sha512(uint8_t *mem, uint64_t val);
+void 			convert64t_mem(uint8_t *dest, uint64_t *mem,
+					size_t size_in_byte);
 
 void			entrance_to_hash(t_args *args);
 t_list			*sha256(void *mem, size_t size);
@@ -56,7 +59,7 @@ t_list			*base64_enc(void *mem, size_t size);
 t_list			*base64_dec(void *mem, size_t size);
 
 void			entrance_to_des(t_des_args *args);
-t_list			*des_ecb(void *mem, size_t size, void *key);
+t_list			*des_ecb(void *mem, size_t size, t_key_vector *key_vector);
 t_list 			*get_pass_stdin(void);
 t_key_vector 	init_key_vector(t_des_args *args);
 t_list			*get_random_bytes(void);
@@ -65,7 +68,9 @@ void 			fill_random_values(t_des_args *args);
 void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);
 void			print_silent_files(t_list *tmp, t_list *stream);
+void			print_output_des(t_des_args *args, t_crypt_output *output);
 
 void			free_output(t_output *output);
+void			free_list(void *mem, size_t size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:24:37 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/12 20:34:16 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/13 22:41:25 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,14 @@ void	des_branch(t_cmd_type cmd, int ac, char **av)
 	args = take_des_args(ac, av);
 	args->type = cmd.type;
 	args->algo = cmd.algo;
-	fill_random_values(args);
-	if (validate_args_des(&args))
+	if (validate_hex(args))
 	{
-		args->key_vector = init_key_vector(args);
-		entrance_to_des(args);
+		fill_random_values(args);
+		if (validate_args_des(&args))
+		{
+			args->key_vector = init_key_vector(args);
+			entrance_to_des(args);
+		}
 	}
 	free_des_args(&args);
 }

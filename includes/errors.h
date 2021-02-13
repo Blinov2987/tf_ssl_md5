@@ -31,5 +31,7 @@ void	error_print_multiple_flags_des(t_des_args *args);
 void 	error_decrypt_encrypt(void);
 void 	pass_validation_error(void);
 void 	error_unexpected_on_key_generation(void);
+void 	error_bad_vector(void);
+void 	error_bad_hex(void);
 
 #endif
