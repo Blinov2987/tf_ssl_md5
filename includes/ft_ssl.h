@@ -58,8 +58,41 @@ void			entrance_to_base64(t_base64_args *args);
 t_list			*base64_enc(void *mem, size_t size);
 t_list			*base64_dec(void *mem, size_t size);
 
+uint64_t 		pure_des_encrypt(uint64_t mem, uint64_t keys[]);
+uint64_t 		pure_des_decrypt(uint64_t mem, uint64_t keys[]);
+uint64_t 		pure_des3_ede_encrypt(uint64_t mem, uint64_t keys[]);
+uint64_t 		pure_des3_ede_decrypt(uint64_t mem, uint64_t keys[]);
+
+void 			des_ecb(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+
+void 			des_cbc_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+void 			des_cbc_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+
+void 			des_pcbc_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+void			des_pcbc_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+
+void 			des_cfb_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+void 			des_cfb_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+
+void 			des_ofb_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+void 			des_ofb_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+
+void 			des_ctr_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+void 			des_ctr_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+
 void			entrance_to_des(t_des_args *args);
-t_list			*des_ecb(void *mem, size_t size, t_key_vector *key_vector);
+t_list			*general_cipher(void *mem, size_t size, t_key_vector *key_vector);
 t_list 			*get_pass_stdin(void);
 t_key_vector 	init_key_vector(t_des_args *args);
 t_list			*get_random_bytes(void);

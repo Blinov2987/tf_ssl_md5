@@ -204,17 +204,17 @@ void 	convert64t_mem(uint8_t *dest, uint64_t *mem, size_t size_in_byte)
 	}
 }
 
-t_list *des_ecb(void *mem, size_t size, t_key_vector *key_vector)
+t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector)
 {
 	uint64_t	*appended_mem;
 	t_list		*result;
 	size_t		i;
 	size_t		cur_position;
 
-	result = ft_safe_memalloc(sizeof(t_list), "des_ecb");
+	result = ft_safe_memalloc(sizeof(t_list), "general_cipher");
 	result->content_size = (size + (size % 8));
-	result->content = ft_safe_memalloc(result->content_size, "des_ecb");
-	appended_mem = ft_safe_memalloc(result->content_size, "des_ecb");
+	result->content = ft_safe_memalloc(result->content_size, "general_cipher");
+	appended_mem = ft_safe_memalloc(result->content_size, "general_cipher");
 	i = 0;
 	cur_position = 0;
 	while (i < (result->content_size / 8))
