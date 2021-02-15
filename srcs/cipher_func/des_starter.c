@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:19:20 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/13 21:58:12 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/15 20:17:15 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,12 +204,15 @@ void 	convert64t_mem(uint8_t *dest, uint64_t *mem, size_t size_in_byte)
 	}
 }
 
-t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector)
+t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector, t_des_args *args)
 {
 	uint64_t	*appended_mem;
 	t_list		*result;
 	size_t		i;
 	size_t		cur_position;
+	void	(*cipher_mode)(uint64_t *, size_t, t_key_vector *,
+			uint64_t (*cipher)(uint64_t, uint64_t *));
+	uint64_t  (*des_template)(uint64_t, uint64_t *);
 
 	result = ft_safe_memalloc(sizeof(t_list), "general_cipher");
 	result->content_size = (size + (size % 8));
@@ -223,7 +226,10 @@ t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector)
 		cur_position += 8;
 		i++;
 	}
-	make_des_rounds(appended_mem, result->content_size / 8, key_vector->keys[0]);
+	cipher_mode = decide_cipher_mode(args);
+	des_template = decide_des_template(args);
+	cipher_mode(appended_mem, result->content_size / 8, key_vector, des_template);
+	//make_des_rounds(appended_mem, result->content_size / 8, key_vector->keys[0]);
 	convert64t_mem(result->content, appended_mem, result->content_size);
 	free(appended_mem);
 	return (result);

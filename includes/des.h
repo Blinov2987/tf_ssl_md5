@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 21:38:06 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/09 19:49:41 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/15 19:08:24 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,5 +157,7 @@ uint64_t 	pure_des3_ede_decrypt(uint64_t mem, uint64_t keys[]);
 uint64_t 	pure_des_encrypt(uint64_t mem, uint64_t keys[]);
 uint64_t 	pure_des_decrypt(uint64_t mem, uint64_t keys[]);
 void		key_gen(uint64_t keys[16], uint64_t orig_key);
+void 		*decide_des_template(t_des_args *args);
+void 		*decide_cipher_mode(t_des_args  *args);
 
 #endif
