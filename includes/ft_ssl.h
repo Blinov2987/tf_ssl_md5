@@ -103,6 +103,7 @@ void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);
 void			print_silent_files(t_list *tmp, t_list *stream);
 void			print_output_des(t_des_args *args, t_crypt_output *output);
+void			print_base64_stdout(int fd, uint8_t *mem, size_t size);
 
 void			free_output(t_output *output);
 void			free_list(void *mem, size_t size);

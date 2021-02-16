@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 19:14:18 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/15 20:17:14 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/16 19:04:37 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void		entrance_to_des(t_des_args *args)
 	output.output_stream = general_cipher(output.mem->content, output.mem->content_size,
 			&args->key_vector, args);
 	if (!args->flag_d && args->flag_a)
+	{
 		get_based_output(&output);
+	}
 	print_output_des(args, &output);
 }

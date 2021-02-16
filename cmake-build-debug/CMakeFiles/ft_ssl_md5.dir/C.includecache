@@ -10,9 +10,11 @@
 libft.h
 ../includes/libft.h
 
-../includes/base64.h
-
 ../includes/constants.h
+
+../includes/des.h
+stdlib.h
+-
 
 ../includes/errors.h
 args.h
@@ -54,9 +56,9 @@ stdarg.h
 fcntl.h
 -
 
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/entrance_to_des.c
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des_starter.c
 ft_ssl.h
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/ft_ssl.h
-base64.h
-/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/base64.h
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/ft_ssl.h
+des.h
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des.h
 

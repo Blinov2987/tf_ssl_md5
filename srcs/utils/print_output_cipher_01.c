@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 21:19:01 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/13 21:32:57 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/16 20:03:15 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,28 +27,38 @@ static void		print_files(t_des_args *args, t_crypt_output *output)
 	close(fd);
 }
 
-static void print_des_stdout(uint8_t *mem, size_t size)
+static void		print_base_files(t_des_args *args, t_crypt_output *output)
 {
-	size_t offset;
-	size_t cur_size;
+	int fd;
 
-	offset = 0;
-	while (offset < size)
+	fd = open(args->output_files->content, O_WRONLY | O_CREAT);
+	if (fd < 0)
 	{
-		cur_size = 64;
-		if (64 > (size - offset))
-			cur_size = size - offset;
-		write(1, &mem[offset], cur_size);
-		ft_putchar('\n');
-		offset += 64;
+		error_open_file(args->output_files->content);
+		return ;
 	}
+	print_base64_stdout(fd, output->output_stream->content,
+			output->output_stream->content_size);
+	close(fd);
 }
 
 void 	print_output_des(t_des_args *args, t_crypt_output *output)
 {
-	if (args->output_files)
-		print_files(args, output);
+	if (args->flag_a && !args->flag_d)
+	{
+		if (args->output_files)
+			print_base_files(args, output);
+		else
+			print_base64_stdout(0, output->output_stream->content,
+					output->output_stream->content_size);
+	}
 	else
-		write(0, output->output_stream->content,
-				output->output_stream->content_size);
+	{
+		if (args->output_files)
+			print_files(args, output);
+		else
+			write(0, output->output_stream->content,
+					output->output_stream->content_size);
+	}
+
 }

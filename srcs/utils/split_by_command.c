@@ -84,6 +84,6 @@ void	split_by_commands(int ac, char **av)
 		hashing_branch(cmd, ac, av);
 	if (cmd.type == BASE64_COMMAND)
 		base64_branch(cmd, ac, av);
-	if (cmd.type == DES_COMMAND)
+	if (cmd.type == DES_COMMAND || cmd.type == DES3_COMMAND)
 		des_branch(cmd, ac, av);
 }

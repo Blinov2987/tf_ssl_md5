@@ -43,14 +43,14 @@ void 	*decide_cipher_mode(t_des_args  *args)
 	if (args->algo == ECB)
 		cipher_mode = &des_ecb;
 	if (args->algo == CBC)
-		cipher_mode = args->flag_e ? &des_cbc_enc : &des_cbc_dec;
+		cipher_mode = !args->flag_d ? &des_cbc_enc : &des_cbc_dec;
 	if (args->algo == OFB)
-		cipher_mode =args->flag_e ? &des_ofb_enc : &des_ofb_dec;
+		cipher_mode =!args->flag_d ? &des_ofb_enc : &des_ofb_dec;
 	if (args->algo == CFB)
-		cipher_mode = args->flag_e ? &des_cfb_enc : &des_cfb_dec;
+		cipher_mode = !args->flag_d ? &des_cfb_enc : &des_cfb_dec;
 	if (args->algo == CTR)
-		cipher_mode = args->flag_e ? &des_ctr_enc : &des_ctr_dec;
+		cipher_mode = !args->flag_d ? &des_ctr_enc : &des_ctr_dec;
 	if (args->algo == PCBC)
-		cipher_mode = args->flag_e ? &des_pcbc_enc : &des_pcbc_dec;
+		cipher_mode = !args->flag_d ? &des_pcbc_enc : &des_pcbc_dec;
 	return (cipher_mode);
 }

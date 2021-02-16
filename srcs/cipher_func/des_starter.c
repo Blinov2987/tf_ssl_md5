@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:19:20 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/15 20:17:15 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/16 22:25:26 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,6 +204,24 @@ void 	convert64t_mem(uint8_t *dest, uint64_t *mem, size_t size_in_byte)
 	}
 }
 
+void 	append_mem_to_cipher(void *mem, size_t size, t_list *result)
+{
+	size_t offset;
+	int i;
+
+	i = -1;
+	offset = (size % 8) ? (8 - (size % 8)) : 0;
+	result->content_size = size + offset;
+	result->content = ft_safe_memalloc(result->content_size,
+			"append_mem_to_cipher");
+	ft_mem_copy(result->content, mem, size);
+//	if (offset)
+//	{
+//		while (++i < offset)
+//			((uint8_t *)result->content)[size + i] = (uint8_t)offset;
+//	}
+}
+
 t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector, t_des_args *args)
 {
 	uint64_t	*appended_mem;
@@ -215,22 +233,24 @@ t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector, t_des_a
 	uint64_t  (*des_template)(uint64_t, uint64_t *);
 
 	result = ft_safe_memalloc(sizeof(t_list), "general_cipher");
-	result->content_size = (size + (size % 8));
-	result->content = ft_safe_memalloc(result->content_size, "general_cipher");
+	append_mem_to_cipher(mem, size, result);
 	appended_mem = ft_safe_memalloc(result->content_size, "general_cipher");
 	i = 0;
 	cur_position = 0;
 	while (i < (result->content_size / 8))
 	{
-		appended_mem[i] = take_uint64_from_uint8((uint8_t *)&mem[cur_position]);
+		appended_mem[i] = take_uint64_from_uint8(&result->content[cur_position]);
 		cur_position += 8;
 		i++;
 	}
+	ft_bzero(result->content, result->content_size);
 	cipher_mode = decide_cipher_mode(args);
 	des_template = decide_des_template(args);
 	cipher_mode(appended_mem, result->content_size / 8, key_vector, des_template);
 	//make_des_rounds(appended_mem, result->content_size / 8, key_vector->keys[0]);
 	convert64t_mem(result->content, appended_mem, result->content_size);
+	if (args->algo == OFB || args->algo == CFB)
+		result->content_size = size;
 	free(appended_mem);
 	return (result);
 }
