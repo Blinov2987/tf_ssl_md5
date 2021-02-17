@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:19:20 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/16 22:25:26 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/17 21:09:13 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,16 +210,16 @@ void 	append_mem_to_cipher(void *mem, size_t size, t_list *result)
 	int i;
 
 	i = -1;
-	offset = (size % 8) ? (8 - (size % 8)) : 0;
+	offset = (size % 8) ? (8 - (size % 8)) : 8;
 	result->content_size = size + offset;
 	result->content = ft_safe_memalloc(result->content_size,
 			"append_mem_to_cipher");
 	ft_mem_copy(result->content, mem, size);
-//	if (offset)
-//	{
-//		while (++i < offset)
-//			((uint8_t *)result->content)[size + i] = (uint8_t)offset;
-//	}
+	if (offset)
+	{
+		while (++i < offset)
+			((uint8_t *)result->content)[size + i] = (uint8_t)offset;
+	}
 }
 
 t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector, t_des_args *args)

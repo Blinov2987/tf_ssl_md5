@@ -50,6 +50,8 @@ uint8_t 	hex_char_to_byte(uint8_t *str)
 			byte = byte * 16 + (str[i] - 'a') + 10;
 		if (str[i] >= 'A' && str[i] <= 'F')
 			byte = byte * 16 + (str[i] - 'A') + 10;
+		if (!str[i])
+			byte *= 16;
 	}
 	return (byte);
 }

@@ -33,5 +33,6 @@ void 	pass_validation_error(void);
 void 	error_unexpected_on_key_generation(void);
 void 	error_bad_vector(void);
 void 	error_bad_hex(void);
+void	error_bad_salt(void);
 
 #endif

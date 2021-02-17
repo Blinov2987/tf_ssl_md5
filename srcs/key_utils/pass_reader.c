@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 20:12:45 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/13 18:51:17 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/17 22:00:01 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void 		get_8byte_from_ascii(t_list *ascii)
 	raw_ind = 0;
 	ft_bzero(raw, 16);
 	ft_bzero(byte, 8);
-	ft_mem_copy(raw, ascii->content, (ascii->content_size - 1) % 17);
+	ft_mem_copy(raw, ascii->content, ascii->content_size > 16 ? 16 : ascii->content_size);
 	while (++i < 8)
 	{
 		byte[i] = hex_char_to_byte(&raw[raw_ind]);

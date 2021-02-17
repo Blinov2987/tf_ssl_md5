@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 19:14:18 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/16 19:04:37 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/17 20:32:32 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,37 @@ static void 	get_based_output(t_crypt_output *output)
 			&output->output_stream->content_size);
 }
 
+void 		add_salt_to_stream(t_des_args *args, t_crypt_output *output)
+{
+	void	*mem;
+	size_t	new_size;
+
+	new_size = 8 + 8 + output->output_stream->content_size;
+	mem = ft_safe_memalloc(new_size, "add_salt_to_stream");
+	ft_mem_copy(mem, "Salted__", 8);
+	ft_mem_copy(&((uint8_t *)mem)[8], args->salt->content, 8);
+	ft_mem_copy(&((uint8_t *)mem)[16], output->output_stream->content,
+			output->output_stream->content_size);
+	free(output->output_stream->content);
+	output->output_stream->content = mem;
+	output->output_stream->content_size = new_size;
+}
+
+void		get_salt_from_content(t_des_args *args, t_crypt_output *output)
+{
+	void	*mem;
+	size_t	new_size;
+
+	new_size = output->mem->content_size - 16;
+	mem = ft_safe_memalloc(new_size, "get_salt_from_content");
+	ft_mem_copy(args->salt->content,
+			&((uint8_t *)output->mem->content)[8], 8);
+	ft_mem_copy(mem, &((uint8_t *)output->mem->content)[16], new_size);
+	free(output->mem->content);
+	output->mem->content = mem;
+	output->mem->content_size = new_size;
+}
+
 void		entrance_to_des(t_des_args *args)
 {
 	t_crypt_output 	output;
@@ -59,11 +90,20 @@ void		entrance_to_des(t_des_args *args)
 		return ;
 	}
 	get_info_stream(args, &output);
+	if (!args->flag_k && args->flag_d && !ft_strncmp("Salted__",
+			output.mem->content, 8) && output.mem->content_size > 16)
+		get_salt_from_content(args, &output);
+	else if ((!args->flag_k && args->flag_d) && (ft_strncmp("Salted__",
+			output.mem->content, 8) || output.mem->content_size > 16))
+	{
+		error_bad_salt();
+		return ;
+	}
 	output.output_stream = general_cipher(output.mem->content, output.mem->content_size,
 			&args->key_vector, args);
+	if (!args->flag_k && !args->flag_d)
+		add_salt_to_stream(args, &output);
 	if (!args->flag_d && args->flag_a)
-	{
 		get_based_output(&output);
-	}
 	print_output_des(args, &output);
 }

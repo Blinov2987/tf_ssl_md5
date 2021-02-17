@@ -26,3 +26,8 @@ void 	error_bad_hex(void)
 {
 	ft_putendl_fd("ft_ssl: non-hex digit", 2);
 }
+
+void	error_bad_salt(void)
+{
+	ft_putendl_fd("ft_ssl: bad salt on input", 2);
+}
