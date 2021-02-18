@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 18:41:10 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/31 20:13:46 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/18 21:39:26 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ void	base_64_dec_last_round(uint8_t *mem, uint8_t *result_mem, size_t offset)
 {
 	if (offset == 2)
 	{
-		result_mem[0] = (mem[0] << 2);
+	//	result_mem[0] = (mem[0] << 2);
+		result_mem[0] = (mem[0] << 2) | (mem[1] >> 4);
 	}
 	if (offset == 1)
 	{
 		result_mem[0] = (mem[0] << 2) | (mem[1] >> 4);
-		result_mem[1] = ((mem[1] & 0x0f) << 4);
+	//	result_mem[1] = ((mem[1] & 0x0f) << 4);
+		result_mem[1] = ((mem[1] & 0x0f) << 4) | (mem[2] >> 2) ;
 	}
 }
 

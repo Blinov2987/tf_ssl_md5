@@ -49,7 +49,7 @@ void 	print_output_des(t_des_args *args, t_crypt_output *output)
 		if (args->output_files)
 			print_base_files(args, output);
 		else
-			print_base64_stdout(0, output->output_stream->content,
+			print_base64_stdout(1, output->output_stream->content,
 					output->output_stream->content_size);
 	}
 	else
@@ -57,7 +57,7 @@ void 	print_output_des(t_des_args *args, t_crypt_output *output)
 		if (args->output_files)
 			print_files(args, output);
 		else
-			write(0, output->output_stream->content,
+			write(1, output->output_stream->content,
 					output->output_stream->content_size);
 	}
 

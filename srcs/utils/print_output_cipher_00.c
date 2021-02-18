@@ -23,8 +23,8 @@ void print_base64_stdout(int fd, uint8_t *mem, size_t size)
 		cur_size = 64;
 		if (64 > (size - offset))
 			cur_size = size - offset;
-		write(1, &mem[offset], cur_size);
-		ft_putchar('\n');
+		write(fd, &mem[offset], cur_size);
+		ft_putchar_fd('\n', fd);
 		offset += 64;
 	}
 }
