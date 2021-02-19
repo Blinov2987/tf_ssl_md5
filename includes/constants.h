@@ -26,10 +26,11 @@
 # define DES3_COMMAND 4
 # define ECB 1
 # define CBC 2
-# define OFB 3
-# define CFB 4
-# define CTR 5
-# define PCBC 6
+# define PCBC 3
+# define OFB 4
+# define CFB 5
+# define CTR 6
+
 # define HASHING_FLAGS "pqrs"
 # define BASE64_FLAGS "deio"
 # define DES_FLAGS "adeikopsv"

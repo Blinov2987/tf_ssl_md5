@@ -60,3 +60,7 @@ ft_ssl.h
 base64.h
 /Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/base64.h
 
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/split_by_command.c
+ft_ssl.h
+/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/ft_ssl.h
+

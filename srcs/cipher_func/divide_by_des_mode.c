@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 18:49:45 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/15 19:41:23 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:17:03 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void 	*decide_des_template(t_des_args *args)
 	des_template = NULL;
 	if (args->type == DES_COMMAND)
 	{
-		if (args->flag_d)
+		if (args->flag_d && args->algo < OFB)
 			des_template = &pure_des_decrypt;
 		else
 			des_template = &pure_des_encrypt;
 	}
 	else
 	{
-		if (args->flag_d)
+		if (args->flag_d && args->algo < OFB)
 			des_template = &pure_des3_ede_decrypt;
 		else
 			des_template = &pure_des3_ede_encrypt;

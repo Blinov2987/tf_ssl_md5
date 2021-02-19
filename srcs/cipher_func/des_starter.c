@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:19:20 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/18 22:13:34 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:48:39 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,14 +204,14 @@ void 	convert64t_mem(uint8_t *dest, uint64_t *mem, size_t size_in_byte)
 	}
 }
 
-void 	append_mem_to_cipher(void *mem, size_t size, t_list *result, uint8_t is_decrypt)
+void 	append_mem_to_cipher(void *mem, size_t size, t_list *result, t_des_args *args)
 {
 	size_t offset;
 	int i;
 
 	i = -1;
 	offset = 0;
-	if (!is_decrypt)
+	if (!args->flag_d || args->algo > PCBC)
 		offset = (size % 8) ? (8 - (size % 8)) : 8;
 	result->content_size = size + offset;
 	result->content = ft_safe_memalloc(result->content_size,
@@ -253,7 +253,7 @@ t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector, t_des_a
 	uint64_t  (*des_template)(uint64_t, uint64_t *);
 
 	result = ft_safe_memalloc(sizeof(t_list), "general_cipher");
-	append_mem_to_cipher(mem, size, result, args->flag_d);
+	append_mem_to_cipher(mem, size, result, args);
 	appended_mem = ft_safe_memalloc(result->content_size, "general_cipher");
 	i = 0;
 	cur_position = 0;
@@ -269,7 +269,7 @@ t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector, t_des_a
 	cipher_mode(appended_mem, result->content_size / 8, key_vector, des_template);
 	//make_des_rounds(appended_mem, result->content_size / 8, key_vector->keys[0]);
 	convert64t_mem(result->content, appended_mem, result->content_size);
-	if (args->flag_d)
+	if (args->flag_d && args->algo < OFB)
 		decrease_content(result);
 	if (args->algo == OFB || args->algo == CFB)
 		result->content_size = size;
