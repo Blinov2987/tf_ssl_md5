@@ -49,6 +49,7 @@ void	free_des_args(t_des_args **args)
 		ft_lstdel(&(*args)->pass_in_ascii, &free_list);
 		ft_lstdel(&(*args)->vector, &free_list);
 		ft_lstdel(&(*args)->salt, &free_list);
+		free((*args)->key_vector.keys);
 		(*args)->bad_argums= NULL;
 		(*args)->input_files = NULL;
 		(*args)->output_files = NULL;

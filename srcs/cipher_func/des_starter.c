@@ -269,7 +269,7 @@ t_list *general_cipher(void *mem, size_t size, t_key_vector *key_vector, t_des_a
 	cipher_mode(appended_mem, result->content_size / 8, key_vector, des_template);
 	//make_des_rounds(appended_mem, result->content_size / 8, key_vector->keys[0]);
 	convert64t_mem(result->content, appended_mem, result->content_size);
-	if (args->flag_d && args->algo < OFB)
+	if (args->flag_d && args->algo < OFB && args->pass_in_ascii)
 		decrease_content(result);
 	if (args->algo == OFB || args->algo == CFB)
 		result->content_size = size;

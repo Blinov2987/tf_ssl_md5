@@ -27,8 +27,8 @@ uint64_t 	pure_des3_ede_decrypt(uint64_t mem, uint64_t keys[])
 {
 	uint64_t result;
 
-	result = pure_des_decrypt(mem, keys);
+	result = pure_des_decrypt(mem, &keys[32]);
 	result = pure_des_encrypt(result, &keys[16]);
-	result = pure_des_decrypt(result, &keys[32]);
+	result = pure_des_decrypt(result, keys);
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 21:19:01 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/16 20:03:15 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:29:17 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void		print_base_files(t_des_args *args, t_crypt_output *output)
 {
 	int fd;
 
-	fd = open(args->output_files->content, O_WRONLY | O_CREAT);
+	fd = open(args->output_files->content, O_WRONLY | O_CREAT, 0666);
 	if (fd < 0)
 	{
 		error_open_file(args->output_files->content);
@@ -44,6 +44,8 @@ static void		print_base_files(t_des_args *args, t_crypt_output *output)
 
 void 	print_output_des(t_des_args *args, t_crypt_output *output)
 {
+	if (!output->output_stream->content || !output->output_stream->content_size)
+		return ;
 	if (args->flag_a && !args->flag_d)
 	{
 		if (args->output_files)

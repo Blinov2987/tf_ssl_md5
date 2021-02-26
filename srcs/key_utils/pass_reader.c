@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 20:12:45 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/17 22:00:01 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/26 18:26:28 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void 		get_keys_from_hex(t_list *hex, uint64_t *dest)
 	}
 	dest[0] = take_uint64_from_uint8(&raw[0]);
 	dest[1] = take_uint64_from_uint8(&raw[8]);
-	dest[1] = take_uint64_from_uint8(&raw[16]);
+	dest[2] = take_uint64_from_uint8(&raw[16]);
 }
 
 void 		prepare_keys(t_des_args *args, t_key_vector *key_vector)
@@ -102,8 +102,6 @@ void 		prepare_keys(t_des_args *args, t_key_vector *key_vector)
 		get_keys_from_hex(args->key_in_hex, key_vector->keys);
 	if (args->vector)
 		key_vector->vector = take_uint64_from_uint8(args->vector->content);
-	if (args->pass_in_ascii)
-		pbkfd(args, key_vector);
 }
 
 t_key_vector init_key_vector(t_des_args *args)

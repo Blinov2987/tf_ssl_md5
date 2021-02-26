@@ -58,7 +58,7 @@ void	des_branch(t_cmd_type cmd, int ac, char **av)
 		fill_random_values(args);
 		if (validate_args_des(&args))
 		{
-
+			args->key_vector = init_key_vector(args);
 			entrance_to_des(args);
 		}
 	}

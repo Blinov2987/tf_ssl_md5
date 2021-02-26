@@ -22,7 +22,10 @@ int		print_commands(void)
 {
 	ft_putendl(STD_COMMANDS);
 	ft_putendl(DIGEST_COMMANDS);
-	ft_putendl(CIPHER_COMMANDS);
+	ft_putendl(CIPHER_COMMANDS_0);
+	ft_putendl(CIPHER_COMMANDS_1);
+	ft_putendl(CIPHER_COMMANDS_2);
+	ft_putendl(CIPHER_COMMANDS_3);
 	return (FALSE);
 }
 

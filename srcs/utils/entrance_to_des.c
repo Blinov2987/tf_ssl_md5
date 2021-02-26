@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 19:14:18 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/19 18:48:39 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:37:45 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,8 @@ void		entrance_to_des(t_des_args *args)
 		error_bad_salt();
 		return ;
 	}
-	args->key_vector = init_key_vector(args);
+	if (args->pass_in_ascii)
+		pbkfd(args, &args->key_vector);
 //	if ((!(output.mem->content_size % 8) || !args->flag_d))
 //	{
 		output.output_stream = general_cipher(output.mem->content,
@@ -110,5 +111,6 @@ void		entrance_to_des(t_des_args *args)
 		if (!args->flag_d && args->flag_a)
 			get_based_output(&output);
 		print_output_des(args, &output);
+		free_crypt_output(&output);
 //	}
 }

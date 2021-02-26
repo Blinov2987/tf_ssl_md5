@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 15:48:55 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/16 19:04:37 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:29:17 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,39 @@ static void		print_files(t_base64_args *args, t_output *output)
 {
 	int fd;
 
-	fd = open(args->output_files->content, O_WRONLY | O_CREAT);
+	fd = open(args->output_files->content, O_WRONLY | O_CREAT, 0666);
 	if (fd < 0)
 	{
 		error_open_file(args->output_files->content);
 		return ;
 	}
-	write(fd, output->string_hash->content, output->string_hash->content_size);
+	if (args->flag_d)
+	{
+		write(fd, output->string_hash->content,
+				output->string_hash->content_size);
+	}
+	else
+	{
+		print_base64_stdout(fd, output->string_hash->content,
+				output->string_hash->content_size);
+	}
 	close(fd);
 }
 
 void 	print_output_cipher(t_base64_args *args, t_output *output)
 {
+	if (!output->string_hash->content || !output->string_hash->content_size)
+		return ;
 	if (args->output_files)
 		print_files(args, output);
+	else if (args->flag_d)
+	{
+		write(1, output->string_hash->content,
+				output->string_hash->content_size);
+	}
 	else
+	{
 		print_base64_stdout(1, output->string_hash->content,
 				output->string_hash->content_size);
+	}
 }

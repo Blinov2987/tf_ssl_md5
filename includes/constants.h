@@ -37,6 +37,9 @@
 # define USAGE_STRING "usage: ft_ssl command [command opts] [command args]"
 # define STD_COMMANDS "Standard commands:\n"
 # define DIGEST_COMMANDS "Message Digest commands:\nmd5\nsha256\nsha512\n"
-# define CIPHER_COMMANDS "Cipher commands:\nbase64"
+# define CIPHER_COMMANDS_0 "Cipher commands:\nbase64\ndes\ndes-ecb\ndes-cbc"
+# define CIPHER_COMMANDS_1 "des-pcbc\ndes-ofb\ndes-cfb\ndes-ctr"
+# define CIPHER_COMMANDS_2 "des3\ndes3-ecb\ndes3-cbc"
+# define CIPHER_COMMANDS_3 "des3-pcbc\ndes3-ofb\ndes3-cfb\ndes3-ctr"
 
 #endif
