@@ -6,14 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:35:05 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/31 18:53:55 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/27 09:30:49 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "base64.h"
 
-t_list *base64_enc(void *mem, size_t size)
+t_list	*base64_enc(void *mem, size_t size)
 {
 	size_t rounds;
 	size_t offset;
@@ -28,7 +28,7 @@ t_list *base64_enc(void *mem, size_t size)
 	return (result);
 }
 
-t_list *base64_dec(void *mem, size_t size)
+t_list	*base64_dec(void *mem, size_t size)
 {
 	size_t rounds;
 	size_t offset;
@@ -44,6 +44,6 @@ t_list *base64_dec(void *mem, size_t size)
 	rounds = size / 4;
 	result->content_size = (3 * rounds) - offset;
 	result->content = ft_safe_memalloc(result->content_size, "base64_enc");
-	base64_dec_wrap(mem, size, offset, result);
+	base64_dec_wrap(mem, offset, result);
 	return (result);
 }

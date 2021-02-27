@@ -13,7 +13,7 @@
 #include "ft_ssl.h"
 #include "des.h"
 
-uint64_t 	pure_des3_ede_encrypt(uint64_t mem, uint64_t keys[])
+uint64_t	pure_des3_ede_encrypt(uint64_t mem, uint64_t keys[])
 {
 	uint64_t result;
 
@@ -23,7 +23,7 @@ uint64_t 	pure_des3_ede_encrypt(uint64_t mem, uint64_t keys[])
 	return (result);
 }
 
-uint64_t 	pure_des3_ede_decrypt(uint64_t mem, uint64_t keys[])
+uint64_t	pure_des3_ede_decrypt(uint64_t mem, uint64_t keys[])
 {
 	uint64_t result;
 

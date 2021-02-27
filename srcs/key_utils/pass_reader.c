@@ -6,14 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 20:12:45 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/26 18:26:28 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/27 10:49:53 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include <readpassphrase.h>
 
-t_list *get_pass_stdin(void)
+t_list			*get_pass_stdin(void)
 {
 	char	passbuf[1024];
 	char	confirmbuf[1024];
@@ -39,47 +39,12 @@ t_list *get_pass_stdin(void)
 	return (pass_phrase);
 }
 
-void 		get_8byte_from_ascii(t_list *ascii)
+void			get_keys_from_hex(t_list *hex, uint64_t *dest)
 {
-	uint8_t raw[16];
-	uint8_t byte[8];
-	int 	i;
-	int 	raw_ind;
-
-	i = -1;
-	raw_ind = 0;
-	ft_bzero(raw, 16);
-	ft_bzero(byte, 8);
-	ft_mem_copy(raw, ascii->content, ascii->content_size > 16 ? 16 : ascii->content_size);
-	while (++i < 8)
-	{
-		byte[i] = hex_char_to_byte(&raw[raw_ind]);
-		raw_ind += 2;
-	}
-	free(ascii->content);
-	ascii->content = ft_safe_memalloc(8, "get_8byte_from_ascii");
-	ft_mem_copy(ascii->content, byte, 8);
-	ascii->content_size = 8;
-}
-
-void 		fill_random_values(t_des_args *args)
-{
-	if (!args->pass_in_ascii && !args->key_in_hex)
-		args->pass_in_ascii = get_pass_stdin();
-	if (!args->key_in_hex && !args->salt)
-		args->salt = get_random_bytes();
-	else if (args->salt)
-		get_8byte_from_ascii(args->salt);
-	if (args->vector)
-		get_8byte_from_ascii(args->vector);
-}
-
-void 		get_keys_from_hex(t_list *hex, uint64_t *dest)
-{
-	uint8_t 	buf[48];
-	uint8_t		raw[24];
-	int			i;
-	int			buf_ind;
+	uint8_t	buf[48];
+	uint8_t	raw[24];
+	int		i;
+	int		buf_ind;
 
 	ft_bzero(buf, 48);
 	ft_bzero(raw, 24);
@@ -96,7 +61,7 @@ void 		get_keys_from_hex(t_list *hex, uint64_t *dest)
 	dest[2] = take_uint64_from_uint8(&raw[16]);
 }
 
-void 		prepare_keys(t_des_args *args, t_key_vector *key_vector)
+void			prepare_keys(t_des_args *args, t_key_vector *key_vector)
 {
 	if (args->key_in_hex)
 		get_keys_from_hex(args->key_in_hex, key_vector->keys);
@@ -104,7 +69,7 @@ void 		prepare_keys(t_des_args *args, t_key_vector *key_vector)
 		key_vector->vector = take_uint64_from_uint8(args->vector->content);
 }
 
-t_key_vector init_key_vector(t_des_args *args)
+t_key_vector	init_key_vector(t_des_args *args)
 {
 	t_key_vector key_vector;
 

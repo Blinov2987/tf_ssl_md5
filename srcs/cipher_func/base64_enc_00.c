@@ -34,13 +34,13 @@ void	base_64_enc_last_round(uint8_t *mem, uint8_t *result_mem, size_t offset)
 		result_mem[2] = 64;
 }
 
-void  base64_enc_wrap(uint8_t *mem, size_t size, t_list *result)
+void	base64_enc_wrap(uint8_t *mem, size_t size, t_list *result)
 {
-	int rounds_len;
-	size_t mem_ind;
-	size_t result_mem_ind;
-	int round;
-	int offset;
+	size_t	rounds_len;
+	size_t	mem_ind;
+	size_t	result_mem_ind;
+	size_t	offset;
+	int		round;
 
 	offset = size % 3;
 	rounds_len = offset ? (result->content_size / 4) - 1

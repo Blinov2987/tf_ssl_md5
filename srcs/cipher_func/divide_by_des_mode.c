@@ -6,15 +6,15 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 18:49:45 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/19 19:17:03 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/27 09:44:21 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
-void 	*decide_des_template(t_des_args *args)
+void	*decide_des_template(t_des_args *args)
 {
-	uint64_t  (*des_template)(uint64_t, uint64_t *);
+	uint64_t	(*des_template)(uint64_t, uint64_t *);
 
 	des_template = NULL;
 	if (args->type == DES_COMMAND)
@@ -34,10 +34,9 @@ void 	*decide_des_template(t_des_args *args)
 	return (des_template);
 }
 
-void 	*decide_cipher_mode(t_des_args  *args)
+void	*decide_cipher_mode(t_des_args *args)
 {
-	void	(*cipher_mode)(uint64_t *, size_t, t_key_vector *,
-			uint64_t (*cipher)(uint64_t, uint64_t *));
+	void	(*cipher_mode)(uint64_t *, size_t, t_key_vector *, uint64_t (*)());
 
 	cipher_mode = NULL;
 	if (args->algo == ECB)
@@ -45,7 +44,7 @@ void 	*decide_cipher_mode(t_des_args  *args)
 	if (args->algo == CBC)
 		cipher_mode = !args->flag_d ? &des_cbc_enc : &des_cbc_dec;
 	if (args->algo == OFB)
-		cipher_mode =!args->flag_d ? &des_ofb_enc : &des_ofb_dec;
+		cipher_mode = !args->flag_d ? &des_ofb_enc : &des_ofb_dec;
 	if (args->algo == CFB)
 		cipher_mode = !args->flag_d ? &des_cfb_enc : &des_cfb_dec;
 	if (args->algo == CTR)

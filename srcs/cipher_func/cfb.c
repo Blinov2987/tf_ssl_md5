@@ -13,13 +13,13 @@
 #include "ft_ssl.h"
 #include "des.h"
 
-void 	des_cfb_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
+void	des_cfb_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
 		uint64_t (*cipher)(uint64_t, uint64_t *))
 {
-	size_t round;
-	uint64_t current;
-	uint64_t keys[48];
-	uint64_t vector;
+	size_t		round;
+	uint64_t	current;
+	uint64_t	keys[48];
+	uint64_t	vector;
 
 	round = 0;
 	key_gen(keys, key_vector->keys[0]);
@@ -35,13 +35,13 @@ void 	des_cfb_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
 	}
 }
 
-void 	des_cfb_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+void	des_cfb_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
 		uint64_t (*cipher)(uint64_t, uint64_t *))
 {
-	size_t round;
-	uint64_t current;
-	uint64_t keys[48];
-	uint64_t vector;
+	size_t		round;
+	uint64_t	current;
+	uint64_t	keys[48];
+	uint64_t	vector;
 
 	round = 0;
 	key_gen(keys, key_vector->keys[0]);

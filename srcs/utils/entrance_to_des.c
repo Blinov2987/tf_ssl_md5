@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 19:14:18 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/26 19:37:45 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/27 09:14:33 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,33 @@ void		get_salt_from_content(t_des_args *args, t_crypt_output *output)
 	output->mem->content_size = new_size;
 }
 
+static void entrance_continue(t_des_args *args, t_crypt_output *output)
+{
+	if (!args->flag_k && args->flag_d && !ft_strncmp("Salted__",
+			output->mem->content, 8) && output->mem->content_size > 16)
+		get_salt_from_content(args, output);
+	else if ((!args->flag_k && args->flag_d) && (ft_strncmp("Salted__",
+			output->mem->content, 8) || output->mem->content_size > 16))
+	{
+		error_bad_salt();
+		free_crypt_output(output);
+		return ;
+	}
+	if (args->pass_in_ascii)
+		pbkfd(args, &args->key_vector);
+	output->output_stream = general_cipher(output->mem->content,
+			output->mem->content_size, args);
+	if (!args->flag_k && !args->flag_d)
+		add_salt_to_stream(args, output);
+	if (!args->flag_d && args->flag_a)
+		get_based_output(output);
+	print_output_des(args, output);
+	free_crypt_output(output);
+}
+
 void		entrance_to_des(t_des_args *args)
 {
 	t_crypt_output 	output;
-	t_list		*(*cipher_func)(void *, size_t, t_key_vector *);
 
 	ft_bzero(&output, sizeof(t_crypt_output));
 	if ((args->algo == CBC || args->algo == PCBC
@@ -90,27 +113,11 @@ void		entrance_to_des(t_des_args *args)
 		return ;
 	}
 	get_info_stream(args, &output);
-	if (!args->flag_k && args->flag_d && !ft_strncmp("Salted__",
-			output.mem->content, 8) && output.mem->content_size > 16)
-		get_salt_from_content(args, &output);
-	else if ((!args->flag_k && args->flag_d) && (ft_strncmp("Salted__",
-			output.mem->content, 8) || output.mem->content_size > 16))
+	if (output.mem->content_size == 0)
 	{
-		error_bad_salt();
+		error_bad_file_descriptor(args->input_files->content);
+		free_crypt_output(&output);
 		return ;
 	}
-	if (args->pass_in_ascii)
-		pbkfd(args, &args->key_vector);
-//	if ((!(output.mem->content_size % 8) || !args->flag_d))
-//	{
-		output.output_stream = general_cipher(output.mem->content,
-				output.mem->content_size,
-				&args->key_vector, args);
-		if (!args->flag_k && !args->flag_d)
-			add_salt_to_stream(args, &output);
-		if (!args->flag_d && args->flag_a)
-			get_based_output(&output);
-		print_output_des(args, &output);
-		free_crypt_output(&output);
-//	}
+	entrance_continue(args, &output);
 }

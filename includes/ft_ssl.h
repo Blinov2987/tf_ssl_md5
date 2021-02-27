@@ -92,8 +92,7 @@ void 			des_ctr_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
 				uint64_t (*cipher)(uint64_t, uint64_t *));
 
 void			entrance_to_des(t_des_args *args);
-t_list			*general_cipher(void *mem, size_t size,
-				t_key_vector *key_vector, t_des_args *args);
+t_list			*general_cipher(void *mem, size_t size, t_des_args *args);
 t_list 			*get_pass_stdin(void);
 t_key_vector 	init_key_vector(t_des_args *args);
 t_list			*get_random_bytes(void);

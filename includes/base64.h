@@ -46,7 +46,7 @@ static const uint8_t g_dec64[127] = {
 };
 
 void	base64_enc_wrap(uint8_t *mem, size_t size, t_list *result);
-void	base64_dec_wrap(uint8_t *mem, size_t size, size_t offset, t_list *result);
+void	base64_dec_wrap(uint8_t *mem, size_t offset, t_list *result);
 void	out_base64_prism(uint8_t *mem, size_t *size);
 void	in_base64_prism(uint8_t *mem, size_t *size);
 
