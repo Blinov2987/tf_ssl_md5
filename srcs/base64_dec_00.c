@@ -38,7 +38,7 @@ void	base64_dec_wrap(uint8_t *mem, size_t offset, t_list *result)
 	size_t	rounds_len;
 	size_t	mem_ind;
 	size_t	result_mem_ind;
-	int		round;
+	size_t	round;
 
 	rounds_len = result->content_size / 3;
 	mem_ind = 0;

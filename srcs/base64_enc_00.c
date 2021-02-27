@@ -40,7 +40,7 @@ void	base64_enc_wrap(uint8_t *mem, size_t size, t_list *result)
 	size_t	mem_ind;
 	size_t	result_mem_ind;
 	size_t	offset;
-	int		round;
+	size_t	round;
 
 	offset = size % 3;
 	rounds_len = offset ? (result->content_size / 4) - 1

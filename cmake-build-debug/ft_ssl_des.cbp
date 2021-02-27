@@ -476,181 +476,181 @@
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/includes/sha512.h">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/base64.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/args_finder.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/base64_dec_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/args_helper_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/base64_enc_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/base64.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/cbc.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/base64_args_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/cfb.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/base64_dec_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/ctr.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/base64_enc_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/base64_in_prism.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des3.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cbc.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des_starter.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cfb.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des_utils_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/ctr.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/des_utils_01.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/des.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/divide_by_des_mode.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/des3.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/ecb.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/des_args.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/ofb.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/des_args_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/cipher_func/pcbc.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/des_starter.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/md5_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/des_utils_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/md5_01.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/des_utils_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/md5_02.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/divide_by_des_mode.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/md5_03.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/ecb.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha256_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/entrance_to_base64.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha256_01.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/entrance_to_des.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha256_02.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/entrance_to_des_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha256_03.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/entrance_to_hash_commands.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha256_04.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/errors_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha512_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/errors_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha512_01.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/errors_02.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha512_02.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/errors_03.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hash_func/sha512_03.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/fill_commands_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/generate_key.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/free_utils.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/generate_utils_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/ft_lstadd_back.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/key_utils/pass_reader.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/ft_safe_memalloc.c">
+			<Option target="ft_ssl_md5"/>
+		</Unit>
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/generate_key.c">
+			<Option target="ft_ssl_md5"/>
+		</Unit>
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/generate_utils_00.c">
+			<Option target="ft_ssl_md5"/>
+		</Unit>
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/hashing_utils.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/main.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/args_finder.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/md5_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/args_helper_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/md5_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/base64_args_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/md5_02.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/base64_in_prism.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/md5_03.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/des_args.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/ofb.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/des_args_01.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/pass_reader.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/entrance_to_base64.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/pcbc.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/entrance_to_des.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/print_output_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/entrance_to_des_01.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/print_output_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/entrance_to_hash_commands.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/print_output_02.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/errors_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/print_output_cipher_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/errors_01.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/print_output_cipher_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/errors_02.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/reader_helper.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/errors_03.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/sha256_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/fill_commands_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/sha256_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/free_utils.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/sha256_02.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/ft_lstadd_back.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/sha256_03.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/ft_safe_memalloc.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/sha256_04.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/hashing_utils.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/sha512_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/sha512_01.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_01.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/sha512_02.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_02.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/sha512_03.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_cipher_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/split_by_command.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/print_output_cipher_01.c">
-			<Option target="ft_ssl_md5"/>
-		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/reader_helper.c">
-			<Option target="ft_ssl_md5"/>
-		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/split_by_command.c">
-			<Option target="ft_ssl_md5"/>
-		</Unit>
-		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/utils/validate_pass_00.c">
+		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/srcs/validate_pass_00.c">
 			<Option target="ft_ssl_md5"/>
 		</Unit>
 		<Unit filename="/Users/gemerald/afterIntern/ft_ssl_des/CMakeLists.txt">

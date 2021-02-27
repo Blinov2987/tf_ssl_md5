@@ -17,14 +17,15 @@ uint64_t		perrm_64(uint64_t num, const uint8_t ip_tab[], size_t tab_len,
 		size_t size)
 {
 	uint64_t	result;
-	int			i;
+	size_t		i;
 
-	i = -1;
+	i = 0;
 	result = 0;
-	while (++i < tab_len)
+	while (i < tab_len)
 	{
 		result <<= 1;
 		result += (num >> (size - ip_tab[i]) & 1);
+		i++;
 	}
 	return (result);
 }

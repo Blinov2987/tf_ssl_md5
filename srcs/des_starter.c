@@ -15,15 +15,16 @@
 
 void		convert64t_mem(uint8_t *dest, uint64_t *mem, size_t size_in_byte)
 {
-	int i;
-	int byte_ind;
+	size_t i;
+	size_t byte_ind;
 
-	i = -1;
+	i = 0;
 	byte_ind = 0;
-	while (++i < size_in_byte / 8)
+	while (i < size_in_byte / 8)
 	{
 		take_byte_from_int_sha512(&dest[byte_ind], mem[i]);
 		byte_ind += 8;
+		i++;
 	}
 }
 
@@ -31,9 +32,9 @@ void		append_mem_to_cipher(void *mem, size_t size,
 			t_list *result, t_des_args *args)
 {
 	size_t	offset;
-	int		i;
+	size_t	i;
 
-	i = -1;
+	i = 0;
 	offset = 0;
 	if (!args->flag_d || args->algo > PCBC)
 		offset = (size % 8) ? (8 - (size % 8)) : 8;
@@ -43,8 +44,11 @@ void		append_mem_to_cipher(void *mem, size_t size,
 	ft_mem_copy(result->content, mem, size);
 	if (offset)
 	{
-		while (++i < offset)
+		while (i < offset)
+		{
 			((uint8_t *)result->content)[size + i] = (uint8_t)offset;
+			i++;
+		}
 	}
 }
 

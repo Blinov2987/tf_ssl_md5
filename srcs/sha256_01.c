@@ -90,7 +90,7 @@ t_list		*append_mem_len_sha256(void *to_hash_mem,
 	hash_mem = (uint8_t *)ft_safe_memalloc(hash_size, "append_mem_len");
 	ft_mem_copy(hash_mem, to_hash_mem, to_hash_size);
 	hash_mem[to_hash_size] = 0x80;
-	bit_len = swap64(to_hash_size * 8);
+	bit_len = ft_swap64(to_hash_size * 8);
 	ft_mem_copy(&hash_mem[hash_size - 8], &bit_len, 8);
 	result = (t_list *)ft_safe_memalloc(sizeof(t_list), "append_mem_len");
 	result->content_size = hash_size;

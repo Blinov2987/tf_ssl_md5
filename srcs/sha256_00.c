@@ -13,7 +13,7 @@
 #include "ft_ssl.h"
 #include "sha256.h"
 
-uint64_t	swap64(uint64_t val)
+uint64_t	ft_swap64(uint64_t val)
 {
 	uint64_t x;
 
