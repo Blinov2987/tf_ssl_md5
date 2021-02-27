@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef FT_SSL_DES_OUTPUT_H
-#define FT_SSL_DES_OUTPUT_H
+# define FT_SSL_DES_OUTPUT_H
 
 typedef struct	s_crypt_output
 {

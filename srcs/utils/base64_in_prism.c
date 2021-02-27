@@ -15,9 +15,9 @@
 
 void	in_base64_prism(uint8_t *mem, size_t *size)
 {
-	size_t i;
-	int error;
-	size_t cur_mem_ind;
+	size_t	i;
+	int		error;
+	size_t	cur_mem_ind;
 
 	i = 0;
 	cur_mem_ind = 0;

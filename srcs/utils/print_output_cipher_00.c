@@ -12,7 +12,7 @@
 
 #include "ft_ssl.h"
 
-void print_base64_stdout(int fd, uint8_t *mem, size_t size)
+void		print_base64_stdout(int fd, uint8_t *mem, size_t size)
 {
 	size_t offset;
 	size_t cur_size;
@@ -29,7 +29,7 @@ void print_base64_stdout(int fd, uint8_t *mem, size_t size)
 	}
 }
 
-static void		print_files(t_base64_args *args, t_output *output)
+static void	print_files(t_base64_args *args, t_output *output)
 {
 	int fd;
 
@@ -52,7 +52,7 @@ static void		print_files(t_base64_args *args, t_output *output)
 	close(fd);
 }
 
-void 	print_output_cipher(t_base64_args *args, t_output *output)
+void		print_output_cipher(t_base64_args *args, t_output *output)
 {
 	if (!output->string_hash->content || !output->string_hash->content_size)
 		return ;

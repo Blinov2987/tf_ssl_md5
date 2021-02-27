@@ -50,7 +50,7 @@ void	free_des_args(t_des_args **args)
 		ft_lstdel(&(*args)->vector, &free_list);
 		ft_lstdel(&(*args)->salt, &free_list);
 		free((*args)->key_vector.keys);
-		(*args)->bad_argums= NULL;
+		(*args)->bad_argums = NULL;
 		(*args)->input_files = NULL;
 		(*args)->output_files = NULL;
 		(*args)->key_in_hex = NULL;
@@ -62,7 +62,7 @@ void	free_des_args(t_des_args **args)
 	}
 }
 
-void 	free_crypt_output(t_crypt_output *output)
+void	free_crypt_output(t_crypt_output *output)
 {
 	t_list *pointers_to_free;
 

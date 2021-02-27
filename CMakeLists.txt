@@ -133,6 +133,12 @@ add_executable(ft_ssl_md5
         includes/libft.h
         includes/ft_ssl.h
         includes/printf.h
+        includes/md5.h
+        includes/sha256.h
+        includes/sha512.h
+        includes/base64.h
+        includes/des.h
+        includes/output.h
         srcs/main.c
         srcs/utils/args_finder.c
         srcs/utils/args_helper_00.c
@@ -142,48 +148,55 @@ add_executable(ft_ssl_md5
         srcs/utils/ft_safe_memalloc.c
         srcs/utils/ft_lstadd_back.c
         srcs/utils/errors_02.c
-        includes/md5.h
-        srcs/utils/split_by_command.c
-        srcs/hash_func/md5_00.c
-        srcs/hash_func/sha256_00.c
         srcs/utils/reader_helper.c
-        srcs/hash_func/md5_01.c
         srcs/utils/hashing_utils.c
-        srcs/hash_func/md5_02.c
-        srcs/hash_func/sha256_01.c
-        includes/sha256.h
-        srcs/hash_func/sha256_02.c
-        srcs/hash_func/sha256_03.c
-        srcs/hash_func/sha256_04.c
         srcs/utils/print_output_00.c
-        includes/sha512.h
-        srcs/hash_func/sha512_00.c
-        srcs/hash_func/sha512_01.c
-        srcs/hash_func/sha512_02.c
-        srcs/hash_func/sha512_03.c
         srcs/utils/print_output_01.c
         srcs/utils/print_output_02.c
-        srcs/hash_func/sha256_00.c
-        srcs/hash_func/md5_03.c
-        srcs/cipher_func/base64.c
-        includes/base64.h
-        srcs/cipher_func/base64_enc_00.c
         srcs/utils/entrance_to_hash_commands.c
         srcs/utils/fill_commands_00.c
         srcs/utils/base64_args_00.c
         srcs/utils/entrance_to_base64.c
         srcs/utils/base64_in_prism.c
         srcs/utils/print_output_cipher_00.c
-        srcs/cipher_func/base64_dec_00.c
-        includes/des.h
-        srcs/cipher_func/des_starter.c
         srcs/utils/des_args.c
-        srcs/cipher_func/des.c
         srcs/utils/validate_pass_00.c
-        srcs/cipher_func/ecb.c
-        includes/output.h
-        srcs/key_utils/generate_key.c
-        srcs/key_utils/pass_reader.c
         srcs/utils/errors_03.c
         srcs/utils/entrance_to_des.c
-        srcs/utils/print_output_cipher_01.c srcs/cipher_func/cbc.c srcs/cipher_func/des3.c srcs/cipher_func/pcbc.c srcs/cipher_func/cfb.c srcs/cipher_func/ofb.c srcs/cipher_func/ctr.c srcs/cipher_func/divide_by_des_mode.c srcs/cipher_func/des_utils_00.c srcs/cipher_func/des_utils_01.c srcs/key_utils/generate_utils_00.c)
+        srcs/utils/print_output_cipher_01.c
+        srcs/utils/des_args_01.c
+        srcs/utils/entrance_to_des_01.c
+        srcs/utils/split_by_command.c
+        srcs/key_utils/generate_utils_00.c
+        srcs/key_utils/generate_key.c
+        srcs/key_utils/pass_reader.c
+        srcs/hash_func/md5_00.c
+        srcs/hash_func/sha256_00.c
+        srcs/hash_func/md5_01.c
+        srcs/hash_func/md5_02.c
+        srcs/hash_func/sha256_01.c
+        srcs/hash_func/sha256_02.c
+        srcs/hash_func/sha256_03.c
+        srcs/hash_func/sha256_04.c
+        srcs/hash_func/sha512_00.c
+        srcs/hash_func/sha512_01.c
+        srcs/hash_func/sha512_02.c
+        srcs/hash_func/sha512_03.c
+        srcs/hash_func/sha256_00.c
+        srcs/hash_func/md5_03.c
+        srcs/cipher_func/base64.c
+        srcs/cipher_func/base64_enc_00.c
+        srcs/cipher_func/base64_dec_00.c
+        srcs/cipher_func/des_starter.c
+        srcs/cipher_func/des.c
+        srcs/cipher_func/ecb.c
+        srcs/cipher_func/cbc.c
+        srcs/cipher_func/des3.c
+        srcs/cipher_func/pcbc.c
+        srcs/cipher_func/cfb.c
+        srcs/cipher_func/ofb.c
+        srcs/cipher_func/ctr.c
+        srcs/cipher_func/divide_by_des_mode.c
+        srcs/cipher_func/des_utils_00.c
+        srcs/cipher_func/des_utils_01.c
+        )

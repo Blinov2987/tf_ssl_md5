@@ -12,7 +12,7 @@
 
 #include "ft_ssl.h"
 
-t_cmd_type take_command_type(char *command)
+t_cmd_type	take_command_type(char *command)
 {
 	t_cmd_type cmd;
 
@@ -22,7 +22,7 @@ t_cmd_type take_command_type(char *command)
 	return (cmd);
 }
 
-void	hashing_branch(t_cmd_type cmd, int ac, char **av)
+void		hashing_branch(t_cmd_type cmd, int ac, char **av)
 {
 	t_args *args;
 
@@ -34,7 +34,7 @@ void	hashing_branch(t_cmd_type cmd, int ac, char **av)
 	free_args(&args);
 }
 
-void	base64_branch(t_cmd_type cmd, int ac, char **av)
+void		base64_branch(t_cmd_type cmd, int ac, char **av)
 {
 	t_base64_args *args;
 
@@ -46,7 +46,7 @@ void	base64_branch(t_cmd_type cmd, int ac, char **av)
 	free_args((t_args **)&args);
 }
 
-void	des_branch(t_cmd_type cmd, int ac, char **av)
+void		des_branch(t_cmd_type cmd, int ac, char **av)
 {
 	t_des_args *args;
 
@@ -65,7 +65,7 @@ void	des_branch(t_cmd_type cmd, int ac, char **av)
 	free_des_args(&args);
 }
 
-void	split_by_commands(int ac, char **av)
+void		split_by_commands(int ac, char **av)
 {
 	t_cmd_type cmd;
 

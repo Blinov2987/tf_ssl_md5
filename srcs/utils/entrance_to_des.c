@@ -6,14 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 19:14:18 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/27 09:14:33 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:23:18 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "base64.h"
 
-static void 	get_info_stream(t_des_args *args, t_crypt_output *output)
+static void	get_info_stream(t_des_args *args, t_crypt_output *output)
 {
 	t_list	*base64_result;
 
@@ -34,7 +34,7 @@ static void 	get_info_stream(t_des_args *args, t_crypt_output *output)
 	}
 }
 
-static void 	get_based_output(t_crypt_output *output)
+static void	get_based_output(t_crypt_output *output)
 {
 	t_list	*base64_result;
 
@@ -46,7 +46,7 @@ static void 	get_based_output(t_crypt_output *output)
 			&output->output_stream->content_size);
 }
 
-void 		add_salt_to_stream(t_des_args *args, t_crypt_output *output)
+void		add_salt_to_stream(t_des_args *args, t_crypt_output *output)
 {
 	void	*mem;
 	size_t	new_size;
@@ -62,22 +62,7 @@ void 		add_salt_to_stream(t_des_args *args, t_crypt_output *output)
 	output->output_stream->content_size = new_size;
 }
 
-void		get_salt_from_content(t_des_args *args, t_crypt_output *output)
-{
-	void	*mem;
-	size_t	new_size;
-
-	new_size = output->mem->content_size - 16;
-	mem = ft_safe_memalloc(new_size, "get_salt_from_content");
-	ft_mem_copy(args->salt->content,
-			&((uint8_t *)output->mem->content)[8], 8);
-	ft_mem_copy(mem, &((uint8_t *)output->mem->content)[16], new_size);
-	free(output->mem->content);
-	output->mem->content = mem;
-	output->mem->content_size = new_size;
-}
-
-static void entrance_continue(t_des_args *args, t_crypt_output *output)
+static void	entrance_continue(t_des_args *args, t_crypt_output *output)
 {
 	if (!args->flag_k && args->flag_d && !ft_strncmp("Salted__",
 			output->mem->content, 8) && output->mem->content_size > 16)
@@ -103,7 +88,7 @@ static void entrance_continue(t_des_args *args, t_crypt_output *output)
 
 void		entrance_to_des(t_des_args *args)
 {
-	t_crypt_output 	output;
+	t_crypt_output	output;
 
 	ft_bzero(&output, sizeof(t_crypt_output));
 	if ((args->algo == CBC || args->algo == PCBC

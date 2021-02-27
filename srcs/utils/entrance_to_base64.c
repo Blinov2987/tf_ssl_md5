@@ -6,15 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 20:20:01 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/31 16:03:51 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:21:33 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "base64.h"
 
-
-static void 		get_info_stream(t_base64_args *args, t_output *output)
+static void		get_info_stream(t_base64_args *args, t_output *output)
 {
 	if (!args->input_files)
 		ft_lstadd_back(&output->string_stream, buffered_reader(0));
@@ -24,10 +23,9 @@ static void 		get_info_stream(t_base64_args *args, t_output *output)
 	if (args->flag_d)
 		in_base64_prism(output->string_stream->content,
 				&output->string_stream->content_size);
-
 }
 
-void				entrance_to_base64(t_base64_args *args)
+void			entrance_to_base64(t_base64_args *args)
 {
 	t_output	output;
 	t_list		*(*cipher_func)(void *, size_t);

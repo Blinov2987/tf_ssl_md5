@@ -62,8 +62,8 @@ t_output	process(t_args *args, t_list *(*hash_func)(void *, size_t))
 	t_output output;
 
 	ft_bzero(&output, sizeof(t_output));
-	if (args->flag_p || (!args->flag_p && !args->flag_s &&
-						 !args->flag_q && !args->flag_r && !args->filenames))
+	if (args->flag_p || (!args->flag_p && !args->flag_s
+		&& !args->flag_q && !args->flag_r && !args->filenames))
 		stdin_process(&output, hash_func);
 	if (args->strings)
 		string_process(args, &output, hash_func);

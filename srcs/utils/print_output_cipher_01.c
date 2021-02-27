@@ -42,7 +42,7 @@ static void		print_base_files(t_des_args *args, t_crypt_output *output)
 	close(fd);
 }
 
-void 	print_output_des(t_des_args *args, t_crypt_output *output)
+void			print_output_des(t_des_args *args, t_crypt_output *output)
 {
 	if (!output->output_stream->content || !output->output_stream->content_size)
 		return ;
@@ -62,5 +62,4 @@ void 	print_output_des(t_des_args *args, t_crypt_output *output)
 			write(1, output->output_stream->content,
 					output->output_stream->content_size);
 	}
-
 }

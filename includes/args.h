@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 10:48:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/13 22:29:39 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:36:09 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 
 typedef struct		s_cmd_type
 {
-	uint8_t 		type;
-	uint8_t 		algo;
+	uint8_t			type;
+	uint8_t			algo;
 }					t_cmd_type;
 
 typedef struct		s_key_vector
@@ -36,8 +36,8 @@ typedef struct		s_key_vector
 
 typedef struct		s_base64_flags
 {
-	uint8_t 		type;
-	uint8_t 		algo;
+	uint8_t			type;
+	uint8_t			algo;
 	t_list			*bad_argums;
 	t_list			*input_files;
 	t_list			*output_files;
@@ -49,8 +49,8 @@ typedef struct		s_base64_flags
 
 typedef struct		s_des_flags
 {
-	uint8_t 		type;
-	uint8_t 		algo;
+	uint8_t			type;
+	uint8_t			algo;
 	t_list			*bad_argums;
 	t_list			*input_files;
 	t_list			*output_files;
@@ -72,8 +72,8 @@ typedef struct		s_des_flags
 
 typedef struct		s_args
 {
-	uint8_t 		type;
-	uint8_t 		algo;
+	uint8_t			type;
+	uint8_t			algo;
 	t_list			*bad_argums;
 	t_list			*filenames;
 	t_list			*strings;
@@ -88,7 +88,7 @@ void				decrease_string_size(t_list *list);
 int					contains_char_sym(char *str, char to_count);
 
 t_args				*take_hash_args(int ac, char **av);
-t_base64_args 		*take_base64_args(int ac, char **av);
+t_base64_args		*take_base64_args(int ac, char **av);
 t_des_args			*take_des_args(int ac, char **av);
 int					take_command(char *command, t_args *args);
 int					validate_args(t_args **args);
@@ -99,6 +99,10 @@ int					validate_hex(t_des_args *args);
 void				free_args(t_args **args);
 void				free_des_args(t_des_args **args);
 void				find_args(char *str, t_args *args);
+void				add_to_args_list(char **av, int *cur_position,
+					t_list **list);
+void				pars_args_des(int ac, char **av,
+					int *cur_position, t_des_args *args);
 
 void				fill_hash_cmd(t_cmd_type *cmd, char *command);
 void				fill_cipher_cmd(t_cmd_type *cmd, char *command);

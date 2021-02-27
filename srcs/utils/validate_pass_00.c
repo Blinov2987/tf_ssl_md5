@@ -21,7 +21,7 @@ int		is_hex_char(char c)
 	return (FALSE);
 }
 
-int 	is_hex_string(char *str, size_t len)
+int		is_hex_string(char *str, size_t len)
 {
 	size_t i;
 
@@ -35,7 +35,7 @@ int 	is_hex_string(char *str, size_t len)
 	return (TRUE);
 }
 
-int 	validate_hex(t_des_args *args)
+int		validate_hex(t_des_args *args)
 {
 	if ((args->key_in_hex && !is_hex_string(args->key_in_hex->content,
 			args->key_in_hex->content_size - 1))

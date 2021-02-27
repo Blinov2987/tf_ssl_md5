@@ -19,7 +19,7 @@ static void		fill_cmd_type(t_cmd_type *cmd, int type, int algo)
 	cmd->algo = algo;
 }
 
-void	fill_hash_cmd(t_cmd_type *cmd, char *command)
+void			fill_hash_cmd(t_cmd_type *cmd, char *command)
 {
 	if (!ft_strcmp("md5", command))
 		fill_cmd_type(cmd, HASHING_COMMAND, MD5);
@@ -29,7 +29,7 @@ void	fill_hash_cmd(t_cmd_type *cmd, char *command)
 		fill_cmd_type(cmd, HASHING_COMMAND, SHA512);
 }
 
-static void 	fill_des_type(t_cmd_type *cmd, int type, char *command)
+static void		fill_des_type(t_cmd_type *cmd, int type, char *command)
 {
 	if (!ft_strcmp("ecb", command))
 		fill_cmd_type(cmd, type, ECB);
@@ -45,7 +45,7 @@ static void 	fill_des_type(t_cmd_type *cmd, int type, char *command)
 		fill_cmd_type(cmd, type, PCBC);
 }
 
-void	fill_cipher_cmd(t_cmd_type *cmd, char *command)
+void			fill_cipher_cmd(t_cmd_type *cmd, char *command)
 {
 	if (!ft_strcmp("base64", command))
 		fill_cmd_type(cmd, BASE64_COMMAND, FALSE);

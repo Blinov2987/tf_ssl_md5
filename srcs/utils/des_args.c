@@ -6,13 +6,13 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:50:22 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/12 19:52:45 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:19:03 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
-static void	set_flag_des(char f, t_des_args *args)
+static void		set_flag_des(char f, t_des_args *args)
 {
 	if (f == 'd')
 		args->flag_d++;
@@ -34,7 +34,7 @@ static void	set_flag_des(char f, t_des_args *args)
 		args->flag_v++;
 }
 
-static void	find_args_des(char *str, t_des_args *args)
+static void		find_args_des(char *str, t_des_args *args)
 {
 	int i;
 
@@ -52,15 +52,7 @@ static void	find_args_des(char *str, t_des_args *args)
 	}
 }
 
-void 	add_to_args_list(char **av, int *cur_position, t_list **list)
-{
-	(*cur_position)++;
-	ft_lstadd_back(list,
-			ft_lstnew(av[*cur_position],
-					ft_strlen(av[*cur_position]) + 1));
-}
-
-void 	save_args_state(uint8_t saved_args[], t_des_args *args)
+void			save_args_state(uint8_t saved_args[], t_des_args *args)
 {
 	saved_args[I] = args->flag_i;
 	saved_args[O] = args->flag_o;
@@ -70,7 +62,8 @@ void 	save_args_state(uint8_t saved_args[], t_des_args *args)
 	saved_args[V] = args->flag_v;
 }
 
-void	pars_args_des(int ac, char **av, int *cur_position, t_des_args *args)
+void			pars_args_des(int ac, char **av,
+				int *cur_position, t_des_args *args)
 {
 	uint8_t saved_args[6];
 
@@ -93,30 +86,18 @@ void	pars_args_des(int ac, char **av, int *cur_position, t_des_args *args)
 	}
 	else
 		ft_lstadd_back(&args->bad_argums,
-				ft_lstnew(av[*cur_position], ft_strlen(av[*cur_position]) + 1));
+				ft_lstnew(av[*cur_position],
+						ft_strlen(av[*cur_position]) + 1));
 }
 
-t_des_args	*take_des_args(int ac, char **av)
-{
-	int				i;
-	t_des_args 	*args;
-
-	args = ft_safe_memalloc(sizeof(t_des_args), "take_base64_args");
-	i = 1;
-	while (++i < ac)
-		pars_args_des(ac, av, &i, args);
-	return (args);
-}
-
-int		validate_args_des(t_des_args **args)
+int				validate_args_des(t_des_args **args)
 {
 	if (!(*args))
 		return (FAIL);
-	if ((*args)->flag_d > 1 || (*args)->flag_e > 1 ||
-		(*args)->flag_o > 1 || (*args)->flag_i > 1 ||
-		(*args)->flag_a > 1 || (*args)->flag_k > 1 ||
-		(*args)->flag_p > 1 || (*args)->flag_s > 1 ||
-		(*args)->flag_v > 1 || (*args)->bad_argums)
+	if ((*args)->flag_d > 1 || (*args)->flag_e > 1 || (*args)->flag_o > 1
+		|| (*args)->flag_i > 1 || (*args)->flag_a > 1 || (*args)->flag_k > 1
+		|| (*args)->flag_p > 1 || (*args)->flag_s > 1 || (*args)->flag_v > 1
+		|| (*args)->bad_argums)
 	{
 		if ((*args)->bad_argums)
 			error_print_bad_argums((t_args *)*args);

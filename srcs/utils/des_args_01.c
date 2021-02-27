@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors_03.c                                        :+:      :+:    :+:   */
+/*   des_args_01.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 19:52:55 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/13 22:41:49 by gemerald         ###   ########.fr       */
+/*   Created: 2021/02/27 11:16:16 by gemerald          #+#    #+#             */
+/*   Updated: 2021/02/27 11:19:03 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
-void	error_unexpected_on_key_generation(void)
+void		add_to_args_list(char **av, int *cur_position, t_list **list)
 {
-	ft_putendl_fd("ft_ssl: unexpected key generation error", 2);
+	(*cur_position)++;
+	ft_lstadd_back(list,
+			ft_lstnew(av[*cur_position],
+					ft_strlen(av[*cur_position]) + 1));
 }
 
-void	error_bad_vector(void)
+t_des_args	*take_des_args(int ac, char **av)
 {
-	ft_putendl_fd("ft_ssl: bad vector", 2);
-}
+	int			i;
+	t_des_args	*args;
 
-void	error_bad_hex(void)
-{
-	ft_putendl_fd("ft_ssl: non-hex digit", 2);
-}
-
-void	error_bad_salt(void)
-{
-	ft_putendl_fd("ft_ssl: bad salt on input", 2);
+	args = ft_safe_memalloc(sizeof(t_des_args), "take_base64_args");
+	i = 1;
+	while (++i < ac)
+		pars_args_des(ac, av, &i, args);
+	return (args);
 }

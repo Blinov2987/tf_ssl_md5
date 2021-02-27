@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/13 21:36:40 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:46:11 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ uint32_t		take_int_from_byte(uint8_t *mem);
 uint64_t		swap64(uint64_t val);
 uint64_t		take_uint64_from_uint8(uint8_t *mem);
 void			take_byte_from_int_sha512(uint8_t *mem, uint64_t val);
-void 			convert64t_mem(uint8_t *dest, uint64_t *mem,
+void			convert64t_mem(uint8_t *dest, uint64_t *mem,
 					size_t size_in_byte);
 
 void			entrance_to_hash(t_args *args);
@@ -58,45 +58,56 @@ void			entrance_to_base64(t_base64_args *args);
 t_list			*base64_enc(void *mem, size_t size);
 t_list			*base64_dec(void *mem, size_t size);
 
-uint64_t 		pure_des_encrypt(uint64_t mem, uint64_t keys[]);
-uint64_t 		pure_des_decrypt(uint64_t mem, uint64_t keys[]);
-uint64_t 		pure_des3_ede_encrypt(uint64_t mem, uint64_t keys[]);
-uint64_t 		pure_des3_ede_decrypt(uint64_t mem, uint64_t keys[]);
+uint64_t		pure_des_encrypt(uint64_t mem, uint64_t keys[]);
+uint64_t		pure_des_decrypt(uint64_t mem, uint64_t keys[]);
+uint64_t		pure_des3_ede_encrypt(uint64_t mem, uint64_t keys[]);
+uint64_t		pure_des3_ede_decrypt(uint64_t mem, uint64_t keys[]);
 
-void 			des_ecb(uint64_t *mem, size_t size, t_key_vector *key_vector,
-				uint64_t (*cipher)(uint64_t, uint64_t *));
-
-void 			des_cbc_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
-				uint64_t (*cipher)(uint64_t, uint64_t *));
-void 			des_cbc_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+void			des_ecb(uint64_t *mem, size_t size, t_key_vector *key_vector,
 				uint64_t (*cipher)(uint64_t, uint64_t *));
 
-void 			des_pcbc_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
+void			des_cbc_enc(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
 				uint64_t (*cipher)(uint64_t, uint64_t *));
-void			des_pcbc_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
-				uint64_t (*cipher)(uint64_t, uint64_t *));
-
-void 			des_cfb_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
-				uint64_t (*cipher)(uint64_t, uint64_t *));
-void 			des_cfb_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+void			des_cbc_dec(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
 				uint64_t (*cipher)(uint64_t, uint64_t *));
 
-void 			des_ofb_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
+void			des_pcbc_enc(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
 				uint64_t (*cipher)(uint64_t, uint64_t *));
-void 			des_ofb_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+void			des_pcbc_dec(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
 				uint64_t (*cipher)(uint64_t, uint64_t *));
 
-void 			des_ctr_enc(uint64_t *mem, size_t size, t_key_vector *key_vector,
+void			des_cfb_enc(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
 				uint64_t (*cipher)(uint64_t, uint64_t *));
-void 			des_ctr_dec(uint64_t *mem, size_t size, t_key_vector *key_vector,
+void			des_cfb_dec(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+
+void			des_ofb_enc(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+void			des_ofb_dec(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+
+void			des_ctr_enc(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
+				uint64_t (*cipher)(uint64_t, uint64_t *));
+void			des_ctr_dec(uint64_t *mem, size_t size,
+				t_key_vector *key_vector,
 				uint64_t (*cipher)(uint64_t, uint64_t *));
 
 void			entrance_to_des(t_des_args *args);
 t_list			*general_cipher(void *mem, size_t size, t_des_args *args);
-t_list 			*get_pass_stdin(void);
-t_key_vector 	init_key_vector(t_des_args *args);
+t_list			*get_pass_stdin(void);
+t_key_vector	init_key_vector(t_des_args *args);
 t_list			*get_random_bytes(void);
-void 			fill_random_values(t_des_args *args);
+void			fill_random_values(t_des_args *args);
+void			get_salt_from_content(t_des_args *args, t_crypt_output *output);
 
 void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);
