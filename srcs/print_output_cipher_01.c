@@ -16,7 +16,7 @@ static void		print_files(t_des_args *args, t_crypt_output *output)
 {
 	int fd;
 
-	fd = open(args->output_files->content, O_WRONLY | O_CREAT);
+	fd = open(args->output_files->content, O_WRONLY | O_CREAT, 0666);
 	if (fd < 0)
 	{
 		error_open_file(args->output_files->content);
