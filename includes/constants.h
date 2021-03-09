@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 20:51:38 by gemerald          #+#    #+#             */
-/*   Updated: 2021/01/29 18:59:11 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/09 22:25:11 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@
 # define BASE64_COMMAND 2
 # define DES_COMMAND 3
 # define DES3_COMMAND 4
+# define RSA 5
+# define GEN_RSA 6
+# define RSAUTL 7
 # define ECB 1
 # define CBC 2
 # define PCBC 3

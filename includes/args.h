@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 10:48:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/27 11:36:09 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/09 22:16:07 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,37 @@ typedef struct		s_args
 	char			flag_r;
 	char			flag_s;
 }					t_args;
+
+typedef struct		s_rsa_args
+{
+	uint8_t			type;
+	uint8_t			algo;
+	t_list			*bad_argums;
+	t_list			*input_files;
+	t_list			*output_files;
+	t_list			*in_key;
+	t_list			*in_form;
+	t_list			*out_form;
+	t_list			*pass_in;
+	t_list			*pass_out;
+	char			inform;
+	char			outform;
+	char			in;
+	char			out;
+	char			passin;
+	char			passout;
+	char			des;
+	char			text;
+	char			noout;
+	char			modulus;
+	char			check;
+	char			pubin;
+	char			pubout;
+	char			encrypt;
+	char			decrypt;
+	char			inkey;
+	char			hexdump;
+}					t_rsa_args;
 
 int					is_argums(char *av);
 void				decrease_string_size(t_list *list);

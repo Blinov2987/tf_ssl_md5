@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/gemerald/afterIntern/ft_ssl_des
+CMAKE_SOURCE_DIR = /Users/gemerald/afterIntern/ft_ssl_rsa
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/gemerald/afterIntern/ft_ssl_des/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/gemerald/afterIntern/ft_ssl_rsa/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gemerald/afterIntern/ft_ssl_des/cmake-build-debug/CMakeFiles /Users/gemerald/afterIntern/ft_ssl_des/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gemerald/afterIntern/ft_ssl_rsa/cmake-build-debug/CMakeFiles /Users/gemerald/afterIntern/ft_ssl_rsa/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gemerald/afterIntern/ft_ssl_des/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gemerald/afterIntern/ft_ssl_rsa/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -3275,923 +3275,842 @@ ft_lftprintf/srcs/work_with_x_big.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/ft_lftprintf/srcs/work_with_x_big.c.s
 .PHONY : ft_lftprintf/srcs/work_with_x_big.c.s
 
-srcs/args_finder.o: srcs/args_finder.c.o
+srcs/cipher_func/base64.o: srcs/cipher_func/base64.c.o
 
-.PHONY : srcs/args_finder.o
-
-# target to build an object file
-srcs/args_finder.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/args_finder.c.o
-.PHONY : srcs/args_finder.c.o
-
-srcs/args_finder.i: srcs/args_finder.c.i
-
-.PHONY : srcs/args_finder.i
-
-# target to preprocess a source file
-srcs/args_finder.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/args_finder.c.i
-.PHONY : srcs/args_finder.c.i
-
-srcs/args_finder.s: srcs/args_finder.c.s
-
-.PHONY : srcs/args_finder.s
-
-# target to generate assembly for a file
-srcs/args_finder.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/args_finder.c.s
-.PHONY : srcs/args_finder.c.s
-
-srcs/args_helper_00.o: srcs/args_helper_00.c.o
-
-.PHONY : srcs/args_helper_00.o
+.PHONY : srcs/cipher_func/base64.o
 
 # target to build an object file
-srcs/args_helper_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/args_helper_00.c.o
-.PHONY : srcs/args_helper_00.c.o
+srcs/cipher_func/base64.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.o
+.PHONY : srcs/cipher_func/base64.c.o
 
-srcs/args_helper_00.i: srcs/args_helper_00.c.i
+srcs/cipher_func/base64.i: srcs/cipher_func/base64.c.i
 
-.PHONY : srcs/args_helper_00.i
+.PHONY : srcs/cipher_func/base64.i
 
 # target to preprocess a source file
-srcs/args_helper_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/args_helper_00.c.i
-.PHONY : srcs/args_helper_00.c.i
+srcs/cipher_func/base64.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.i
+.PHONY : srcs/cipher_func/base64.c.i
 
-srcs/args_helper_00.s: srcs/args_helper_00.c.s
+srcs/cipher_func/base64.s: srcs/cipher_func/base64.c.s
 
-.PHONY : srcs/args_helper_00.s
+.PHONY : srcs/cipher_func/base64.s
 
 # target to generate assembly for a file
-srcs/args_helper_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/args_helper_00.c.s
-.PHONY : srcs/args_helper_00.c.s
+srcs/cipher_func/base64.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64.c.s
+.PHONY : srcs/cipher_func/base64.c.s
 
-srcs/base64.o: srcs/base64.c.o
+srcs/cipher_func/base64_dec_00.o: srcs/cipher_func/base64_dec_00.c.o
 
-.PHONY : srcs/base64.o
+.PHONY : srcs/cipher_func/base64_dec_00.o
 
 # target to build an object file
-srcs/base64.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64.c.o
-.PHONY : srcs/base64.c.o
+srcs/cipher_func/base64_dec_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.o
+.PHONY : srcs/cipher_func/base64_dec_00.c.o
 
-srcs/base64.i: srcs/base64.c.i
+srcs/cipher_func/base64_dec_00.i: srcs/cipher_func/base64_dec_00.c.i
 
-.PHONY : srcs/base64.i
+.PHONY : srcs/cipher_func/base64_dec_00.i
 
 # target to preprocess a source file
-srcs/base64.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64.c.i
-.PHONY : srcs/base64.c.i
+srcs/cipher_func/base64_dec_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.i
+.PHONY : srcs/cipher_func/base64_dec_00.c.i
 
-srcs/base64.s: srcs/base64.c.s
+srcs/cipher_func/base64_dec_00.s: srcs/cipher_func/base64_dec_00.c.s
 
-.PHONY : srcs/base64.s
+.PHONY : srcs/cipher_func/base64_dec_00.s
 
 # target to generate assembly for a file
-srcs/base64.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64.c.s
-.PHONY : srcs/base64.c.s
+srcs/cipher_func/base64_dec_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_dec_00.c.s
+.PHONY : srcs/cipher_func/base64_dec_00.c.s
 
-srcs/base64_args_00.o: srcs/base64_args_00.c.o
+srcs/cipher_func/base64_enc_00.o: srcs/cipher_func/base64_enc_00.c.o
 
-.PHONY : srcs/base64_args_00.o
+.PHONY : srcs/cipher_func/base64_enc_00.o
 
 # target to build an object file
-srcs/base64_args_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_args_00.c.o
-.PHONY : srcs/base64_args_00.c.o
+srcs/cipher_func/base64_enc_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.o
+.PHONY : srcs/cipher_func/base64_enc_00.c.o
 
-srcs/base64_args_00.i: srcs/base64_args_00.c.i
+srcs/cipher_func/base64_enc_00.i: srcs/cipher_func/base64_enc_00.c.i
 
-.PHONY : srcs/base64_args_00.i
+.PHONY : srcs/cipher_func/base64_enc_00.i
 
 # target to preprocess a source file
-srcs/base64_args_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_args_00.c.i
-.PHONY : srcs/base64_args_00.c.i
+srcs/cipher_func/base64_enc_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.i
+.PHONY : srcs/cipher_func/base64_enc_00.c.i
 
-srcs/base64_args_00.s: srcs/base64_args_00.c.s
+srcs/cipher_func/base64_enc_00.s: srcs/cipher_func/base64_enc_00.c.s
 
-.PHONY : srcs/base64_args_00.s
+.PHONY : srcs/cipher_func/base64_enc_00.s
 
 # target to generate assembly for a file
-srcs/base64_args_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_args_00.c.s
-.PHONY : srcs/base64_args_00.c.s
+srcs/cipher_func/base64_enc_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_enc_00.c.s
+.PHONY : srcs/cipher_func/base64_enc_00.c.s
 
-srcs/base64_dec_00.o: srcs/base64_dec_00.c.o
+srcs/cipher_func/base64_in_prism.o: srcs/cipher_func/base64_in_prism.c.o
 
-.PHONY : srcs/base64_dec_00.o
+.PHONY : srcs/cipher_func/base64_in_prism.o
 
 # target to build an object file
-srcs/base64_dec_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_dec_00.c.o
-.PHONY : srcs/base64_dec_00.c.o
+srcs/cipher_func/base64_in_prism.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_in_prism.c.o
+.PHONY : srcs/cipher_func/base64_in_prism.c.o
 
-srcs/base64_dec_00.i: srcs/base64_dec_00.c.i
+srcs/cipher_func/base64_in_prism.i: srcs/cipher_func/base64_in_prism.c.i
 
-.PHONY : srcs/base64_dec_00.i
+.PHONY : srcs/cipher_func/base64_in_prism.i
 
 # target to preprocess a source file
-srcs/base64_dec_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_dec_00.c.i
-.PHONY : srcs/base64_dec_00.c.i
+srcs/cipher_func/base64_in_prism.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_in_prism.c.i
+.PHONY : srcs/cipher_func/base64_in_prism.c.i
 
-srcs/base64_dec_00.s: srcs/base64_dec_00.c.s
+srcs/cipher_func/base64_in_prism.s: srcs/cipher_func/base64_in_prism.c.s
 
-.PHONY : srcs/base64_dec_00.s
+.PHONY : srcs/cipher_func/base64_in_prism.s
 
 # target to generate assembly for a file
-srcs/base64_dec_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_dec_00.c.s
-.PHONY : srcs/base64_dec_00.c.s
+srcs/cipher_func/base64_in_prism.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/base64_in_prism.c.s
+.PHONY : srcs/cipher_func/base64_in_prism.c.s
 
-srcs/base64_enc_00.o: srcs/base64_enc_00.c.o
+srcs/cipher_func/cbc.o: srcs/cipher_func/cbc.c.o
 
-.PHONY : srcs/base64_enc_00.o
+.PHONY : srcs/cipher_func/cbc.o
 
 # target to build an object file
-srcs/base64_enc_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_enc_00.c.o
-.PHONY : srcs/base64_enc_00.c.o
+srcs/cipher_func/cbc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/cbc.c.o
+.PHONY : srcs/cipher_func/cbc.c.o
 
-srcs/base64_enc_00.i: srcs/base64_enc_00.c.i
+srcs/cipher_func/cbc.i: srcs/cipher_func/cbc.c.i
 
-.PHONY : srcs/base64_enc_00.i
+.PHONY : srcs/cipher_func/cbc.i
 
 # target to preprocess a source file
-srcs/base64_enc_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_enc_00.c.i
-.PHONY : srcs/base64_enc_00.c.i
+srcs/cipher_func/cbc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/cbc.c.i
+.PHONY : srcs/cipher_func/cbc.c.i
 
-srcs/base64_enc_00.s: srcs/base64_enc_00.c.s
+srcs/cipher_func/cbc.s: srcs/cipher_func/cbc.c.s
 
-.PHONY : srcs/base64_enc_00.s
+.PHONY : srcs/cipher_func/cbc.s
 
 # target to generate assembly for a file
-srcs/base64_enc_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_enc_00.c.s
-.PHONY : srcs/base64_enc_00.c.s
+srcs/cipher_func/cbc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/cbc.c.s
+.PHONY : srcs/cipher_func/cbc.c.s
 
-srcs/base64_in_prism.o: srcs/base64_in_prism.c.o
+srcs/cipher_func/cfb.o: srcs/cipher_func/cfb.c.o
 
-.PHONY : srcs/base64_in_prism.o
+.PHONY : srcs/cipher_func/cfb.o
 
 # target to build an object file
-srcs/base64_in_prism.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_in_prism.c.o
-.PHONY : srcs/base64_in_prism.c.o
+srcs/cipher_func/cfb.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/cfb.c.o
+.PHONY : srcs/cipher_func/cfb.c.o
 
-srcs/base64_in_prism.i: srcs/base64_in_prism.c.i
+srcs/cipher_func/cfb.i: srcs/cipher_func/cfb.c.i
 
-.PHONY : srcs/base64_in_prism.i
+.PHONY : srcs/cipher_func/cfb.i
 
 # target to preprocess a source file
-srcs/base64_in_prism.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_in_prism.c.i
-.PHONY : srcs/base64_in_prism.c.i
+srcs/cipher_func/cfb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/cfb.c.i
+.PHONY : srcs/cipher_func/cfb.c.i
 
-srcs/base64_in_prism.s: srcs/base64_in_prism.c.s
+srcs/cipher_func/cfb.s: srcs/cipher_func/cfb.c.s
 
-.PHONY : srcs/base64_in_prism.s
+.PHONY : srcs/cipher_func/cfb.s
 
 # target to generate assembly for a file
-srcs/base64_in_prism.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/base64_in_prism.c.s
-.PHONY : srcs/base64_in_prism.c.s
+srcs/cipher_func/cfb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/cfb.c.s
+.PHONY : srcs/cipher_func/cfb.c.s
 
-srcs/cbc.o: srcs/cbc.c.o
+srcs/cipher_func/ctr.o: srcs/cipher_func/ctr.c.o
 
-.PHONY : srcs/cbc.o
+.PHONY : srcs/cipher_func/ctr.o
 
 # target to build an object file
-srcs/cbc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cbc.c.o
-.PHONY : srcs/cbc.c.o
+srcs/cipher_func/ctr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ctr.c.o
+.PHONY : srcs/cipher_func/ctr.c.o
 
-srcs/cbc.i: srcs/cbc.c.i
+srcs/cipher_func/ctr.i: srcs/cipher_func/ctr.c.i
 
-.PHONY : srcs/cbc.i
+.PHONY : srcs/cipher_func/ctr.i
 
 # target to preprocess a source file
-srcs/cbc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cbc.c.i
-.PHONY : srcs/cbc.c.i
+srcs/cipher_func/ctr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ctr.c.i
+.PHONY : srcs/cipher_func/ctr.c.i
 
-srcs/cbc.s: srcs/cbc.c.s
+srcs/cipher_func/ctr.s: srcs/cipher_func/ctr.c.s
 
-.PHONY : srcs/cbc.s
+.PHONY : srcs/cipher_func/ctr.s
 
 # target to generate assembly for a file
-srcs/cbc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cbc.c.s
-.PHONY : srcs/cbc.c.s
+srcs/cipher_func/ctr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ctr.c.s
+.PHONY : srcs/cipher_func/ctr.c.s
 
-srcs/cfb.o: srcs/cfb.c.o
+srcs/cipher_func/des.o: srcs/cipher_func/des.c.o
 
-.PHONY : srcs/cfb.o
+.PHONY : srcs/cipher_func/des.o
 
 # target to build an object file
-srcs/cfb.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cfb.c.o
-.PHONY : srcs/cfb.c.o
+srcs/cipher_func/des.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.o
+.PHONY : srcs/cipher_func/des.c.o
 
-srcs/cfb.i: srcs/cfb.c.i
+srcs/cipher_func/des.i: srcs/cipher_func/des.c.i
 
-.PHONY : srcs/cfb.i
+.PHONY : srcs/cipher_func/des.i
 
 # target to preprocess a source file
-srcs/cfb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cfb.c.i
-.PHONY : srcs/cfb.c.i
+srcs/cipher_func/des.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.i
+.PHONY : srcs/cipher_func/des.c.i
 
-srcs/cfb.s: srcs/cfb.c.s
+srcs/cipher_func/des.s: srcs/cipher_func/des.c.s
 
-.PHONY : srcs/cfb.s
+.PHONY : srcs/cipher_func/des.s
 
 # target to generate assembly for a file
-srcs/cfb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cfb.c.s
-.PHONY : srcs/cfb.c.s
+srcs/cipher_func/des.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des.c.s
+.PHONY : srcs/cipher_func/des.c.s
 
-srcs/ctr.o: srcs/ctr.c.o
+srcs/cipher_func/des3.o: srcs/cipher_func/des3.c.o
 
-.PHONY : srcs/ctr.o
+.PHONY : srcs/cipher_func/des3.o
 
 # target to build an object file
-srcs/ctr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ctr.c.o
-.PHONY : srcs/ctr.c.o
+srcs/cipher_func/des3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des3.c.o
+.PHONY : srcs/cipher_func/des3.c.o
 
-srcs/ctr.i: srcs/ctr.c.i
+srcs/cipher_func/des3.i: srcs/cipher_func/des3.c.i
 
-.PHONY : srcs/ctr.i
+.PHONY : srcs/cipher_func/des3.i
 
 # target to preprocess a source file
-srcs/ctr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ctr.c.i
-.PHONY : srcs/ctr.c.i
+srcs/cipher_func/des3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des3.c.i
+.PHONY : srcs/cipher_func/des3.c.i
 
-srcs/ctr.s: srcs/ctr.c.s
+srcs/cipher_func/des3.s: srcs/cipher_func/des3.c.s
 
-.PHONY : srcs/ctr.s
+.PHONY : srcs/cipher_func/des3.s
 
 # target to generate assembly for a file
-srcs/ctr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ctr.c.s
-.PHONY : srcs/ctr.c.s
+srcs/cipher_func/des3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des3.c.s
+.PHONY : srcs/cipher_func/des3.c.s
 
-srcs/des.o: srcs/des.c.o
+srcs/cipher_func/des_starter.o: srcs/cipher_func/des_starter.c.o
 
-.PHONY : srcs/des.o
+.PHONY : srcs/cipher_func/des_starter.o
 
 # target to build an object file
-srcs/des.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des.c.o
-.PHONY : srcs/des.c.o
+srcs/cipher_func/des_starter.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.o
+.PHONY : srcs/cipher_func/des_starter.c.o
 
-srcs/des.i: srcs/des.c.i
+srcs/cipher_func/des_starter.i: srcs/cipher_func/des_starter.c.i
 
-.PHONY : srcs/des.i
+.PHONY : srcs/cipher_func/des_starter.i
 
 # target to preprocess a source file
-srcs/des.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des.c.i
-.PHONY : srcs/des.c.i
+srcs/cipher_func/des_starter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.i
+.PHONY : srcs/cipher_func/des_starter.c.i
 
-srcs/des.s: srcs/des.c.s
+srcs/cipher_func/des_starter.s: srcs/cipher_func/des_starter.c.s
 
-.PHONY : srcs/des.s
+.PHONY : srcs/cipher_func/des_starter.s
 
 # target to generate assembly for a file
-srcs/des.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des.c.s
-.PHONY : srcs/des.c.s
+srcs/cipher_func/des_starter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_starter.c.s
+.PHONY : srcs/cipher_func/des_starter.c.s
 
-srcs/des3.o: srcs/des3.c.o
+srcs/cipher_func/des_utils_00.o: srcs/cipher_func/des_utils_00.c.o
 
-.PHONY : srcs/des3.o
+.PHONY : srcs/cipher_func/des_utils_00.o
 
 # target to build an object file
-srcs/des3.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des3.c.o
-.PHONY : srcs/des3.c.o
+srcs/cipher_func/des_utils_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_utils_00.c.o
+.PHONY : srcs/cipher_func/des_utils_00.c.o
 
-srcs/des3.i: srcs/des3.c.i
+srcs/cipher_func/des_utils_00.i: srcs/cipher_func/des_utils_00.c.i
 
-.PHONY : srcs/des3.i
+.PHONY : srcs/cipher_func/des_utils_00.i
 
 # target to preprocess a source file
-srcs/des3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des3.c.i
-.PHONY : srcs/des3.c.i
+srcs/cipher_func/des_utils_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_utils_00.c.i
+.PHONY : srcs/cipher_func/des_utils_00.c.i
 
-srcs/des3.s: srcs/des3.c.s
+srcs/cipher_func/des_utils_00.s: srcs/cipher_func/des_utils_00.c.s
 
-.PHONY : srcs/des3.s
+.PHONY : srcs/cipher_func/des_utils_00.s
 
 # target to generate assembly for a file
-srcs/des3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des3.c.s
-.PHONY : srcs/des3.c.s
+srcs/cipher_func/des_utils_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_utils_00.c.s
+.PHONY : srcs/cipher_func/des_utils_00.c.s
 
-srcs/des_args.o: srcs/des_args.c.o
+srcs/cipher_func/des_utils_01.o: srcs/cipher_func/des_utils_01.c.o
 
-.PHONY : srcs/des_args.o
+.PHONY : srcs/cipher_func/des_utils_01.o
 
 # target to build an object file
-srcs/des_args.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_args.c.o
-.PHONY : srcs/des_args.c.o
+srcs/cipher_func/des_utils_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_utils_01.c.o
+.PHONY : srcs/cipher_func/des_utils_01.c.o
 
-srcs/des_args.i: srcs/des_args.c.i
+srcs/cipher_func/des_utils_01.i: srcs/cipher_func/des_utils_01.c.i
 
-.PHONY : srcs/des_args.i
+.PHONY : srcs/cipher_func/des_utils_01.i
 
 # target to preprocess a source file
-srcs/des_args.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_args.c.i
-.PHONY : srcs/des_args.c.i
+srcs/cipher_func/des_utils_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_utils_01.c.i
+.PHONY : srcs/cipher_func/des_utils_01.c.i
 
-srcs/des_args.s: srcs/des_args.c.s
+srcs/cipher_func/des_utils_01.s: srcs/cipher_func/des_utils_01.c.s
 
-.PHONY : srcs/des_args.s
+.PHONY : srcs/cipher_func/des_utils_01.s
 
 # target to generate assembly for a file
-srcs/des_args.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_args.c.s
-.PHONY : srcs/des_args.c.s
+srcs/cipher_func/des_utils_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/des_utils_01.c.s
+.PHONY : srcs/cipher_func/des_utils_01.c.s
 
-srcs/des_args_01.o: srcs/des_args_01.c.o
+srcs/cipher_func/divide_by_des_mode.o: srcs/cipher_func/divide_by_des_mode.c.o
 
-.PHONY : srcs/des_args_01.o
+.PHONY : srcs/cipher_func/divide_by_des_mode.o
 
 # target to build an object file
-srcs/des_args_01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_args_01.c.o
-.PHONY : srcs/des_args_01.c.o
+srcs/cipher_func/divide_by_des_mode.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/divide_by_des_mode.c.o
+.PHONY : srcs/cipher_func/divide_by_des_mode.c.o
 
-srcs/des_args_01.i: srcs/des_args_01.c.i
+srcs/cipher_func/divide_by_des_mode.i: srcs/cipher_func/divide_by_des_mode.c.i
 
-.PHONY : srcs/des_args_01.i
+.PHONY : srcs/cipher_func/divide_by_des_mode.i
 
 # target to preprocess a source file
-srcs/des_args_01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_args_01.c.i
-.PHONY : srcs/des_args_01.c.i
+srcs/cipher_func/divide_by_des_mode.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/divide_by_des_mode.c.i
+.PHONY : srcs/cipher_func/divide_by_des_mode.c.i
 
-srcs/des_args_01.s: srcs/des_args_01.c.s
+srcs/cipher_func/divide_by_des_mode.s: srcs/cipher_func/divide_by_des_mode.c.s
 
-.PHONY : srcs/des_args_01.s
+.PHONY : srcs/cipher_func/divide_by_des_mode.s
 
 # target to generate assembly for a file
-srcs/des_args_01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_args_01.c.s
-.PHONY : srcs/des_args_01.c.s
+srcs/cipher_func/divide_by_des_mode.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/divide_by_des_mode.c.s
+.PHONY : srcs/cipher_func/divide_by_des_mode.c.s
 
-srcs/des_starter.o: srcs/des_starter.c.o
+srcs/cipher_func/ecb.o: srcs/cipher_func/ecb.c.o
 
-.PHONY : srcs/des_starter.o
+.PHONY : srcs/cipher_func/ecb.o
 
 # target to build an object file
-srcs/des_starter.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_starter.c.o
-.PHONY : srcs/des_starter.c.o
+srcs/cipher_func/ecb.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.o
+.PHONY : srcs/cipher_func/ecb.c.o
 
-srcs/des_starter.i: srcs/des_starter.c.i
+srcs/cipher_func/ecb.i: srcs/cipher_func/ecb.c.i
 
-.PHONY : srcs/des_starter.i
+.PHONY : srcs/cipher_func/ecb.i
 
 # target to preprocess a source file
-srcs/des_starter.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_starter.c.i
-.PHONY : srcs/des_starter.c.i
+srcs/cipher_func/ecb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.i
+.PHONY : srcs/cipher_func/ecb.c.i
 
-srcs/des_starter.s: srcs/des_starter.c.s
+srcs/cipher_func/ecb.s: srcs/cipher_func/ecb.c.s
 
-.PHONY : srcs/des_starter.s
+.PHONY : srcs/cipher_func/ecb.s
 
 # target to generate assembly for a file
-srcs/des_starter.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_starter.c.s
-.PHONY : srcs/des_starter.c.s
+srcs/cipher_func/ecb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ecb.c.s
+.PHONY : srcs/cipher_func/ecb.c.s
 
-srcs/des_utils_00.o: srcs/des_utils_00.c.o
+srcs/cipher_func/ofb.o: srcs/cipher_func/ofb.c.o
 
-.PHONY : srcs/des_utils_00.o
+.PHONY : srcs/cipher_func/ofb.o
 
 # target to build an object file
-srcs/des_utils_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_utils_00.c.o
-.PHONY : srcs/des_utils_00.c.o
+srcs/cipher_func/ofb.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ofb.c.o
+.PHONY : srcs/cipher_func/ofb.c.o
 
-srcs/des_utils_00.i: srcs/des_utils_00.c.i
+srcs/cipher_func/ofb.i: srcs/cipher_func/ofb.c.i
 
-.PHONY : srcs/des_utils_00.i
+.PHONY : srcs/cipher_func/ofb.i
 
 # target to preprocess a source file
-srcs/des_utils_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_utils_00.c.i
-.PHONY : srcs/des_utils_00.c.i
+srcs/cipher_func/ofb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ofb.c.i
+.PHONY : srcs/cipher_func/ofb.c.i
 
-srcs/des_utils_00.s: srcs/des_utils_00.c.s
+srcs/cipher_func/ofb.s: srcs/cipher_func/ofb.c.s
 
-.PHONY : srcs/des_utils_00.s
+.PHONY : srcs/cipher_func/ofb.s
 
 # target to generate assembly for a file
-srcs/des_utils_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_utils_00.c.s
-.PHONY : srcs/des_utils_00.c.s
+srcs/cipher_func/ofb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/ofb.c.s
+.PHONY : srcs/cipher_func/ofb.c.s
 
-srcs/des_utils_01.o: srcs/des_utils_01.c.o
+srcs/cipher_func/pcbc.o: srcs/cipher_func/pcbc.c.o
 
-.PHONY : srcs/des_utils_01.o
+.PHONY : srcs/cipher_func/pcbc.o
 
 # target to build an object file
-srcs/des_utils_01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_utils_01.c.o
-.PHONY : srcs/des_utils_01.c.o
+srcs/cipher_func/pcbc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/pcbc.c.o
+.PHONY : srcs/cipher_func/pcbc.c.o
 
-srcs/des_utils_01.i: srcs/des_utils_01.c.i
+srcs/cipher_func/pcbc.i: srcs/cipher_func/pcbc.c.i
 
-.PHONY : srcs/des_utils_01.i
+.PHONY : srcs/cipher_func/pcbc.i
 
 # target to preprocess a source file
-srcs/des_utils_01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_utils_01.c.i
-.PHONY : srcs/des_utils_01.c.i
+srcs/cipher_func/pcbc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/pcbc.c.i
+.PHONY : srcs/cipher_func/pcbc.c.i
 
-srcs/des_utils_01.s: srcs/des_utils_01.c.s
+srcs/cipher_func/pcbc.s: srcs/cipher_func/pcbc.c.s
 
-.PHONY : srcs/des_utils_01.s
+.PHONY : srcs/cipher_func/pcbc.s
 
 # target to generate assembly for a file
-srcs/des_utils_01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/des_utils_01.c.s
-.PHONY : srcs/des_utils_01.c.s
+srcs/cipher_func/pcbc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/cipher_func/pcbc.c.s
+.PHONY : srcs/cipher_func/pcbc.c.s
 
-srcs/divide_by_des_mode.o: srcs/divide_by_des_mode.c.o
+srcs/hash_func/md5_00.o: srcs/hash_func/md5_00.c.o
 
-.PHONY : srcs/divide_by_des_mode.o
+.PHONY : srcs/hash_func/md5_00.o
 
 # target to build an object file
-srcs/divide_by_des_mode.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/divide_by_des_mode.c.o
-.PHONY : srcs/divide_by_des_mode.c.o
+srcs/hash_func/md5_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.o
+.PHONY : srcs/hash_func/md5_00.c.o
 
-srcs/divide_by_des_mode.i: srcs/divide_by_des_mode.c.i
+srcs/hash_func/md5_00.i: srcs/hash_func/md5_00.c.i
 
-.PHONY : srcs/divide_by_des_mode.i
+.PHONY : srcs/hash_func/md5_00.i
 
 # target to preprocess a source file
-srcs/divide_by_des_mode.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/divide_by_des_mode.c.i
-.PHONY : srcs/divide_by_des_mode.c.i
+srcs/hash_func/md5_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.i
+.PHONY : srcs/hash_func/md5_00.c.i
 
-srcs/divide_by_des_mode.s: srcs/divide_by_des_mode.c.s
+srcs/hash_func/md5_00.s: srcs/hash_func/md5_00.c.s
 
-.PHONY : srcs/divide_by_des_mode.s
+.PHONY : srcs/hash_func/md5_00.s
 
 # target to generate assembly for a file
-srcs/divide_by_des_mode.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/divide_by_des_mode.c.s
-.PHONY : srcs/divide_by_des_mode.c.s
+srcs/hash_func/md5_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_00.c.s
+.PHONY : srcs/hash_func/md5_00.c.s
 
-srcs/ecb.o: srcs/ecb.c.o
+srcs/hash_func/md5_01.o: srcs/hash_func/md5_01.c.o
 
-.PHONY : srcs/ecb.o
+.PHONY : srcs/hash_func/md5_01.o
 
 # target to build an object file
-srcs/ecb.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ecb.c.o
-.PHONY : srcs/ecb.c.o
+srcs/hash_func/md5_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.o
+.PHONY : srcs/hash_func/md5_01.c.o
 
-srcs/ecb.i: srcs/ecb.c.i
+srcs/hash_func/md5_01.i: srcs/hash_func/md5_01.c.i
 
-.PHONY : srcs/ecb.i
+.PHONY : srcs/hash_func/md5_01.i
 
 # target to preprocess a source file
-srcs/ecb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ecb.c.i
-.PHONY : srcs/ecb.c.i
+srcs/hash_func/md5_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.i
+.PHONY : srcs/hash_func/md5_01.c.i
 
-srcs/ecb.s: srcs/ecb.c.s
+srcs/hash_func/md5_01.s: srcs/hash_func/md5_01.c.s
 
-.PHONY : srcs/ecb.s
+.PHONY : srcs/hash_func/md5_01.s
 
 # target to generate assembly for a file
-srcs/ecb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ecb.c.s
-.PHONY : srcs/ecb.c.s
+srcs/hash_func/md5_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_01.c.s
+.PHONY : srcs/hash_func/md5_01.c.s
 
-srcs/entrance_to_base64.o: srcs/entrance_to_base64.c.o
+srcs/hash_func/md5_02.o: srcs/hash_func/md5_02.c.o
 
-.PHONY : srcs/entrance_to_base64.o
+.PHONY : srcs/hash_func/md5_02.o
 
 # target to build an object file
-srcs/entrance_to_base64.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_base64.c.o
-.PHONY : srcs/entrance_to_base64.c.o
+srcs/hash_func/md5_02.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.o
+.PHONY : srcs/hash_func/md5_02.c.o
 
-srcs/entrance_to_base64.i: srcs/entrance_to_base64.c.i
+srcs/hash_func/md5_02.i: srcs/hash_func/md5_02.c.i
 
-.PHONY : srcs/entrance_to_base64.i
+.PHONY : srcs/hash_func/md5_02.i
 
 # target to preprocess a source file
-srcs/entrance_to_base64.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_base64.c.i
-.PHONY : srcs/entrance_to_base64.c.i
+srcs/hash_func/md5_02.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.i
+.PHONY : srcs/hash_func/md5_02.c.i
 
-srcs/entrance_to_base64.s: srcs/entrance_to_base64.c.s
+srcs/hash_func/md5_02.s: srcs/hash_func/md5_02.c.s
 
-.PHONY : srcs/entrance_to_base64.s
+.PHONY : srcs/hash_func/md5_02.s
 
 # target to generate assembly for a file
-srcs/entrance_to_base64.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_base64.c.s
-.PHONY : srcs/entrance_to_base64.c.s
+srcs/hash_func/md5_02.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_02.c.s
+.PHONY : srcs/hash_func/md5_02.c.s
 
-srcs/entrance_to_des.o: srcs/entrance_to_des.c.o
+srcs/hash_func/md5_03.o: srcs/hash_func/md5_03.c.o
 
-.PHONY : srcs/entrance_to_des.o
+.PHONY : srcs/hash_func/md5_03.o
 
 # target to build an object file
-srcs/entrance_to_des.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_des.c.o
-.PHONY : srcs/entrance_to_des.c.o
+srcs/hash_func/md5_03.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.o
+.PHONY : srcs/hash_func/md5_03.c.o
 
-srcs/entrance_to_des.i: srcs/entrance_to_des.c.i
+srcs/hash_func/md5_03.i: srcs/hash_func/md5_03.c.i
 
-.PHONY : srcs/entrance_to_des.i
+.PHONY : srcs/hash_func/md5_03.i
 
 # target to preprocess a source file
-srcs/entrance_to_des.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_des.c.i
-.PHONY : srcs/entrance_to_des.c.i
+srcs/hash_func/md5_03.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.i
+.PHONY : srcs/hash_func/md5_03.c.i
 
-srcs/entrance_to_des.s: srcs/entrance_to_des.c.s
+srcs/hash_func/md5_03.s: srcs/hash_func/md5_03.c.s
 
-.PHONY : srcs/entrance_to_des.s
+.PHONY : srcs/hash_func/md5_03.s
 
 # target to generate assembly for a file
-srcs/entrance_to_des.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_des.c.s
-.PHONY : srcs/entrance_to_des.c.s
+srcs/hash_func/md5_03.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/md5_03.c.s
+.PHONY : srcs/hash_func/md5_03.c.s
 
-srcs/entrance_to_des_01.o: srcs/entrance_to_des_01.c.o
+srcs/hash_func/sha256_00.o: srcs/hash_func/sha256_00.c.o
 
-.PHONY : srcs/entrance_to_des_01.o
+.PHONY : srcs/hash_func/sha256_00.o
 
 # target to build an object file
-srcs/entrance_to_des_01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_des_01.c.o
-.PHONY : srcs/entrance_to_des_01.c.o
+srcs/hash_func/sha256_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.o
+.PHONY : srcs/hash_func/sha256_00.c.o
 
-srcs/entrance_to_des_01.i: srcs/entrance_to_des_01.c.i
+srcs/hash_func/sha256_00.i: srcs/hash_func/sha256_00.c.i
 
-.PHONY : srcs/entrance_to_des_01.i
+.PHONY : srcs/hash_func/sha256_00.i
 
 # target to preprocess a source file
-srcs/entrance_to_des_01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_des_01.c.i
-.PHONY : srcs/entrance_to_des_01.c.i
+srcs/hash_func/sha256_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.i
+.PHONY : srcs/hash_func/sha256_00.c.i
 
-srcs/entrance_to_des_01.s: srcs/entrance_to_des_01.c.s
+srcs/hash_func/sha256_00.s: srcs/hash_func/sha256_00.c.s
 
-.PHONY : srcs/entrance_to_des_01.s
+.PHONY : srcs/hash_func/sha256_00.s
 
 # target to generate assembly for a file
-srcs/entrance_to_des_01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_des_01.c.s
-.PHONY : srcs/entrance_to_des_01.c.s
+srcs/hash_func/sha256_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_00.c.s
+.PHONY : srcs/hash_func/sha256_00.c.s
 
-srcs/entrance_to_hash_commands.o: srcs/entrance_to_hash_commands.c.o
+srcs/hash_func/sha256_01.o: srcs/hash_func/sha256_01.c.o
 
-.PHONY : srcs/entrance_to_hash_commands.o
+.PHONY : srcs/hash_func/sha256_01.o
 
 # target to build an object file
-srcs/entrance_to_hash_commands.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_hash_commands.c.o
-.PHONY : srcs/entrance_to_hash_commands.c.o
+srcs/hash_func/sha256_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.o
+.PHONY : srcs/hash_func/sha256_01.c.o
 
-srcs/entrance_to_hash_commands.i: srcs/entrance_to_hash_commands.c.i
+srcs/hash_func/sha256_01.i: srcs/hash_func/sha256_01.c.i
 
-.PHONY : srcs/entrance_to_hash_commands.i
+.PHONY : srcs/hash_func/sha256_01.i
 
 # target to preprocess a source file
-srcs/entrance_to_hash_commands.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_hash_commands.c.i
-.PHONY : srcs/entrance_to_hash_commands.c.i
+srcs/hash_func/sha256_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.i
+.PHONY : srcs/hash_func/sha256_01.c.i
 
-srcs/entrance_to_hash_commands.s: srcs/entrance_to_hash_commands.c.s
+srcs/hash_func/sha256_01.s: srcs/hash_func/sha256_01.c.s
 
-.PHONY : srcs/entrance_to_hash_commands.s
+.PHONY : srcs/hash_func/sha256_01.s
 
 # target to generate assembly for a file
-srcs/entrance_to_hash_commands.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/entrance_to_hash_commands.c.s
-.PHONY : srcs/entrance_to_hash_commands.c.s
+srcs/hash_func/sha256_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_01.c.s
+.PHONY : srcs/hash_func/sha256_01.c.s
 
-srcs/errors_00.o: srcs/errors_00.c.o
+srcs/hash_func/sha256_02.o: srcs/hash_func/sha256_02.c.o
 
-.PHONY : srcs/errors_00.o
+.PHONY : srcs/hash_func/sha256_02.o
 
 # target to build an object file
-srcs/errors_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_00.c.o
-.PHONY : srcs/errors_00.c.o
+srcs/hash_func/sha256_02.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_02.c.o
+.PHONY : srcs/hash_func/sha256_02.c.o
 
-srcs/errors_00.i: srcs/errors_00.c.i
+srcs/hash_func/sha256_02.i: srcs/hash_func/sha256_02.c.i
 
-.PHONY : srcs/errors_00.i
+.PHONY : srcs/hash_func/sha256_02.i
 
 # target to preprocess a source file
-srcs/errors_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_00.c.i
-.PHONY : srcs/errors_00.c.i
+srcs/hash_func/sha256_02.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_02.c.i
+.PHONY : srcs/hash_func/sha256_02.c.i
 
-srcs/errors_00.s: srcs/errors_00.c.s
+srcs/hash_func/sha256_02.s: srcs/hash_func/sha256_02.c.s
 
-.PHONY : srcs/errors_00.s
+.PHONY : srcs/hash_func/sha256_02.s
 
 # target to generate assembly for a file
-srcs/errors_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_00.c.s
-.PHONY : srcs/errors_00.c.s
+srcs/hash_func/sha256_02.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_02.c.s
+.PHONY : srcs/hash_func/sha256_02.c.s
 
-srcs/errors_01.o: srcs/errors_01.c.o
+srcs/hash_func/sha256_03.o: srcs/hash_func/sha256_03.c.o
 
-.PHONY : srcs/errors_01.o
+.PHONY : srcs/hash_func/sha256_03.o
 
 # target to build an object file
-srcs/errors_01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_01.c.o
-.PHONY : srcs/errors_01.c.o
+srcs/hash_func/sha256_03.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_03.c.o
+.PHONY : srcs/hash_func/sha256_03.c.o
 
-srcs/errors_01.i: srcs/errors_01.c.i
+srcs/hash_func/sha256_03.i: srcs/hash_func/sha256_03.c.i
 
-.PHONY : srcs/errors_01.i
+.PHONY : srcs/hash_func/sha256_03.i
 
 # target to preprocess a source file
-srcs/errors_01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_01.c.i
-.PHONY : srcs/errors_01.c.i
+srcs/hash_func/sha256_03.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_03.c.i
+.PHONY : srcs/hash_func/sha256_03.c.i
 
-srcs/errors_01.s: srcs/errors_01.c.s
+srcs/hash_func/sha256_03.s: srcs/hash_func/sha256_03.c.s
 
-.PHONY : srcs/errors_01.s
+.PHONY : srcs/hash_func/sha256_03.s
 
 # target to generate assembly for a file
-srcs/errors_01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_01.c.s
-.PHONY : srcs/errors_01.c.s
+srcs/hash_func/sha256_03.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_03.c.s
+.PHONY : srcs/hash_func/sha256_03.c.s
 
-srcs/errors_02.o: srcs/errors_02.c.o
+srcs/hash_func/sha256_04.o: srcs/hash_func/sha256_04.c.o
 
-.PHONY : srcs/errors_02.o
+.PHONY : srcs/hash_func/sha256_04.o
 
 # target to build an object file
-srcs/errors_02.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.o
-.PHONY : srcs/errors_02.c.o
+srcs/hash_func/sha256_04.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.o
+.PHONY : srcs/hash_func/sha256_04.c.o
 
-srcs/errors_02.i: srcs/errors_02.c.i
+srcs/hash_func/sha256_04.i: srcs/hash_func/sha256_04.c.i
 
-.PHONY : srcs/errors_02.i
+.PHONY : srcs/hash_func/sha256_04.i
 
 # target to preprocess a source file
-srcs/errors_02.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.i
-.PHONY : srcs/errors_02.c.i
+srcs/hash_func/sha256_04.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.i
+.PHONY : srcs/hash_func/sha256_04.c.i
 
-srcs/errors_02.s: srcs/errors_02.c.s
+srcs/hash_func/sha256_04.s: srcs/hash_func/sha256_04.c.s
 
-.PHONY : srcs/errors_02.s
+.PHONY : srcs/hash_func/sha256_04.s
 
 # target to generate assembly for a file
-srcs/errors_02.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_02.c.s
-.PHONY : srcs/errors_02.c.s
+srcs/hash_func/sha256_04.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha256_04.c.s
+.PHONY : srcs/hash_func/sha256_04.c.s
 
-srcs/errors_03.o: srcs/errors_03.c.o
+srcs/hash_func/sha512_00.o: srcs/hash_func/sha512_00.c.o
 
-.PHONY : srcs/errors_03.o
+.PHONY : srcs/hash_func/sha512_00.o
 
 # target to build an object file
-srcs/errors_03.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_03.c.o
-.PHONY : srcs/errors_03.c.o
+srcs/hash_func/sha512_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.o
+.PHONY : srcs/hash_func/sha512_00.c.o
 
-srcs/errors_03.i: srcs/errors_03.c.i
+srcs/hash_func/sha512_00.i: srcs/hash_func/sha512_00.c.i
 
-.PHONY : srcs/errors_03.i
+.PHONY : srcs/hash_func/sha512_00.i
 
 # target to preprocess a source file
-srcs/errors_03.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_03.c.i
-.PHONY : srcs/errors_03.c.i
+srcs/hash_func/sha512_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.i
+.PHONY : srcs/hash_func/sha512_00.c.i
 
-srcs/errors_03.s: srcs/errors_03.c.s
+srcs/hash_func/sha512_00.s: srcs/hash_func/sha512_00.c.s
 
-.PHONY : srcs/errors_03.s
+.PHONY : srcs/hash_func/sha512_00.s
 
 # target to generate assembly for a file
-srcs/errors_03.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/errors_03.c.s
-.PHONY : srcs/errors_03.c.s
+srcs/hash_func/sha512_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_00.c.s
+.PHONY : srcs/hash_func/sha512_00.c.s
 
-srcs/fill_commands_00.o: srcs/fill_commands_00.c.o
+srcs/hash_func/sha512_01.o: srcs/hash_func/sha512_01.c.o
 
-.PHONY : srcs/fill_commands_00.o
+.PHONY : srcs/hash_func/sha512_01.o
 
 # target to build an object file
-srcs/fill_commands_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/fill_commands_00.c.o
-.PHONY : srcs/fill_commands_00.c.o
+srcs/hash_func/sha512_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.o
+.PHONY : srcs/hash_func/sha512_01.c.o
 
-srcs/fill_commands_00.i: srcs/fill_commands_00.c.i
+srcs/hash_func/sha512_01.i: srcs/hash_func/sha512_01.c.i
 
-.PHONY : srcs/fill_commands_00.i
+.PHONY : srcs/hash_func/sha512_01.i
 
 # target to preprocess a source file
-srcs/fill_commands_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/fill_commands_00.c.i
-.PHONY : srcs/fill_commands_00.c.i
+srcs/hash_func/sha512_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.i
+.PHONY : srcs/hash_func/sha512_01.c.i
 
-srcs/fill_commands_00.s: srcs/fill_commands_00.c.s
+srcs/hash_func/sha512_01.s: srcs/hash_func/sha512_01.c.s
 
-.PHONY : srcs/fill_commands_00.s
+.PHONY : srcs/hash_func/sha512_01.s
 
 # target to generate assembly for a file
-srcs/fill_commands_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/fill_commands_00.c.s
-.PHONY : srcs/fill_commands_00.c.s
+srcs/hash_func/sha512_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_01.c.s
+.PHONY : srcs/hash_func/sha512_01.c.s
 
-srcs/free_utils.o: srcs/free_utils.c.o
+srcs/hash_func/sha512_02.o: srcs/hash_func/sha512_02.c.o
 
-.PHONY : srcs/free_utils.o
+.PHONY : srcs/hash_func/sha512_02.o
 
 # target to build an object file
-srcs/free_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/free_utils.c.o
-.PHONY : srcs/free_utils.c.o
+srcs/hash_func/sha512_02.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_02.c.o
+.PHONY : srcs/hash_func/sha512_02.c.o
 
-srcs/free_utils.i: srcs/free_utils.c.i
+srcs/hash_func/sha512_02.i: srcs/hash_func/sha512_02.c.i
 
-.PHONY : srcs/free_utils.i
+.PHONY : srcs/hash_func/sha512_02.i
 
 # target to preprocess a source file
-srcs/free_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/free_utils.c.i
-.PHONY : srcs/free_utils.c.i
+srcs/hash_func/sha512_02.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_02.c.i
+.PHONY : srcs/hash_func/sha512_02.c.i
 
-srcs/free_utils.s: srcs/free_utils.c.s
+srcs/hash_func/sha512_02.s: srcs/hash_func/sha512_02.c.s
 
-.PHONY : srcs/free_utils.s
+.PHONY : srcs/hash_func/sha512_02.s
 
 # target to generate assembly for a file
-srcs/free_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/free_utils.c.s
-.PHONY : srcs/free_utils.c.s
+srcs/hash_func/sha512_02.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_02.c.s
+.PHONY : srcs/hash_func/sha512_02.c.s
 
-srcs/ft_lstadd_back.o: srcs/ft_lstadd_back.c.o
+srcs/hash_func/sha512_03.o: srcs/hash_func/sha512_03.c.o
 
-.PHONY : srcs/ft_lstadd_back.o
+.PHONY : srcs/hash_func/sha512_03.o
 
 # target to build an object file
-srcs/ft_lstadd_back.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.o
-.PHONY : srcs/ft_lstadd_back.c.o
+srcs/hash_func/sha512_03.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.o
+.PHONY : srcs/hash_func/sha512_03.c.o
 
-srcs/ft_lstadd_back.i: srcs/ft_lstadd_back.c.i
+srcs/hash_func/sha512_03.i: srcs/hash_func/sha512_03.c.i
 
-.PHONY : srcs/ft_lstadd_back.i
+.PHONY : srcs/hash_func/sha512_03.i
 
 # target to preprocess a source file
-srcs/ft_lstadd_back.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.i
-.PHONY : srcs/ft_lstadd_back.c.i
+srcs/hash_func/sha512_03.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.i
+.PHONY : srcs/hash_func/sha512_03.c.i
 
-srcs/ft_lstadd_back.s: srcs/ft_lstadd_back.c.s
+srcs/hash_func/sha512_03.s: srcs/hash_func/sha512_03.c.s
 
-.PHONY : srcs/ft_lstadd_back.s
+.PHONY : srcs/hash_func/sha512_03.s
 
 # target to generate assembly for a file
-srcs/ft_lstadd_back.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ft_lstadd_back.c.s
-.PHONY : srcs/ft_lstadd_back.c.s
+srcs/hash_func/sha512_03.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hash_func/sha512_03.c.s
+.PHONY : srcs/hash_func/sha512_03.c.s
 
-srcs/ft_safe_memalloc.o: srcs/ft_safe_memalloc.c.o
+srcs/key_utils/generate_key.o: srcs/key_utils/generate_key.c.o
 
-.PHONY : srcs/ft_safe_memalloc.o
+.PHONY : srcs/key_utils/generate_key.o
 
 # target to build an object file
-srcs/ft_safe_memalloc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.o
-.PHONY : srcs/ft_safe_memalloc.c.o
+srcs/key_utils/generate_key.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/generate_key.c.o
+.PHONY : srcs/key_utils/generate_key.c.o
 
-srcs/ft_safe_memalloc.i: srcs/ft_safe_memalloc.c.i
+srcs/key_utils/generate_key.i: srcs/key_utils/generate_key.c.i
 
-.PHONY : srcs/ft_safe_memalloc.i
+.PHONY : srcs/key_utils/generate_key.i
 
 # target to preprocess a source file
-srcs/ft_safe_memalloc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.i
-.PHONY : srcs/ft_safe_memalloc.c.i
+srcs/key_utils/generate_key.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/generate_key.c.i
+.PHONY : srcs/key_utils/generate_key.c.i
 
-srcs/ft_safe_memalloc.s: srcs/ft_safe_memalloc.c.s
+srcs/key_utils/generate_key.s: srcs/key_utils/generate_key.c.s
 
-.PHONY : srcs/ft_safe_memalloc.s
+.PHONY : srcs/key_utils/generate_key.s
 
 # target to generate assembly for a file
-srcs/ft_safe_memalloc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ft_safe_memalloc.c.s
-.PHONY : srcs/ft_safe_memalloc.c.s
+srcs/key_utils/generate_key.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/generate_key.c.s
+.PHONY : srcs/key_utils/generate_key.c.s
 
-srcs/generate_key.o: srcs/generate_key.c.o
+srcs/key_utils/generate_utils_00.o: srcs/key_utils/generate_utils_00.c.o
 
-.PHONY : srcs/generate_key.o
+.PHONY : srcs/key_utils/generate_utils_00.o
 
 # target to build an object file
-srcs/generate_key.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/generate_key.c.o
-.PHONY : srcs/generate_key.c.o
+srcs/key_utils/generate_utils_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/generate_utils_00.c.o
+.PHONY : srcs/key_utils/generate_utils_00.c.o
 
-srcs/generate_key.i: srcs/generate_key.c.i
+srcs/key_utils/generate_utils_00.i: srcs/key_utils/generate_utils_00.c.i
 
-.PHONY : srcs/generate_key.i
-
-# target to preprocess a source file
-srcs/generate_key.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/generate_key.c.i
-.PHONY : srcs/generate_key.c.i
-
-srcs/generate_key.s: srcs/generate_key.c.s
-
-.PHONY : srcs/generate_key.s
-
-# target to generate assembly for a file
-srcs/generate_key.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/generate_key.c.s
-.PHONY : srcs/generate_key.c.s
-
-srcs/generate_utils_00.o: srcs/generate_utils_00.c.o
-
-.PHONY : srcs/generate_utils_00.o
-
-# target to build an object file
-srcs/generate_utils_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/generate_utils_00.c.o
-.PHONY : srcs/generate_utils_00.c.o
-
-srcs/generate_utils_00.i: srcs/generate_utils_00.c.i
-
-.PHONY : srcs/generate_utils_00.i
+.PHONY : srcs/key_utils/generate_utils_00.i
 
 # target to preprocess a source file
-srcs/generate_utils_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/generate_utils_00.c.i
-.PHONY : srcs/generate_utils_00.c.i
+srcs/key_utils/generate_utils_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/generate_utils_00.c.i
+.PHONY : srcs/key_utils/generate_utils_00.c.i
 
-srcs/generate_utils_00.s: srcs/generate_utils_00.c.s
+srcs/key_utils/generate_utils_00.s: srcs/key_utils/generate_utils_00.c.s
 
-.PHONY : srcs/generate_utils_00.s
-
-# target to generate assembly for a file
-srcs/generate_utils_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/generate_utils_00.c.s
-.PHONY : srcs/generate_utils_00.c.s
-
-srcs/hashing_utils.o: srcs/hashing_utils.c.o
-
-.PHONY : srcs/hashing_utils.o
-
-# target to build an object file
-srcs/hashing_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hashing_utils.c.o
-.PHONY : srcs/hashing_utils.c.o
-
-srcs/hashing_utils.i: srcs/hashing_utils.c.i
-
-.PHONY : srcs/hashing_utils.i
-
-# target to preprocess a source file
-srcs/hashing_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hashing_utils.c.i
-.PHONY : srcs/hashing_utils.c.i
-
-srcs/hashing_utils.s: srcs/hashing_utils.c.s
-
-.PHONY : srcs/hashing_utils.s
+.PHONY : srcs/key_utils/generate_utils_00.s
 
 # target to generate assembly for a file
-srcs/hashing_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/hashing_utils.c.s
-.PHONY : srcs/hashing_utils.c.s
+srcs/key_utils/generate_utils_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/key_utils/generate_utils_00.c.s
+.PHONY : srcs/key_utils/generate_utils_00.c.s
 
 srcs/main.o: srcs/main.c.o
 
@@ -4220,653 +4139,788 @@ srcs/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/main.c.s
 .PHONY : srcs/main.c.s
 
-srcs/md5_00.o: srcs/md5_00.c.o
+srcs/utils/args_finder.o: srcs/utils/args_finder.c.o
 
-.PHONY : srcs/md5_00.o
-
-# target to build an object file
-srcs/md5_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_00.c.o
-.PHONY : srcs/md5_00.c.o
-
-srcs/md5_00.i: srcs/md5_00.c.i
-
-.PHONY : srcs/md5_00.i
-
-# target to preprocess a source file
-srcs/md5_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_00.c.i
-.PHONY : srcs/md5_00.c.i
-
-srcs/md5_00.s: srcs/md5_00.c.s
-
-.PHONY : srcs/md5_00.s
-
-# target to generate assembly for a file
-srcs/md5_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_00.c.s
-.PHONY : srcs/md5_00.c.s
-
-srcs/md5_01.o: srcs/md5_01.c.o
-
-.PHONY : srcs/md5_01.o
+.PHONY : srcs/utils/args_finder.o
 
 # target to build an object file
-srcs/md5_01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_01.c.o
-.PHONY : srcs/md5_01.c.o
+srcs/utils/args_finder.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.o
+.PHONY : srcs/utils/args_finder.c.o
 
-srcs/md5_01.i: srcs/md5_01.c.i
+srcs/utils/args_finder.i: srcs/utils/args_finder.c.i
 
-.PHONY : srcs/md5_01.i
+.PHONY : srcs/utils/args_finder.i
 
 # target to preprocess a source file
-srcs/md5_01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_01.c.i
-.PHONY : srcs/md5_01.c.i
+srcs/utils/args_finder.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.i
+.PHONY : srcs/utils/args_finder.c.i
 
-srcs/md5_01.s: srcs/md5_01.c.s
+srcs/utils/args_finder.s: srcs/utils/args_finder.c.s
 
-.PHONY : srcs/md5_01.s
+.PHONY : srcs/utils/args_finder.s
 
 # target to generate assembly for a file
-srcs/md5_01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_01.c.s
-.PHONY : srcs/md5_01.c.s
+srcs/utils/args_finder.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_finder.c.s
+.PHONY : srcs/utils/args_finder.c.s
 
-srcs/md5_02.o: srcs/md5_02.c.o
+srcs/utils/args_helper_00.o: srcs/utils/args_helper_00.c.o
 
-.PHONY : srcs/md5_02.o
+.PHONY : srcs/utils/args_helper_00.o
 
 # target to build an object file
-srcs/md5_02.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_02.c.o
-.PHONY : srcs/md5_02.c.o
+srcs/utils/args_helper_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.o
+.PHONY : srcs/utils/args_helper_00.c.o
 
-srcs/md5_02.i: srcs/md5_02.c.i
+srcs/utils/args_helper_00.i: srcs/utils/args_helper_00.c.i
 
-.PHONY : srcs/md5_02.i
+.PHONY : srcs/utils/args_helper_00.i
 
 # target to preprocess a source file
-srcs/md5_02.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_02.c.i
-.PHONY : srcs/md5_02.c.i
+srcs/utils/args_helper_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.i
+.PHONY : srcs/utils/args_helper_00.c.i
 
-srcs/md5_02.s: srcs/md5_02.c.s
+srcs/utils/args_helper_00.s: srcs/utils/args_helper_00.c.s
 
-.PHONY : srcs/md5_02.s
+.PHONY : srcs/utils/args_helper_00.s
 
 # target to generate assembly for a file
-srcs/md5_02.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_02.c.s
-.PHONY : srcs/md5_02.c.s
+srcs/utils/args_helper_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/args_helper_00.c.s
+.PHONY : srcs/utils/args_helper_00.c.s
 
-srcs/md5_03.o: srcs/md5_03.c.o
+srcs/utils/base64_args_00.o: srcs/utils/base64_args_00.c.o
 
-.PHONY : srcs/md5_03.o
+.PHONY : srcs/utils/base64_args_00.o
 
 # target to build an object file
-srcs/md5_03.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_03.c.o
-.PHONY : srcs/md5_03.c.o
+srcs/utils/base64_args_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.o
+.PHONY : srcs/utils/base64_args_00.c.o
 
-srcs/md5_03.i: srcs/md5_03.c.i
+srcs/utils/base64_args_00.i: srcs/utils/base64_args_00.c.i
 
-.PHONY : srcs/md5_03.i
+.PHONY : srcs/utils/base64_args_00.i
 
 # target to preprocess a source file
-srcs/md5_03.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_03.c.i
-.PHONY : srcs/md5_03.c.i
+srcs/utils/base64_args_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.i
+.PHONY : srcs/utils/base64_args_00.c.i
 
-srcs/md5_03.s: srcs/md5_03.c.s
+srcs/utils/base64_args_00.s: srcs/utils/base64_args_00.c.s
 
-.PHONY : srcs/md5_03.s
+.PHONY : srcs/utils/base64_args_00.s
 
 # target to generate assembly for a file
-srcs/md5_03.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/md5_03.c.s
-.PHONY : srcs/md5_03.c.s
+srcs/utils/base64_args_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/base64_args_00.c.s
+.PHONY : srcs/utils/base64_args_00.c.s
 
-srcs/ofb.o: srcs/ofb.c.o
+srcs/utils/des_args.o: srcs/utils/des_args.c.o
 
-.PHONY : srcs/ofb.o
+.PHONY : srcs/utils/des_args.o
 
 # target to build an object file
-srcs/ofb.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ofb.c.o
-.PHONY : srcs/ofb.c.o
+srcs/utils/des_args.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.o
+.PHONY : srcs/utils/des_args.c.o
 
-srcs/ofb.i: srcs/ofb.c.i
+srcs/utils/des_args.i: srcs/utils/des_args.c.i
 
-.PHONY : srcs/ofb.i
+.PHONY : srcs/utils/des_args.i
 
 # target to preprocess a source file
-srcs/ofb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ofb.c.i
-.PHONY : srcs/ofb.c.i
+srcs/utils/des_args.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.i
+.PHONY : srcs/utils/des_args.c.i
 
-srcs/ofb.s: srcs/ofb.c.s
+srcs/utils/des_args.s: srcs/utils/des_args.c.s
 
-.PHONY : srcs/ofb.s
+.PHONY : srcs/utils/des_args.s
 
 # target to generate assembly for a file
-srcs/ofb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/ofb.c.s
-.PHONY : srcs/ofb.c.s
+srcs/utils/des_args.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args.c.s
+.PHONY : srcs/utils/des_args.c.s
 
-srcs/pass_reader.o: srcs/pass_reader.c.o
+srcs/utils/des_args_01.o: srcs/utils/des_args_01.c.o
 
-.PHONY : srcs/pass_reader.o
+.PHONY : srcs/utils/des_args_01.o
 
 # target to build an object file
-srcs/pass_reader.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/pass_reader.c.o
-.PHONY : srcs/pass_reader.c.o
+srcs/utils/des_args_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args_01.c.o
+.PHONY : srcs/utils/des_args_01.c.o
 
-srcs/pass_reader.i: srcs/pass_reader.c.i
+srcs/utils/des_args_01.i: srcs/utils/des_args_01.c.i
 
-.PHONY : srcs/pass_reader.i
+.PHONY : srcs/utils/des_args_01.i
 
 # target to preprocess a source file
-srcs/pass_reader.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/pass_reader.c.i
-.PHONY : srcs/pass_reader.c.i
+srcs/utils/des_args_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args_01.c.i
+.PHONY : srcs/utils/des_args_01.c.i
 
-srcs/pass_reader.s: srcs/pass_reader.c.s
+srcs/utils/des_args_01.s: srcs/utils/des_args_01.c.s
 
-.PHONY : srcs/pass_reader.s
+.PHONY : srcs/utils/des_args_01.s
 
 # target to generate assembly for a file
-srcs/pass_reader.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/pass_reader.c.s
-.PHONY : srcs/pass_reader.c.s
+srcs/utils/des_args_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/des_args_01.c.s
+.PHONY : srcs/utils/des_args_01.c.s
 
-srcs/pcbc.o: srcs/pcbc.c.o
+srcs/utils/entrance_to_base64.o: srcs/utils/entrance_to_base64.c.o
 
-.PHONY : srcs/pcbc.o
+.PHONY : srcs/utils/entrance_to_base64.o
 
 # target to build an object file
-srcs/pcbc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/pcbc.c.o
-.PHONY : srcs/pcbc.c.o
+srcs/utils/entrance_to_base64.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.o
+.PHONY : srcs/utils/entrance_to_base64.c.o
 
-srcs/pcbc.i: srcs/pcbc.c.i
+srcs/utils/entrance_to_base64.i: srcs/utils/entrance_to_base64.c.i
 
-.PHONY : srcs/pcbc.i
+.PHONY : srcs/utils/entrance_to_base64.i
 
 # target to preprocess a source file
-srcs/pcbc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/pcbc.c.i
-.PHONY : srcs/pcbc.c.i
+srcs/utils/entrance_to_base64.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.i
+.PHONY : srcs/utils/entrance_to_base64.c.i
 
-srcs/pcbc.s: srcs/pcbc.c.s
+srcs/utils/entrance_to_base64.s: srcs/utils/entrance_to_base64.c.s
 
-.PHONY : srcs/pcbc.s
+.PHONY : srcs/utils/entrance_to_base64.s
 
 # target to generate assembly for a file
-srcs/pcbc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/pcbc.c.s
-.PHONY : srcs/pcbc.c.s
+srcs/utils/entrance_to_base64.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_base64.c.s
+.PHONY : srcs/utils/entrance_to_base64.c.s
 
-srcs/print_output_00.o: srcs/print_output_00.c.o
+srcs/utils/entrance_to_des.o: srcs/utils/entrance_to_des.c.o
 
-.PHONY : srcs/print_output_00.o
+.PHONY : srcs/utils/entrance_to_des.o
 
 # target to build an object file
-srcs/print_output_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_00.c.o
-.PHONY : srcs/print_output_00.c.o
+srcs/utils/entrance_to_des.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_des.c.o
+.PHONY : srcs/utils/entrance_to_des.c.o
 
-srcs/print_output_00.i: srcs/print_output_00.c.i
+srcs/utils/entrance_to_des.i: srcs/utils/entrance_to_des.c.i
 
-.PHONY : srcs/print_output_00.i
+.PHONY : srcs/utils/entrance_to_des.i
 
 # target to preprocess a source file
-srcs/print_output_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_00.c.i
-.PHONY : srcs/print_output_00.c.i
+srcs/utils/entrance_to_des.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_des.c.i
+.PHONY : srcs/utils/entrance_to_des.c.i
 
-srcs/print_output_00.s: srcs/print_output_00.c.s
+srcs/utils/entrance_to_des.s: srcs/utils/entrance_to_des.c.s
 
-.PHONY : srcs/print_output_00.s
+.PHONY : srcs/utils/entrance_to_des.s
 
 # target to generate assembly for a file
-srcs/print_output_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_00.c.s
-.PHONY : srcs/print_output_00.c.s
+srcs/utils/entrance_to_des.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_des.c.s
+.PHONY : srcs/utils/entrance_to_des.c.s
 
-srcs/print_output_01.o: srcs/print_output_01.c.o
+srcs/utils/entrance_to_des_01.o: srcs/utils/entrance_to_des_01.c.o
 
-.PHONY : srcs/print_output_01.o
+.PHONY : srcs/utils/entrance_to_des_01.o
 
 # target to build an object file
-srcs/print_output_01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_01.c.o
-.PHONY : srcs/print_output_01.c.o
+srcs/utils/entrance_to_des_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_des_01.c.o
+.PHONY : srcs/utils/entrance_to_des_01.c.o
 
-srcs/print_output_01.i: srcs/print_output_01.c.i
+srcs/utils/entrance_to_des_01.i: srcs/utils/entrance_to_des_01.c.i
 
-.PHONY : srcs/print_output_01.i
+.PHONY : srcs/utils/entrance_to_des_01.i
 
 # target to preprocess a source file
-srcs/print_output_01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_01.c.i
-.PHONY : srcs/print_output_01.c.i
+srcs/utils/entrance_to_des_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_des_01.c.i
+.PHONY : srcs/utils/entrance_to_des_01.c.i
 
-srcs/print_output_01.s: srcs/print_output_01.c.s
+srcs/utils/entrance_to_des_01.s: srcs/utils/entrance_to_des_01.c.s
 
-.PHONY : srcs/print_output_01.s
+.PHONY : srcs/utils/entrance_to_des_01.s
 
 # target to generate assembly for a file
-srcs/print_output_01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_01.c.s
-.PHONY : srcs/print_output_01.c.s
+srcs/utils/entrance_to_des_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_des_01.c.s
+.PHONY : srcs/utils/entrance_to_des_01.c.s
 
-srcs/print_output_02.o: srcs/print_output_02.c.o
+srcs/utils/entrance_to_hash_commands.o: srcs/utils/entrance_to_hash_commands.c.o
 
-.PHONY : srcs/print_output_02.o
+.PHONY : srcs/utils/entrance_to_hash_commands.o
 
 # target to build an object file
-srcs/print_output_02.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_02.c.o
-.PHONY : srcs/print_output_02.c.o
+srcs/utils/entrance_to_hash_commands.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.o
+.PHONY : srcs/utils/entrance_to_hash_commands.c.o
 
-srcs/print_output_02.i: srcs/print_output_02.c.i
+srcs/utils/entrance_to_hash_commands.i: srcs/utils/entrance_to_hash_commands.c.i
 
-.PHONY : srcs/print_output_02.i
+.PHONY : srcs/utils/entrance_to_hash_commands.i
 
 # target to preprocess a source file
-srcs/print_output_02.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_02.c.i
-.PHONY : srcs/print_output_02.c.i
+srcs/utils/entrance_to_hash_commands.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.i
+.PHONY : srcs/utils/entrance_to_hash_commands.c.i
 
-srcs/print_output_02.s: srcs/print_output_02.c.s
+srcs/utils/entrance_to_hash_commands.s: srcs/utils/entrance_to_hash_commands.c.s
 
-.PHONY : srcs/print_output_02.s
+.PHONY : srcs/utils/entrance_to_hash_commands.s
 
 # target to generate assembly for a file
-srcs/print_output_02.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_02.c.s
-.PHONY : srcs/print_output_02.c.s
+srcs/utils/entrance_to_hash_commands.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/entrance_to_hash_commands.c.s
+.PHONY : srcs/utils/entrance_to_hash_commands.c.s
 
-srcs/print_output_cipher_00.o: srcs/print_output_cipher_00.c.o
+srcs/utils/errors_00.o: srcs/utils/errors_00.c.o
 
-.PHONY : srcs/print_output_cipher_00.o
+.PHONY : srcs/utils/errors_00.o
 
 # target to build an object file
-srcs/print_output_cipher_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_cipher_00.c.o
-.PHONY : srcs/print_output_cipher_00.c.o
+srcs/utils/errors_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.o
+.PHONY : srcs/utils/errors_00.c.o
 
-srcs/print_output_cipher_00.i: srcs/print_output_cipher_00.c.i
+srcs/utils/errors_00.i: srcs/utils/errors_00.c.i
 
-.PHONY : srcs/print_output_cipher_00.i
+.PHONY : srcs/utils/errors_00.i
 
 # target to preprocess a source file
-srcs/print_output_cipher_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_cipher_00.c.i
-.PHONY : srcs/print_output_cipher_00.c.i
+srcs/utils/errors_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.i
+.PHONY : srcs/utils/errors_00.c.i
 
-srcs/print_output_cipher_00.s: srcs/print_output_cipher_00.c.s
+srcs/utils/errors_00.s: srcs/utils/errors_00.c.s
 
-.PHONY : srcs/print_output_cipher_00.s
+.PHONY : srcs/utils/errors_00.s
 
 # target to generate assembly for a file
-srcs/print_output_cipher_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_cipher_00.c.s
-.PHONY : srcs/print_output_cipher_00.c.s
+srcs/utils/errors_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_00.c.s
+.PHONY : srcs/utils/errors_00.c.s
 
-srcs/print_output_cipher_01.o: srcs/print_output_cipher_01.c.o
+srcs/utils/errors_01.o: srcs/utils/errors_01.c.o
 
-.PHONY : srcs/print_output_cipher_01.o
+.PHONY : srcs/utils/errors_01.o
 
 # target to build an object file
-srcs/print_output_cipher_01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_cipher_01.c.o
-.PHONY : srcs/print_output_cipher_01.c.o
+srcs/utils/errors_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.o
+.PHONY : srcs/utils/errors_01.c.o
 
-srcs/print_output_cipher_01.i: srcs/print_output_cipher_01.c.i
+srcs/utils/errors_01.i: srcs/utils/errors_01.c.i
 
-.PHONY : srcs/print_output_cipher_01.i
+.PHONY : srcs/utils/errors_01.i
 
 # target to preprocess a source file
-srcs/print_output_cipher_01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_cipher_01.c.i
-.PHONY : srcs/print_output_cipher_01.c.i
+srcs/utils/errors_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.i
+.PHONY : srcs/utils/errors_01.c.i
 
-srcs/print_output_cipher_01.s: srcs/print_output_cipher_01.c.s
+srcs/utils/errors_01.s: srcs/utils/errors_01.c.s
 
-.PHONY : srcs/print_output_cipher_01.s
+.PHONY : srcs/utils/errors_01.s
 
 # target to generate assembly for a file
-srcs/print_output_cipher_01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/print_output_cipher_01.c.s
-.PHONY : srcs/print_output_cipher_01.c.s
+srcs/utils/errors_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_01.c.s
+.PHONY : srcs/utils/errors_01.c.s
 
-srcs/reader_helper.o: srcs/reader_helper.c.o
+srcs/utils/errors_02.o: srcs/utils/errors_02.c.o
 
-.PHONY : srcs/reader_helper.o
+.PHONY : srcs/utils/errors_02.o
 
 # target to build an object file
-srcs/reader_helper.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/reader_helper.c.o
-.PHONY : srcs/reader_helper.c.o
+srcs/utils/errors_02.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.o
+.PHONY : srcs/utils/errors_02.c.o
 
-srcs/reader_helper.i: srcs/reader_helper.c.i
+srcs/utils/errors_02.i: srcs/utils/errors_02.c.i
 
-.PHONY : srcs/reader_helper.i
+.PHONY : srcs/utils/errors_02.i
 
 # target to preprocess a source file
-srcs/reader_helper.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/reader_helper.c.i
-.PHONY : srcs/reader_helper.c.i
+srcs/utils/errors_02.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.i
+.PHONY : srcs/utils/errors_02.c.i
 
-srcs/reader_helper.s: srcs/reader_helper.c.s
+srcs/utils/errors_02.s: srcs/utils/errors_02.c.s
 
-.PHONY : srcs/reader_helper.s
+.PHONY : srcs/utils/errors_02.s
 
 # target to generate assembly for a file
-srcs/reader_helper.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/reader_helper.c.s
-.PHONY : srcs/reader_helper.c.s
+srcs/utils/errors_02.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_02.c.s
+.PHONY : srcs/utils/errors_02.c.s
 
-srcs/sha256_00.o: srcs/sha256_00.c.o
+srcs/utils/errors_03.o: srcs/utils/errors_03.c.o
 
-.PHONY : srcs/sha256_00.o
+.PHONY : srcs/utils/errors_03.o
 
 # target to build an object file
-srcs/sha256_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_00.c.o
-.PHONY : srcs/sha256_00.c.o
+srcs/utils/errors_03.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_03.c.o
+.PHONY : srcs/utils/errors_03.c.o
 
-srcs/sha256_00.i: srcs/sha256_00.c.i
+srcs/utils/errors_03.i: srcs/utils/errors_03.c.i
 
-.PHONY : srcs/sha256_00.i
+.PHONY : srcs/utils/errors_03.i
 
 # target to preprocess a source file
-srcs/sha256_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_00.c.i
-.PHONY : srcs/sha256_00.c.i
+srcs/utils/errors_03.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_03.c.i
+.PHONY : srcs/utils/errors_03.c.i
 
-srcs/sha256_00.s: srcs/sha256_00.c.s
+srcs/utils/errors_03.s: srcs/utils/errors_03.c.s
 
-.PHONY : srcs/sha256_00.s
+.PHONY : srcs/utils/errors_03.s
 
 # target to generate assembly for a file
-srcs/sha256_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_00.c.s
-.PHONY : srcs/sha256_00.c.s
+srcs/utils/errors_03.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/errors_03.c.s
+.PHONY : srcs/utils/errors_03.c.s
 
-srcs/sha256_01.o: srcs/sha256_01.c.o
+srcs/utils/fill_commands_00.o: srcs/utils/fill_commands_00.c.o
 
-.PHONY : srcs/sha256_01.o
+.PHONY : srcs/utils/fill_commands_00.o
 
 # target to build an object file
-srcs/sha256_01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_01.c.o
-.PHONY : srcs/sha256_01.c.o
+srcs/utils/fill_commands_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/fill_commands_00.c.o
+.PHONY : srcs/utils/fill_commands_00.c.o
 
-srcs/sha256_01.i: srcs/sha256_01.c.i
+srcs/utils/fill_commands_00.i: srcs/utils/fill_commands_00.c.i
 
-.PHONY : srcs/sha256_01.i
+.PHONY : srcs/utils/fill_commands_00.i
 
 # target to preprocess a source file
-srcs/sha256_01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_01.c.i
-.PHONY : srcs/sha256_01.c.i
+srcs/utils/fill_commands_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/fill_commands_00.c.i
+.PHONY : srcs/utils/fill_commands_00.c.i
 
-srcs/sha256_01.s: srcs/sha256_01.c.s
+srcs/utils/fill_commands_00.s: srcs/utils/fill_commands_00.c.s
 
-.PHONY : srcs/sha256_01.s
+.PHONY : srcs/utils/fill_commands_00.s
 
 # target to generate assembly for a file
-srcs/sha256_01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_01.c.s
-.PHONY : srcs/sha256_01.c.s
+srcs/utils/fill_commands_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/fill_commands_00.c.s
+.PHONY : srcs/utils/fill_commands_00.c.s
 
-srcs/sha256_02.o: srcs/sha256_02.c.o
+srcs/utils/free_utils.o: srcs/utils/free_utils.c.o
 
-.PHONY : srcs/sha256_02.o
+.PHONY : srcs/utils/free_utils.o
 
 # target to build an object file
-srcs/sha256_02.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_02.c.o
-.PHONY : srcs/sha256_02.c.o
+srcs/utils/free_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.o
+.PHONY : srcs/utils/free_utils.c.o
 
-srcs/sha256_02.i: srcs/sha256_02.c.i
+srcs/utils/free_utils.i: srcs/utils/free_utils.c.i
 
-.PHONY : srcs/sha256_02.i
+.PHONY : srcs/utils/free_utils.i
 
 # target to preprocess a source file
-srcs/sha256_02.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_02.c.i
-.PHONY : srcs/sha256_02.c.i
+srcs/utils/free_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.i
+.PHONY : srcs/utils/free_utils.c.i
 
-srcs/sha256_02.s: srcs/sha256_02.c.s
+srcs/utils/free_utils.s: srcs/utils/free_utils.c.s
 
-.PHONY : srcs/sha256_02.s
+.PHONY : srcs/utils/free_utils.s
 
 # target to generate assembly for a file
-srcs/sha256_02.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_02.c.s
-.PHONY : srcs/sha256_02.c.s
+srcs/utils/free_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/free_utils.c.s
+.PHONY : srcs/utils/free_utils.c.s
 
-srcs/sha256_03.o: srcs/sha256_03.c.o
+srcs/utils/ft_lstadd_back.o: srcs/utils/ft_lstadd_back.c.o
 
-.PHONY : srcs/sha256_03.o
+.PHONY : srcs/utils/ft_lstadd_back.o
 
 # target to build an object file
-srcs/sha256_03.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_03.c.o
-.PHONY : srcs/sha256_03.c.o
+srcs/utils/ft_lstadd_back.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.o
+.PHONY : srcs/utils/ft_lstadd_back.c.o
 
-srcs/sha256_03.i: srcs/sha256_03.c.i
+srcs/utils/ft_lstadd_back.i: srcs/utils/ft_lstadd_back.c.i
 
-.PHONY : srcs/sha256_03.i
+.PHONY : srcs/utils/ft_lstadd_back.i
 
 # target to preprocess a source file
-srcs/sha256_03.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_03.c.i
-.PHONY : srcs/sha256_03.c.i
+srcs/utils/ft_lstadd_back.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.i
+.PHONY : srcs/utils/ft_lstadd_back.c.i
 
-srcs/sha256_03.s: srcs/sha256_03.c.s
+srcs/utils/ft_lstadd_back.s: srcs/utils/ft_lstadd_back.c.s
 
-.PHONY : srcs/sha256_03.s
+.PHONY : srcs/utils/ft_lstadd_back.s
 
 # target to generate assembly for a file
-srcs/sha256_03.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_03.c.s
-.PHONY : srcs/sha256_03.c.s
+srcs/utils/ft_lstadd_back.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_lstadd_back.c.s
+.PHONY : srcs/utils/ft_lstadd_back.c.s
 
-srcs/sha256_04.o: srcs/sha256_04.c.o
+srcs/utils/ft_safe_memalloc.o: srcs/utils/ft_safe_memalloc.c.o
 
-.PHONY : srcs/sha256_04.o
+.PHONY : srcs/utils/ft_safe_memalloc.o
 
 # target to build an object file
-srcs/sha256_04.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_04.c.o
-.PHONY : srcs/sha256_04.c.o
+srcs/utils/ft_safe_memalloc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.o
+.PHONY : srcs/utils/ft_safe_memalloc.c.o
 
-srcs/sha256_04.i: srcs/sha256_04.c.i
+srcs/utils/ft_safe_memalloc.i: srcs/utils/ft_safe_memalloc.c.i
 
-.PHONY : srcs/sha256_04.i
+.PHONY : srcs/utils/ft_safe_memalloc.i
 
 # target to preprocess a source file
-srcs/sha256_04.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_04.c.i
-.PHONY : srcs/sha256_04.c.i
+srcs/utils/ft_safe_memalloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.i
+.PHONY : srcs/utils/ft_safe_memalloc.c.i
 
-srcs/sha256_04.s: srcs/sha256_04.c.s
+srcs/utils/ft_safe_memalloc.s: srcs/utils/ft_safe_memalloc.c.s
 
-.PHONY : srcs/sha256_04.s
+.PHONY : srcs/utils/ft_safe_memalloc.s
 
 # target to generate assembly for a file
-srcs/sha256_04.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha256_04.c.s
-.PHONY : srcs/sha256_04.c.s
+srcs/utils/ft_safe_memalloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/ft_safe_memalloc.c.s
+.PHONY : srcs/utils/ft_safe_memalloc.c.s
 
-srcs/sha512_00.o: srcs/sha512_00.c.o
+srcs/utils/hashing_utils.o: srcs/utils/hashing_utils.c.o
 
-.PHONY : srcs/sha512_00.o
+.PHONY : srcs/utils/hashing_utils.o
 
 # target to build an object file
-srcs/sha512_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_00.c.o
-.PHONY : srcs/sha512_00.c.o
+srcs/utils/hashing_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.o
+.PHONY : srcs/utils/hashing_utils.c.o
 
-srcs/sha512_00.i: srcs/sha512_00.c.i
+srcs/utils/hashing_utils.i: srcs/utils/hashing_utils.c.i
 
-.PHONY : srcs/sha512_00.i
+.PHONY : srcs/utils/hashing_utils.i
 
 # target to preprocess a source file
-srcs/sha512_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_00.c.i
-.PHONY : srcs/sha512_00.c.i
+srcs/utils/hashing_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.i
+.PHONY : srcs/utils/hashing_utils.c.i
 
-srcs/sha512_00.s: srcs/sha512_00.c.s
+srcs/utils/hashing_utils.s: srcs/utils/hashing_utils.c.s
 
-.PHONY : srcs/sha512_00.s
+.PHONY : srcs/utils/hashing_utils.s
 
 # target to generate assembly for a file
-srcs/sha512_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_00.c.s
-.PHONY : srcs/sha512_00.c.s
+srcs/utils/hashing_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/hashing_utils.c.s
+.PHONY : srcs/utils/hashing_utils.c.s
 
-srcs/sha512_01.o: srcs/sha512_01.c.o
+srcs/utils/pass_reader.o: srcs/utils/pass_reader.c.o
 
-.PHONY : srcs/sha512_01.o
+.PHONY : srcs/utils/pass_reader.o
 
 # target to build an object file
-srcs/sha512_01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_01.c.o
-.PHONY : srcs/sha512_01.c.o
+srcs/utils/pass_reader.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/pass_reader.c.o
+.PHONY : srcs/utils/pass_reader.c.o
 
-srcs/sha512_01.i: srcs/sha512_01.c.i
+srcs/utils/pass_reader.i: srcs/utils/pass_reader.c.i
 
-.PHONY : srcs/sha512_01.i
+.PHONY : srcs/utils/pass_reader.i
 
 # target to preprocess a source file
-srcs/sha512_01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_01.c.i
-.PHONY : srcs/sha512_01.c.i
+srcs/utils/pass_reader.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/pass_reader.c.i
+.PHONY : srcs/utils/pass_reader.c.i
 
-srcs/sha512_01.s: srcs/sha512_01.c.s
+srcs/utils/pass_reader.s: srcs/utils/pass_reader.c.s
 
-.PHONY : srcs/sha512_01.s
+.PHONY : srcs/utils/pass_reader.s
 
 # target to generate assembly for a file
-srcs/sha512_01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_01.c.s
-.PHONY : srcs/sha512_01.c.s
+srcs/utils/pass_reader.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/pass_reader.c.s
+.PHONY : srcs/utils/pass_reader.c.s
 
-srcs/sha512_02.o: srcs/sha512_02.c.o
+srcs/utils/print_output_00.o: srcs/utils/print_output_00.c.o
 
-.PHONY : srcs/sha512_02.o
+.PHONY : srcs/utils/print_output_00.o
 
 # target to build an object file
-srcs/sha512_02.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_02.c.o
-.PHONY : srcs/sha512_02.c.o
+srcs/utils/print_output_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.o
+.PHONY : srcs/utils/print_output_00.c.o
 
-srcs/sha512_02.i: srcs/sha512_02.c.i
+srcs/utils/print_output_00.i: srcs/utils/print_output_00.c.i
 
-.PHONY : srcs/sha512_02.i
+.PHONY : srcs/utils/print_output_00.i
 
 # target to preprocess a source file
-srcs/sha512_02.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_02.c.i
-.PHONY : srcs/sha512_02.c.i
+srcs/utils/print_output_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.i
+.PHONY : srcs/utils/print_output_00.c.i
 
-srcs/sha512_02.s: srcs/sha512_02.c.s
+srcs/utils/print_output_00.s: srcs/utils/print_output_00.c.s
 
-.PHONY : srcs/sha512_02.s
+.PHONY : srcs/utils/print_output_00.s
 
 # target to generate assembly for a file
-srcs/sha512_02.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_02.c.s
-.PHONY : srcs/sha512_02.c.s
+srcs/utils/print_output_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_00.c.s
+.PHONY : srcs/utils/print_output_00.c.s
 
-srcs/sha512_03.o: srcs/sha512_03.c.o
+srcs/utils/print_output_01.o: srcs/utils/print_output_01.c.o
 
-.PHONY : srcs/sha512_03.o
+.PHONY : srcs/utils/print_output_01.o
 
 # target to build an object file
-srcs/sha512_03.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_03.c.o
-.PHONY : srcs/sha512_03.c.o
+srcs/utils/print_output_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.o
+.PHONY : srcs/utils/print_output_01.c.o
 
-srcs/sha512_03.i: srcs/sha512_03.c.i
+srcs/utils/print_output_01.i: srcs/utils/print_output_01.c.i
 
-.PHONY : srcs/sha512_03.i
+.PHONY : srcs/utils/print_output_01.i
 
 # target to preprocess a source file
-srcs/sha512_03.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_03.c.i
-.PHONY : srcs/sha512_03.c.i
+srcs/utils/print_output_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.i
+.PHONY : srcs/utils/print_output_01.c.i
 
-srcs/sha512_03.s: srcs/sha512_03.c.s
+srcs/utils/print_output_01.s: srcs/utils/print_output_01.c.s
 
-.PHONY : srcs/sha512_03.s
+.PHONY : srcs/utils/print_output_01.s
 
 # target to generate assembly for a file
-srcs/sha512_03.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/sha512_03.c.s
-.PHONY : srcs/sha512_03.c.s
+srcs/utils/print_output_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_01.c.s
+.PHONY : srcs/utils/print_output_01.c.s
 
-srcs/split_by_command.o: srcs/split_by_command.c.o
+srcs/utils/print_output_02.o: srcs/utils/print_output_02.c.o
 
-.PHONY : srcs/split_by_command.o
+.PHONY : srcs/utils/print_output_02.o
 
 # target to build an object file
-srcs/split_by_command.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/split_by_command.c.o
-.PHONY : srcs/split_by_command.c.o
+srcs/utils/print_output_02.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.o
+.PHONY : srcs/utils/print_output_02.c.o
 
-srcs/split_by_command.i: srcs/split_by_command.c.i
+srcs/utils/print_output_02.i: srcs/utils/print_output_02.c.i
 
-.PHONY : srcs/split_by_command.i
+.PHONY : srcs/utils/print_output_02.i
 
 # target to preprocess a source file
-srcs/split_by_command.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/split_by_command.c.i
-.PHONY : srcs/split_by_command.c.i
+srcs/utils/print_output_02.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.i
+.PHONY : srcs/utils/print_output_02.c.i
 
-srcs/split_by_command.s: srcs/split_by_command.c.s
+srcs/utils/print_output_02.s: srcs/utils/print_output_02.c.s
 
-.PHONY : srcs/split_by_command.s
+.PHONY : srcs/utils/print_output_02.s
 
 # target to generate assembly for a file
-srcs/split_by_command.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/split_by_command.c.s
-.PHONY : srcs/split_by_command.c.s
+srcs/utils/print_output_02.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_02.c.s
+.PHONY : srcs/utils/print_output_02.c.s
 
-srcs/validate_pass_00.o: srcs/validate_pass_00.c.o
+srcs/utils/print_output_cipher_00.o: srcs/utils/print_output_cipher_00.c.o
 
-.PHONY : srcs/validate_pass_00.o
+.PHONY : srcs/utils/print_output_cipher_00.o
 
 # target to build an object file
-srcs/validate_pass_00.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/validate_pass_00.c.o
-.PHONY : srcs/validate_pass_00.c.o
+srcs/utils/print_output_cipher_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.o
+.PHONY : srcs/utils/print_output_cipher_00.c.o
 
-srcs/validate_pass_00.i: srcs/validate_pass_00.c.i
+srcs/utils/print_output_cipher_00.i: srcs/utils/print_output_cipher_00.c.i
 
-.PHONY : srcs/validate_pass_00.i
+.PHONY : srcs/utils/print_output_cipher_00.i
 
 # target to preprocess a source file
-srcs/validate_pass_00.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/validate_pass_00.c.i
-.PHONY : srcs/validate_pass_00.c.i
+srcs/utils/print_output_cipher_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.i
+.PHONY : srcs/utils/print_output_cipher_00.c.i
 
-srcs/validate_pass_00.s: srcs/validate_pass_00.c.s
+srcs/utils/print_output_cipher_00.s: srcs/utils/print_output_cipher_00.c.s
 
-.PHONY : srcs/validate_pass_00.s
+.PHONY : srcs/utils/print_output_cipher_00.s
 
 # target to generate assembly for a file
-srcs/validate_pass_00.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/validate_pass_00.c.s
-.PHONY : srcs/validate_pass_00.c.s
+srcs/utils/print_output_cipher_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_00.c.s
+.PHONY : srcs/utils/print_output_cipher_00.c.s
+
+srcs/utils/print_output_cipher_01.o: srcs/utils/print_output_cipher_01.c.o
+
+.PHONY : srcs/utils/print_output_cipher_01.o
+
+# target to build an object file
+srcs/utils/print_output_cipher_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_01.c.o
+.PHONY : srcs/utils/print_output_cipher_01.c.o
+
+srcs/utils/print_output_cipher_01.i: srcs/utils/print_output_cipher_01.c.i
+
+.PHONY : srcs/utils/print_output_cipher_01.i
+
+# target to preprocess a source file
+srcs/utils/print_output_cipher_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_01.c.i
+.PHONY : srcs/utils/print_output_cipher_01.c.i
+
+srcs/utils/print_output_cipher_01.s: srcs/utils/print_output_cipher_01.c.s
+
+.PHONY : srcs/utils/print_output_cipher_01.s
+
+# target to generate assembly for a file
+srcs/utils/print_output_cipher_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/print_output_cipher_01.c.s
+.PHONY : srcs/utils/print_output_cipher_01.c.s
+
+srcs/utils/reader_helper.o: srcs/utils/reader_helper.c.o
+
+.PHONY : srcs/utils/reader_helper.o
+
+# target to build an object file
+srcs/utils/reader_helper.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.o
+.PHONY : srcs/utils/reader_helper.c.o
+
+srcs/utils/reader_helper.i: srcs/utils/reader_helper.c.i
+
+.PHONY : srcs/utils/reader_helper.i
+
+# target to preprocess a source file
+srcs/utils/reader_helper.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.i
+.PHONY : srcs/utils/reader_helper.c.i
+
+srcs/utils/reader_helper.s: srcs/utils/reader_helper.c.s
+
+.PHONY : srcs/utils/reader_helper.s
+
+# target to generate assembly for a file
+srcs/utils/reader_helper.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/reader_helper.c.s
+.PHONY : srcs/utils/reader_helper.c.s
+
+srcs/utils/rsa_args_00.o: srcs/utils/rsa_args_00.c.o
+
+.PHONY : srcs/utils/rsa_args_00.o
+
+# target to build an object file
+srcs/utils/rsa_args_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/rsa_args_00.c.o
+.PHONY : srcs/utils/rsa_args_00.c.o
+
+srcs/utils/rsa_args_00.i: srcs/utils/rsa_args_00.c.i
+
+.PHONY : srcs/utils/rsa_args_00.i
+
+# target to preprocess a source file
+srcs/utils/rsa_args_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/rsa_args_00.c.i
+.PHONY : srcs/utils/rsa_args_00.c.i
+
+srcs/utils/rsa_args_00.s: srcs/utils/rsa_args_00.c.s
+
+.PHONY : srcs/utils/rsa_args_00.s
+
+# target to generate assembly for a file
+srcs/utils/rsa_args_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/rsa_args_00.c.s
+.PHONY : srcs/utils/rsa_args_00.c.s
+
+srcs/utils/split_by_command.o: srcs/utils/split_by_command.c.o
+
+.PHONY : srcs/utils/split_by_command.o
+
+# target to build an object file
+srcs/utils/split_by_command.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.o
+.PHONY : srcs/utils/split_by_command.c.o
+
+srcs/utils/split_by_command.i: srcs/utils/split_by_command.c.i
+
+.PHONY : srcs/utils/split_by_command.i
+
+# target to preprocess a source file
+srcs/utils/split_by_command.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.i
+.PHONY : srcs/utils/split_by_command.c.i
+
+srcs/utils/split_by_command.s: srcs/utils/split_by_command.c.s
+
+.PHONY : srcs/utils/split_by_command.s
+
+# target to generate assembly for a file
+srcs/utils/split_by_command.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command.c.s
+.PHONY : srcs/utils/split_by_command.c.s
+
+srcs/utils/split_by_command_01.o: srcs/utils/split_by_command_01.c.o
+
+.PHONY : srcs/utils/split_by_command_01.o
+
+# target to build an object file
+srcs/utils/split_by_command_01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command_01.c.o
+.PHONY : srcs/utils/split_by_command_01.c.o
+
+srcs/utils/split_by_command_01.i: srcs/utils/split_by_command_01.c.i
+
+.PHONY : srcs/utils/split_by_command_01.i
+
+# target to preprocess a source file
+srcs/utils/split_by_command_01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command_01.c.i
+.PHONY : srcs/utils/split_by_command_01.c.i
+
+srcs/utils/split_by_command_01.s: srcs/utils/split_by_command_01.c.s
+
+.PHONY : srcs/utils/split_by_command_01.s
+
+# target to generate assembly for a file
+srcs/utils/split_by_command_01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/split_by_command_01.c.s
+.PHONY : srcs/utils/split_by_command_01.c.s
+
+srcs/utils/validate_pass_00.o: srcs/utils/validate_pass_00.c.o
+
+.PHONY : srcs/utils/validate_pass_00.o
+
+# target to build an object file
+srcs/utils/validate_pass_00.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.o
+.PHONY : srcs/utils/validate_pass_00.c.o
+
+srcs/utils/validate_pass_00.i: srcs/utils/validate_pass_00.c.i
+
+.PHONY : srcs/utils/validate_pass_00.i
+
+# target to preprocess a source file
+srcs/utils/validate_pass_00.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.i
+.PHONY : srcs/utils/validate_pass_00.c.i
+
+srcs/utils/validate_pass_00.s: srcs/utils/validate_pass_00.c.s
+
+.PHONY : srcs/utils/validate_pass_00.s
+
+# target to generate assembly for a file
+srcs/utils/validate_pass_00.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_ssl_md5.dir/build.make CMakeFiles/ft_ssl_md5.dir/srcs/utils/validate_pass_00.c.s
+.PHONY : srcs/utils/validate_pass_00.c.s
 
 # Help Target
 help:
@@ -5225,183 +5279,189 @@ help:
 	@echo "... ft_lftprintf/srcs/work_with_x_big.o"
 	@echo "... ft_lftprintf/srcs/work_with_x_big.i"
 	@echo "... ft_lftprintf/srcs/work_with_x_big.s"
-	@echo "... srcs/args_finder.o"
-	@echo "... srcs/args_finder.i"
-	@echo "... srcs/args_finder.s"
-	@echo "... srcs/args_helper_00.o"
-	@echo "... srcs/args_helper_00.i"
-	@echo "... srcs/args_helper_00.s"
-	@echo "... srcs/base64.o"
-	@echo "... srcs/base64.i"
-	@echo "... srcs/base64.s"
-	@echo "... srcs/base64_args_00.o"
-	@echo "... srcs/base64_args_00.i"
-	@echo "... srcs/base64_args_00.s"
-	@echo "... srcs/base64_dec_00.o"
-	@echo "... srcs/base64_dec_00.i"
-	@echo "... srcs/base64_dec_00.s"
-	@echo "... srcs/base64_enc_00.o"
-	@echo "... srcs/base64_enc_00.i"
-	@echo "... srcs/base64_enc_00.s"
-	@echo "... srcs/base64_in_prism.o"
-	@echo "... srcs/base64_in_prism.i"
-	@echo "... srcs/base64_in_prism.s"
-	@echo "... srcs/cbc.o"
-	@echo "... srcs/cbc.i"
-	@echo "... srcs/cbc.s"
-	@echo "... srcs/cfb.o"
-	@echo "... srcs/cfb.i"
-	@echo "... srcs/cfb.s"
-	@echo "... srcs/ctr.o"
-	@echo "... srcs/ctr.i"
-	@echo "... srcs/ctr.s"
-	@echo "... srcs/des.o"
-	@echo "... srcs/des.i"
-	@echo "... srcs/des.s"
-	@echo "... srcs/des3.o"
-	@echo "... srcs/des3.i"
-	@echo "... srcs/des3.s"
-	@echo "... srcs/des_args.o"
-	@echo "... srcs/des_args.i"
-	@echo "... srcs/des_args.s"
-	@echo "... srcs/des_args_01.o"
-	@echo "... srcs/des_args_01.i"
-	@echo "... srcs/des_args_01.s"
-	@echo "... srcs/des_starter.o"
-	@echo "... srcs/des_starter.i"
-	@echo "... srcs/des_starter.s"
-	@echo "... srcs/des_utils_00.o"
-	@echo "... srcs/des_utils_00.i"
-	@echo "... srcs/des_utils_00.s"
-	@echo "... srcs/des_utils_01.o"
-	@echo "... srcs/des_utils_01.i"
-	@echo "... srcs/des_utils_01.s"
-	@echo "... srcs/divide_by_des_mode.o"
-	@echo "... srcs/divide_by_des_mode.i"
-	@echo "... srcs/divide_by_des_mode.s"
-	@echo "... srcs/ecb.o"
-	@echo "... srcs/ecb.i"
-	@echo "... srcs/ecb.s"
-	@echo "... srcs/entrance_to_base64.o"
-	@echo "... srcs/entrance_to_base64.i"
-	@echo "... srcs/entrance_to_base64.s"
-	@echo "... srcs/entrance_to_des.o"
-	@echo "... srcs/entrance_to_des.i"
-	@echo "... srcs/entrance_to_des.s"
-	@echo "... srcs/entrance_to_des_01.o"
-	@echo "... srcs/entrance_to_des_01.i"
-	@echo "... srcs/entrance_to_des_01.s"
-	@echo "... srcs/entrance_to_hash_commands.o"
-	@echo "... srcs/entrance_to_hash_commands.i"
-	@echo "... srcs/entrance_to_hash_commands.s"
-	@echo "... srcs/errors_00.o"
-	@echo "... srcs/errors_00.i"
-	@echo "... srcs/errors_00.s"
-	@echo "... srcs/errors_01.o"
-	@echo "... srcs/errors_01.i"
-	@echo "... srcs/errors_01.s"
-	@echo "... srcs/errors_02.o"
-	@echo "... srcs/errors_02.i"
-	@echo "... srcs/errors_02.s"
-	@echo "... srcs/errors_03.o"
-	@echo "... srcs/errors_03.i"
-	@echo "... srcs/errors_03.s"
-	@echo "... srcs/fill_commands_00.o"
-	@echo "... srcs/fill_commands_00.i"
-	@echo "... srcs/fill_commands_00.s"
-	@echo "... srcs/free_utils.o"
-	@echo "... srcs/free_utils.i"
-	@echo "... srcs/free_utils.s"
-	@echo "... srcs/ft_lstadd_back.o"
-	@echo "... srcs/ft_lstadd_back.i"
-	@echo "... srcs/ft_lstadd_back.s"
-	@echo "... srcs/ft_safe_memalloc.o"
-	@echo "... srcs/ft_safe_memalloc.i"
-	@echo "... srcs/ft_safe_memalloc.s"
-	@echo "... srcs/generate_key.o"
-	@echo "... srcs/generate_key.i"
-	@echo "... srcs/generate_key.s"
-	@echo "... srcs/generate_utils_00.o"
-	@echo "... srcs/generate_utils_00.i"
-	@echo "... srcs/generate_utils_00.s"
-	@echo "... srcs/hashing_utils.o"
-	@echo "... srcs/hashing_utils.i"
-	@echo "... srcs/hashing_utils.s"
+	@echo "... srcs/cipher_func/base64.o"
+	@echo "... srcs/cipher_func/base64.i"
+	@echo "... srcs/cipher_func/base64.s"
+	@echo "... srcs/cipher_func/base64_dec_00.o"
+	@echo "... srcs/cipher_func/base64_dec_00.i"
+	@echo "... srcs/cipher_func/base64_dec_00.s"
+	@echo "... srcs/cipher_func/base64_enc_00.o"
+	@echo "... srcs/cipher_func/base64_enc_00.i"
+	@echo "... srcs/cipher_func/base64_enc_00.s"
+	@echo "... srcs/cipher_func/base64_in_prism.o"
+	@echo "... srcs/cipher_func/base64_in_prism.i"
+	@echo "... srcs/cipher_func/base64_in_prism.s"
+	@echo "... srcs/cipher_func/cbc.o"
+	@echo "... srcs/cipher_func/cbc.i"
+	@echo "... srcs/cipher_func/cbc.s"
+	@echo "... srcs/cipher_func/cfb.o"
+	@echo "... srcs/cipher_func/cfb.i"
+	@echo "... srcs/cipher_func/cfb.s"
+	@echo "... srcs/cipher_func/ctr.o"
+	@echo "... srcs/cipher_func/ctr.i"
+	@echo "... srcs/cipher_func/ctr.s"
+	@echo "... srcs/cipher_func/des.o"
+	@echo "... srcs/cipher_func/des.i"
+	@echo "... srcs/cipher_func/des.s"
+	@echo "... srcs/cipher_func/des3.o"
+	@echo "... srcs/cipher_func/des3.i"
+	@echo "... srcs/cipher_func/des3.s"
+	@echo "... srcs/cipher_func/des_starter.o"
+	@echo "... srcs/cipher_func/des_starter.i"
+	@echo "... srcs/cipher_func/des_starter.s"
+	@echo "... srcs/cipher_func/des_utils_00.o"
+	@echo "... srcs/cipher_func/des_utils_00.i"
+	@echo "... srcs/cipher_func/des_utils_00.s"
+	@echo "... srcs/cipher_func/des_utils_01.o"
+	@echo "... srcs/cipher_func/des_utils_01.i"
+	@echo "... srcs/cipher_func/des_utils_01.s"
+	@echo "... srcs/cipher_func/divide_by_des_mode.o"
+	@echo "... srcs/cipher_func/divide_by_des_mode.i"
+	@echo "... srcs/cipher_func/divide_by_des_mode.s"
+	@echo "... srcs/cipher_func/ecb.o"
+	@echo "... srcs/cipher_func/ecb.i"
+	@echo "... srcs/cipher_func/ecb.s"
+	@echo "... srcs/cipher_func/ofb.o"
+	@echo "... srcs/cipher_func/ofb.i"
+	@echo "... srcs/cipher_func/ofb.s"
+	@echo "... srcs/cipher_func/pcbc.o"
+	@echo "... srcs/cipher_func/pcbc.i"
+	@echo "... srcs/cipher_func/pcbc.s"
+	@echo "... srcs/hash_func/md5_00.o"
+	@echo "... srcs/hash_func/md5_00.i"
+	@echo "... srcs/hash_func/md5_00.s"
+	@echo "... srcs/hash_func/md5_01.o"
+	@echo "... srcs/hash_func/md5_01.i"
+	@echo "... srcs/hash_func/md5_01.s"
+	@echo "... srcs/hash_func/md5_02.o"
+	@echo "... srcs/hash_func/md5_02.i"
+	@echo "... srcs/hash_func/md5_02.s"
+	@echo "... srcs/hash_func/md5_03.o"
+	@echo "... srcs/hash_func/md5_03.i"
+	@echo "... srcs/hash_func/md5_03.s"
+	@echo "... srcs/hash_func/sha256_00.o"
+	@echo "... srcs/hash_func/sha256_00.i"
+	@echo "... srcs/hash_func/sha256_00.s"
+	@echo "... srcs/hash_func/sha256_01.o"
+	@echo "... srcs/hash_func/sha256_01.i"
+	@echo "... srcs/hash_func/sha256_01.s"
+	@echo "... srcs/hash_func/sha256_02.o"
+	@echo "... srcs/hash_func/sha256_02.i"
+	@echo "... srcs/hash_func/sha256_02.s"
+	@echo "... srcs/hash_func/sha256_03.o"
+	@echo "... srcs/hash_func/sha256_03.i"
+	@echo "... srcs/hash_func/sha256_03.s"
+	@echo "... srcs/hash_func/sha256_04.o"
+	@echo "... srcs/hash_func/sha256_04.i"
+	@echo "... srcs/hash_func/sha256_04.s"
+	@echo "... srcs/hash_func/sha512_00.o"
+	@echo "... srcs/hash_func/sha512_00.i"
+	@echo "... srcs/hash_func/sha512_00.s"
+	@echo "... srcs/hash_func/sha512_01.o"
+	@echo "... srcs/hash_func/sha512_01.i"
+	@echo "... srcs/hash_func/sha512_01.s"
+	@echo "... srcs/hash_func/sha512_02.o"
+	@echo "... srcs/hash_func/sha512_02.i"
+	@echo "... srcs/hash_func/sha512_02.s"
+	@echo "... srcs/hash_func/sha512_03.o"
+	@echo "... srcs/hash_func/sha512_03.i"
+	@echo "... srcs/hash_func/sha512_03.s"
+	@echo "... srcs/key_utils/generate_key.o"
+	@echo "... srcs/key_utils/generate_key.i"
+	@echo "... srcs/key_utils/generate_key.s"
+	@echo "... srcs/key_utils/generate_utils_00.o"
+	@echo "... srcs/key_utils/generate_utils_00.i"
+	@echo "... srcs/key_utils/generate_utils_00.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"
-	@echo "... srcs/md5_00.o"
-	@echo "... srcs/md5_00.i"
-	@echo "... srcs/md5_00.s"
-	@echo "... srcs/md5_01.o"
-	@echo "... srcs/md5_01.i"
-	@echo "... srcs/md5_01.s"
-	@echo "... srcs/md5_02.o"
-	@echo "... srcs/md5_02.i"
-	@echo "... srcs/md5_02.s"
-	@echo "... srcs/md5_03.o"
-	@echo "... srcs/md5_03.i"
-	@echo "... srcs/md5_03.s"
-	@echo "... srcs/ofb.o"
-	@echo "... srcs/ofb.i"
-	@echo "... srcs/ofb.s"
-	@echo "... srcs/pass_reader.o"
-	@echo "... srcs/pass_reader.i"
-	@echo "... srcs/pass_reader.s"
-	@echo "... srcs/pcbc.o"
-	@echo "... srcs/pcbc.i"
-	@echo "... srcs/pcbc.s"
-	@echo "... srcs/print_output_00.o"
-	@echo "... srcs/print_output_00.i"
-	@echo "... srcs/print_output_00.s"
-	@echo "... srcs/print_output_01.o"
-	@echo "... srcs/print_output_01.i"
-	@echo "... srcs/print_output_01.s"
-	@echo "... srcs/print_output_02.o"
-	@echo "... srcs/print_output_02.i"
-	@echo "... srcs/print_output_02.s"
-	@echo "... srcs/print_output_cipher_00.o"
-	@echo "... srcs/print_output_cipher_00.i"
-	@echo "... srcs/print_output_cipher_00.s"
-	@echo "... srcs/print_output_cipher_01.o"
-	@echo "... srcs/print_output_cipher_01.i"
-	@echo "... srcs/print_output_cipher_01.s"
-	@echo "... srcs/reader_helper.o"
-	@echo "... srcs/reader_helper.i"
-	@echo "... srcs/reader_helper.s"
-	@echo "... srcs/sha256_00.o"
-	@echo "... srcs/sha256_00.i"
-	@echo "... srcs/sha256_00.s"
-	@echo "... srcs/sha256_01.o"
-	@echo "... srcs/sha256_01.i"
-	@echo "... srcs/sha256_01.s"
-	@echo "... srcs/sha256_02.o"
-	@echo "... srcs/sha256_02.i"
-	@echo "... srcs/sha256_02.s"
-	@echo "... srcs/sha256_03.o"
-	@echo "... srcs/sha256_03.i"
-	@echo "... srcs/sha256_03.s"
-	@echo "... srcs/sha256_04.o"
-	@echo "... srcs/sha256_04.i"
-	@echo "... srcs/sha256_04.s"
-	@echo "... srcs/sha512_00.o"
-	@echo "... srcs/sha512_00.i"
-	@echo "... srcs/sha512_00.s"
-	@echo "... srcs/sha512_01.o"
-	@echo "... srcs/sha512_01.i"
-	@echo "... srcs/sha512_01.s"
-	@echo "... srcs/sha512_02.o"
-	@echo "... srcs/sha512_02.i"
-	@echo "... srcs/sha512_02.s"
-	@echo "... srcs/sha512_03.o"
-	@echo "... srcs/sha512_03.i"
-	@echo "... srcs/sha512_03.s"
-	@echo "... srcs/split_by_command.o"
-	@echo "... srcs/split_by_command.i"
-	@echo "... srcs/split_by_command.s"
-	@echo "... srcs/validate_pass_00.o"
-	@echo "... srcs/validate_pass_00.i"
-	@echo "... srcs/validate_pass_00.s"
+	@echo "... srcs/utils/args_finder.o"
+	@echo "... srcs/utils/args_finder.i"
+	@echo "... srcs/utils/args_finder.s"
+	@echo "... srcs/utils/args_helper_00.o"
+	@echo "... srcs/utils/args_helper_00.i"
+	@echo "... srcs/utils/args_helper_00.s"
+	@echo "... srcs/utils/base64_args_00.o"
+	@echo "... srcs/utils/base64_args_00.i"
+	@echo "... srcs/utils/base64_args_00.s"
+	@echo "... srcs/utils/des_args.o"
+	@echo "... srcs/utils/des_args.i"
+	@echo "... srcs/utils/des_args.s"
+	@echo "... srcs/utils/des_args_01.o"
+	@echo "... srcs/utils/des_args_01.i"
+	@echo "... srcs/utils/des_args_01.s"
+	@echo "... srcs/utils/entrance_to_base64.o"
+	@echo "... srcs/utils/entrance_to_base64.i"
+	@echo "... srcs/utils/entrance_to_base64.s"
+	@echo "... srcs/utils/entrance_to_des.o"
+	@echo "... srcs/utils/entrance_to_des.i"
+	@echo "... srcs/utils/entrance_to_des.s"
+	@echo "... srcs/utils/entrance_to_des_01.o"
+	@echo "... srcs/utils/entrance_to_des_01.i"
+	@echo "... srcs/utils/entrance_to_des_01.s"
+	@echo "... srcs/utils/entrance_to_hash_commands.o"
+	@echo "... srcs/utils/entrance_to_hash_commands.i"
+	@echo "... srcs/utils/entrance_to_hash_commands.s"
+	@echo "... srcs/utils/errors_00.o"
+	@echo "... srcs/utils/errors_00.i"
+	@echo "... srcs/utils/errors_00.s"
+	@echo "... srcs/utils/errors_01.o"
+	@echo "... srcs/utils/errors_01.i"
+	@echo "... srcs/utils/errors_01.s"
+	@echo "... srcs/utils/errors_02.o"
+	@echo "... srcs/utils/errors_02.i"
+	@echo "... srcs/utils/errors_02.s"
+	@echo "... srcs/utils/errors_03.o"
+	@echo "... srcs/utils/errors_03.i"
+	@echo "... srcs/utils/errors_03.s"
+	@echo "... srcs/utils/fill_commands_00.o"
+	@echo "... srcs/utils/fill_commands_00.i"
+	@echo "... srcs/utils/fill_commands_00.s"
+	@echo "... srcs/utils/free_utils.o"
+	@echo "... srcs/utils/free_utils.i"
+	@echo "... srcs/utils/free_utils.s"
+	@echo "... srcs/utils/ft_lstadd_back.o"
+	@echo "... srcs/utils/ft_lstadd_back.i"
+	@echo "... srcs/utils/ft_lstadd_back.s"
+	@echo "... srcs/utils/ft_safe_memalloc.o"
+	@echo "... srcs/utils/ft_safe_memalloc.i"
+	@echo "... srcs/utils/ft_safe_memalloc.s"
+	@echo "... srcs/utils/hashing_utils.o"
+	@echo "... srcs/utils/hashing_utils.i"
+	@echo "... srcs/utils/hashing_utils.s"
+	@echo "... srcs/utils/pass_reader.o"
+	@echo "... srcs/utils/pass_reader.i"
+	@echo "... srcs/utils/pass_reader.s"
+	@echo "... srcs/utils/print_output_00.o"
+	@echo "... srcs/utils/print_output_00.i"
+	@echo "... srcs/utils/print_output_00.s"
+	@echo "... srcs/utils/print_output_01.o"
+	@echo "... srcs/utils/print_output_01.i"
+	@echo "... srcs/utils/print_output_01.s"
+	@echo "... srcs/utils/print_output_02.o"
+	@echo "... srcs/utils/print_output_02.i"
+	@echo "... srcs/utils/print_output_02.s"
+	@echo "... srcs/utils/print_output_cipher_00.o"
+	@echo "... srcs/utils/print_output_cipher_00.i"
+	@echo "... srcs/utils/print_output_cipher_00.s"
+	@echo "... srcs/utils/print_output_cipher_01.o"
+	@echo "... srcs/utils/print_output_cipher_01.i"
+	@echo "... srcs/utils/print_output_cipher_01.s"
+	@echo "... srcs/utils/reader_helper.o"
+	@echo "... srcs/utils/reader_helper.i"
+	@echo "... srcs/utils/reader_helper.s"
+	@echo "... srcs/utils/rsa_args_00.o"
+	@echo "... srcs/utils/rsa_args_00.i"
+	@echo "... srcs/utils/rsa_args_00.s"
+	@echo "... srcs/utils/split_by_command.o"
+	@echo "... srcs/utils/split_by_command.i"
+	@echo "... srcs/utils/split_by_command.s"
+	@echo "... srcs/utils/split_by_command_01.o"
+	@echo "... srcs/utils/split_by_command_01.i"
+	@echo "... srcs/utils/split_by_command_01.s"
+	@echo "... srcs/utils/validate_pass_00.o"
+	@echo "... srcs/utils/validate_pass_00.i"
+	@echo "... srcs/utils/validate_pass_00.s"
 .PHONY : help
 
 

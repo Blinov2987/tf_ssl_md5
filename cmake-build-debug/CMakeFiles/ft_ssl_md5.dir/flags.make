@@ -6,5 +6,5 @@ C_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacO
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/gemerald/afterIntern/ft_ssl_des/ft_lftprintf/includes -I/Users/gemerald/afterIntern/ft_ssl_des/ft_lftprintf/includes/libft -I/Users/gemerald/afterIntern/ft_ssl_des/includes -I/Users/gemerald/afterIntern/ft_ssl_des/srcs 
+C_INCLUDES = -I/Users/gemerald/afterIntern/ft_ssl_rsa/ft_lftprintf/includes -I/Users/gemerald/afterIntern/ft_ssl_rsa/ft_lftprintf/includes/libft -I/Users/gemerald/afterIntern/ft_ssl_rsa/includes -I/Users/gemerald/afterIntern/ft_ssl_rsa/srcs 
 

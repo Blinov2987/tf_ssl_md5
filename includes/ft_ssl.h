@@ -109,6 +109,8 @@ t_list			*get_random_bytes(void);
 void			fill_random_values(t_des_args *args);
 void			get_salt_from_content(t_des_args *args, t_crypt_output *output);
 
+void		rsa_branch(t_cmd_type cmd, int ac, char **av);
+
 void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);
 void			print_silent_files(t_list *tmp, t_list *stream);

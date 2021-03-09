@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 19:24:37 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/13 22:41:25 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/09 22:11:44 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,6 @@ void		split_by_commands(int ac, char **av)
 		base64_branch(cmd, ac, av);
 	if (cmd.type == DES_COMMAND || cmd.type == DES3_COMMAND)
 		des_branch(cmd, ac, av);
+	if (cmd.type == RSA || cmd.type == RSAUTL || cmd.type == GEN_RSA)
+		rsa_branch(cmd, ac, av);
 }
