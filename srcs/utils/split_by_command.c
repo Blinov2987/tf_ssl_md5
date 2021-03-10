@@ -19,6 +19,7 @@ t_cmd_type	take_command_type(char *command)
 	ft_bzero(&cmd, sizeof(t_cmd_type));
 	fill_hash_cmd(&cmd, command);
 	fill_cipher_cmd(&cmd, command);
+	fill_rsa_cmd(&cmd, command);
 	return (cmd);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 10:48:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/09 22:16:07 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/10 21:54:25 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,10 +121,12 @@ int					contains_char_sym(char *str, char to_count);
 t_args				*take_hash_args(int ac, char **av);
 t_base64_args		*take_base64_args(int ac, char **av);
 t_des_args			*take_des_args(int ac, char **av);
+t_rsa_args			*take_rsa_args(int ac, char **av);
 int					take_command(char *command, t_args *args);
 int					validate_args(t_args **args);
 int					validate_args_base64(t_base64_args **args);
 int					validate_args_des(t_des_args **args);
+int					validate_args_rsa(t_rsa_args **args);
 int					is_hex_string(char *str, size_t len);
 int					validate_hex(t_des_args *args);
 void				free_args(t_args **args);
@@ -137,5 +139,6 @@ void				pars_args_des(int ac, char **av,
 
 void				fill_hash_cmd(t_cmd_type *cmd, char *command);
 void				fill_cipher_cmd(t_cmd_type *cmd, char *command);
+void				fill_rsa_cmd(t_cmd_type *cmd, char *command);
 
 #endif

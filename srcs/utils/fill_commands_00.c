@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 19:39:38 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/11 18:27:57 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/10 21:57:37 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,14 @@ void			fill_cipher_cmd(t_cmd_type *cmd, char *command)
 		fill_cmd_type(cmd, DES3_COMMAND, CBC);
 	else if (!ft_strcmp("des", command))
 		fill_cmd_type(cmd, DES_COMMAND, CBC);
+}
+
+void			fill_rsa_cmd(t_cmd_type *cmd, char *command)
+{
+	if (!ft_strcmp("rsa", command))
+		fill_cmd_type(cmd, RSA, FALSE);
+	if (!ft_strcmp("rsautl", command))
+		fill_cmd_type(cmd, RSAUTL, FALSE);
+	if (!ft_strcmp("genrsa", command))
+		fill_cmd_type(cmd, GEN_RSA, FALSE);
 }

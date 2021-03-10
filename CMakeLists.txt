@@ -199,4 +199,4 @@ add_executable(ft_ssl_md5
         srcs/cipher_func/divide_by_des_mode.c
         srcs/cipher_func/des_utils_00.c
         srcs/cipher_func/des_utils_01.c
-        srcs/utils/split_by_command_01.c srcs/utils/rsa_args_00.c includes/rsa.h)
+        srcs/utils/split_by_command_01.c srcs/utils/rsa_args_00.c includes/rsa.h srcs/utils/entrance_to_rsa.c)
