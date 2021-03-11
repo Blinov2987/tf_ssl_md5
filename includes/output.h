@@ -31,6 +31,13 @@ typedef struct	s_output_streams
 	t_list		*file_hash;
 }				t_output;
 
+typedef struct	s_rsa_output
+{
+	t_list		*pointers_to_free;
+	t_list		*mem;
+	t_list		*output_stream;
+}				t_rsa_output;
+
 void			free_crypt_output(t_crypt_output *output);
 
 #endif

@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   entrance_to_rsa.c                                  :+:      :+:    :+:   */
+/*   gen_rsa_00.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 21:54:33 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/10 21:54:33 by gemerald         ###   ########.fr       */
+/*   Created: 2021/03/11 19:29:35 by gemerald          #+#    #+#             */
+/*   Updated: 2021/03/11 19:29:35 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
+#include "rsa.h"
 
-void		entrance_to_rsa(t_rsa_args *args)
+void 	gen_rsa(t_rsa_args *args, t_rsa_output *output)
 {
-	t_rsa_output	output;
 
-	ft_bzero(&output, sizeof(t_crypt_output));
-	if (args->algo == GEN_RSA) {
-		gen_rsa(args, output);
-	}
 }
