@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
+#include "rsa.h"
 
 void		entrance_to_rsa(t_rsa_args *args)
 {
@@ -18,6 +19,6 @@ void		entrance_to_rsa(t_rsa_args *args)
 
 	ft_bzero(&output, sizeof(t_crypt_output));
 	if (args->algo == GEN_RSA) {
-		gen_rsa(args, output);
+		gen_rsa(args, &output);
 	}
 }
