@@ -54,9 +54,9 @@ fcntl.h
 
 ../includes/rsa.h
 
-/Users/gemerald/afterIntern/ft_ssl_rsa/srcs/rsa_func/gen_rsa_00.c
+/Users/gemerald/afterIntern/ft_ssl_rsa/srcs/rsa_utils/asn_writer.c
 ft_ssl.h
-/Users/gemerald/afterIntern/ft_ssl_rsa/srcs/rsa_func/ft_ssl.h
+/Users/gemerald/afterIntern/ft_ssl_rsa/srcs/rsa_utils/ft_ssl.h
 rsa.h
-/Users/gemerald/afterIntern/ft_ssl_rsa/srcs/rsa_func/rsa.h
+/Users/gemerald/afterIntern/ft_ssl_rsa/srcs/rsa_utils/rsa.h
 

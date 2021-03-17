@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 19:29:35 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/16 22:40:37 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/17 21:36:50 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,88 +74,63 @@ int		get_pow_remainder(uint32_t x, uint32_t pow, uint32_t mod)
 	return (general_rem);
 }
 
-int 	miller_rabin(uint32_t val, int k)
+int		miller_rabin_step(uint32_t s, uint32_t x, uint32_t val)
 {
-// если n == 2 или n == 3 - эти числа простые, возвращаем true
-	if (val == 2 || val == 3)
-		return (val);
+	int r;
 
-	// если n < 2 или n четное - возвращаем false
-	if (val < 2 || val % 2 == 0)
-		return FALSE;
-
-	// представим n − 1 в виде (2^s)·t, где t нечётно, это можно сделать последовательным делением n - 1 на 2
-	uint32_t t = val - 1;
-
-	uint32_t s = 0;
-
-	while (t % 2 == 0)
+	r = 0;
+	while (++r < s)
 	{
-		t /= 2;
-		s += 1;
+		x = get_pow_remainder(x, 2, val);
+		if (x == 1)
+			return FALSE;
+		if (x == val - 1)
+			break;
 	}
+	return (TRUE);
+}
 
-	// повторить k раз
-	for (int i = 0; i < k; i++)
+int		miller_rabin_cycle(uint32_t val, int k, uint32_t t, uint32_t s)
+{
+	int i;
+	uint32_t x;
+
+	i = -1;
+	while (++i < k)
 	{
-		// выберем случайное целое число a в отрезке [2, n − 2]
-		uint32_t a = get_rand_uint(val);
-
-		// x ← a^t mod n, вычислим с помощью возведения в степень по модулю
-//		a = 7;
-//		t = 13;
-//		val = 59;
-		uint32_t x = get_pow_remainder(a, t, val);
-
-		// если x == 1 или x == n − 1, то перейти на следующую итерацию цикла
+		x = get_rand_uint(val);
+		x = get_pow_remainder(x, t, val);
 		if (x == 1 || x == val - 1)
 		{
 			write(1, "+", 1);
 			continue;
 		}
-
-
-		// повторить s − 1 раз
-		for (int r = 1; r < s; r++)
-		{
-			// x ← x^2 mod n
-			x = get_pow_remainder(x, 2, val);
-
-			// если x == 1, то вернуть "составное"
-			if (x == 1)
-				return FALSE;
-
-			// если x == n − 1, то перейти на следующую итерацию внешнего цикла
-			if (x == val - 1)
-				break;
-		}
-
+		if (!miller_rabin_step(s, x, val))
+			return (FALSE);
 		if (x != val - 1)
 			return FALSE;
 		write(1, "+", 1);
 	}
-
-	// вернуть "вероятно простое"
 	return (val);
 }
 
-
-int 	solovey_strassen(uint32_t val, int k)
+int 	miller_rabin(uint32_t val, int k)
 {
-	int i;
-	uint32_t rand;
-	uint32_t powered_rand;
-	uint32_t jac_sym;
+	uint32_t t;
+	uint32_t s;
 
-	i = -1;
-	while (++i < k)
+	if (val == 2 || val == 3)
+		return (val);
+	if (val < 2 || val % 2 == 0)
+		return FALSE;
+	t = val - 1;
+	s = 0;
+	while (t % 2 == 0)
 	{
-		rand = get_rand_uint(val);
-		if (get_nod(val, rand) > 1)
-			return (FALSE);
-//		jac_sym =
+		t /= 2;
+		s += 1;
 	}
-	return (TRUE);
+	return (miller_rabin_cycle(val, k, t, s));
 }
 
 uint32_t  get_rand_prime(void)
@@ -176,82 +151,58 @@ uint32_t  get_rand_prime(void)
 }
 
 
-void extended_euclid(uint64_t a, uint64_t b, long *x)
-
-/* calculates a * *x + b * *y = gcd(a, b) = *d */
-
+void 	extended_euclid(uint64_t a, uint64_t b, long *x)
 {
-	long y = 0;
-//	(*y) = 0;
-	long d = 1;
-//	(*d) = 1;
+	t_ext_euclid e;
 
-	long q, r, x1, x2, y1, y2;
-
-	x2 = 1, x1 = 0, y2 = 0, y1 = 1;
-
-	while (b > 0) {
-
-		q = a / b, r = a - q * b;
-
-		*x = x2 - q * x1, y = y2 - q * y1;
-
-		a = b, b = r;
-
-		x2 = x1, x1 = *x, y2 = y1, y1 = y;
-
+	ft_bzero(&e, sizeof(t_ext_euclid));
+	e.x2 = 1;
+	e.y1 = 1;
+	while (b > 0)
+	{
+		e.q = a / b;
+		e.r = a - e.q * b;
+		*x = e.x2 - e.q * e.x1;
+		e.y = e.y2 - e.q * e.y1;
+		a = b;
+		b = e.r;
+		e.x2 = e.x1;
+		e.x1 = *x;
+		e.y2 = e.y1;
+		e.y1 = e.y;
 	}
-
-	*x = x2;
-
+	*x = e.x2;
 }
 
 
 
 void 	gen_rsa(t_rsa_args *args, t_rsa_output *output)
 {
-//	uint32_t x = 225227;
-//	int result;
-//	result = miller_rabin(x, 5);
+	t_rsa_key key;
 
-
-	uint32_t p = get_rand_prime();
-	ft_printf("%u\n", p);
-	uint32_t q = get_rand_prime();
-	ft_printf("%u\n", q);
-	uint64_t multi =(uint64_t)p * (uint64_t)q;
-	ft_printf("multi = %llu\n", multi);
-	uint64_t eiler = (uint64_t)(p - 1) * (uint64_t)(q - 1);
-	uint64_t pub_e = 0x10001;
-//	int64_t priv_e;
+	ft_bzero(&key, sizeof(t_rsa_key));
+	key.prime1 = get_rand_prime();
+	ft_printf("%u\n", key.prime1);
+	key.prime2 = get_rand_prime();
+	ft_printf("%u\n", key.prime2);
+	key.prime1 = 3383235047;
+	key.prime2 = 3360900689;
+	key.modulus =(uint64_t)key.prime1 * (uint64_t)key.prime2;
+	ft_printf("key.modulus = %llu\n", key.modulus);
+	uint64_t eiler = (uint64_t)(key.prime1 - 1) * (uint64_t)(key.prime2 - 1);
+	key.public_exponent = 0x10001;
 	long euklid = 0;
-	uint64_t ext_eucl;
-	extended_euclid(pub_e, eiler, &euklid);
+	extended_euclid(key.public_exponent, eiler, &euklid);
 	if (euklid < 0)
-		ext_eucl = euklid + eiler;
+		key.private_exponent = euklid + eiler;
 	else
-		ext_eucl = euklid;
+		key.private_exponent = euklid;
+	key.exponent1 = key.private_exponent % (key.prime1 - 1);
+	key.exponent2 = key.private_exponent % (key.prime2 - 1);
+	key.coefficient =get_pow_remainder(key.prime2, key.prime1 - 2, key.prime1);
+	get_der_form(key);
 	int i = 5;
 	i++;
 	if (i < 4)
 		return;
-}
-
-void some_trash(void)
-{
-	uint64_t max = 18446744073709551615;
-	uint32_t max32 = 0xffffffff;
-	uint64_t pow = 2;
-	uint64_t count = 1;
-	while (pow < max)
-	{
-		uint64_t prew_pow = pow;
-		pow *= pow;
-		if (prew_pow > pow)
-		{
-			ft_printf("max pow = %llu\n", prew_pow);
-			break;
-		}
-		count++;
-	}
 }
