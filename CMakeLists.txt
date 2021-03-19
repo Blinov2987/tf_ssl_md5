@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(ft_ssl_des C)
+project(ft_ssl C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -8,7 +8,7 @@ include_directories(ft_lftprintf/includes/libft)
 include_directories(includes)
 include_directories(srcs)
 
-add_executable(ft_ssl_md5
+add_executable(ft_ssl
         ft_lftprintf/includes/libft/ft_atoi.c
         ft_lftprintf/includes/libft/ft_atoi_base.c
         ft_lftprintf/includes/libft/ft_atoi_size_t.c

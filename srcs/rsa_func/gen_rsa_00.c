@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 19:29:35 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/17 21:36:50 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/19 18:23:36 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,14 +102,14 @@ int		miller_rabin_cycle(uint32_t val, int k, uint32_t t, uint32_t s)
 		x = get_pow_remainder(x, t, val);
 		if (x == 1 || x == val - 1)
 		{
-			write(1, "+", 1);
+//			write(1, "+", 1);
 			continue;
 		}
 		if (!miller_rabin_step(s, x, val))
 			return (FALSE);
 		if (x != val - 1)
 			return FALSE;
-		write(1, "+", 1);
+//		write(1, "+", 1);
 	}
 	return (val);
 }
@@ -143,10 +143,10 @@ uint32_t  get_rand_prime(void)
 		prime = 0;
 		prime = get_rand_uint(prime);
 		prime = miller_rabin(prime, 5);
-		if (!prime)
-			write(1, ".", 1);
+//		if (!prime)
+//			write(1, ".", 1);
 	}
-	write(1, "\n", 1);
+//	write(1, "\n", 1);
 	return (prime);
 }
 
@@ -182,13 +182,13 @@ void 	gen_rsa(t_rsa_args *args, t_rsa_output *output)
 
 	ft_bzero(&key, sizeof(t_rsa_key));
 	key.prime1 = get_rand_prime();
-	ft_printf("%u\n", key.prime1);
+//	ft_printf("%u\n", key.prime1);
 	key.prime2 = get_rand_prime();
-	ft_printf("%u\n", key.prime2);
-	key.prime1 = 3383235047;
-	key.prime2 = 3360900689;
+//	ft_printf("%u\n", key.prime2);
+//	key.prime1 = 3383235047;
+//	key.prime2 = 3360900689;
 	key.modulus =(uint64_t)key.prime1 * (uint64_t)key.prime2;
-	ft_printf("key.modulus = %llu\n", key.modulus);
+//	ft_printf("key.modulus = %llu\n", key.modulus);
 	uint64_t eiler = (uint64_t)(key.prime1 - 1) * (uint64_t)(key.prime2 - 1);
 	key.public_exponent = 0x10001;
 	long euklid = 0;
@@ -200,7 +200,8 @@ void 	gen_rsa(t_rsa_args *args, t_rsa_output *output)
 	key.exponent1 = key.private_exponent % (key.prime1 - 1);
 	key.exponent2 = key.private_exponent % (key.prime2 - 1);
 	key.coefficient =get_pow_remainder(key.prime2, key.prime1 - 2, key.prime1);
-	get_der_form(key);
+	t_list *der = get_der_form(key);
+	write(1, der->content, der->content_size);
 	int i = 5;
 	i++;
 	if (i < 4)
