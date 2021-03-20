@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 19:29:35 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/19 18:23:36 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/20 11:38:44 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ void 	extended_euclid(uint64_t a, uint64_t b, long *x)
 
 
 
-void 	gen_rsa(t_rsa_args *args, t_rsa_output *output)
+t_rsa_key gen_rsa(t_rsa_args *args, t_rsa_output *output)
 {
 	t_rsa_key key;
 
@@ -199,11 +199,12 @@ void 	gen_rsa(t_rsa_args *args, t_rsa_output *output)
 		key.private_exponent = euklid;
 	key.exponent1 = key.private_exponent % (key.prime1 - 1);
 	key.exponent2 = key.private_exponent % (key.prime2 - 1);
-	key.coefficient =get_pow_remainder(key.prime2, key.prime1 - 2, key.prime1);
-	t_list *der = get_der_form(key);
-	write(1, der->content, der->content_size);
-	int i = 5;
-	i++;
-	if (i < 4)
-		return;
+	key.coefficient = get_pow_remainder(key.prime2, key.prime1 - 2, key.prime1);
+	return (key);
+
+
+//	int i = 5;
+//	i++;
+//	if (i < 4)
+//		return;
 }

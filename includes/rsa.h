@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:25:22 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/17 21:36:50 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/20 14:40:13 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ static const char*	g_rsa_flags[] = {
 	"inform", "outform", "in", "i", "passin", "out", "o",
 	"passout", "des", "text", "noout", "modulus", "check",
 	"pubin", "pubout", "inkey", "encrypt", "decrypt", "hexdump"
+};
+
+static const uint8_t g_der_bit_string[] ={
+	0x30, 0x24, 0x30, 0xd, 0x6, 0x9, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0xd, 0x1,
+	0x1, 0x1, 0x5, 0, 0x3, 0x13, 0
 };
 
 typedef struct 		s_rsa_key
@@ -50,7 +55,11 @@ typedef struct		s_asn
 	uint8_t		size;
 }					t_asn;
 
-void 	gen_rsa(t_rsa_args *args, t_rsa_output *output);
-t_list *get_der_form(t_rsa_key key);
+t_rsa_key 	gen_rsa(t_rsa_args *args, t_rsa_output *output);
+t_list *get_priv_der_form(t_rsa_key *key);
+t_list *get_pub_der_form(t_rsa_key *key);
+void 	rsa_pem_writer(t_rsa_key *key, t_rsa_args *args);
+t_asn convert_key_to_asn(void *mem, size_t size);
+t_list *collect_mem_to_output(t_asn asn[], size_t asn_size);
 
 #endif

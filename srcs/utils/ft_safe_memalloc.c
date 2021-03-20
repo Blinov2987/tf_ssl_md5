@@ -16,6 +16,7 @@ void	*ft_safe_memalloc(size_t size, char *function_name)
 {
 	void *ptr;
 
+	ptr = NULL;
 	if (!(ptr = ft_memalloc(size)))
 	{
 		error_safe_memalloc(function_name);
