@@ -44,5 +44,9 @@
 # define CIPHER_COMMANDS_1 "des-pcbc\ndes-ofb\ndes-cfb\ndes-ctr"
 # define CIPHER_COMMANDS_2 "des3\ndes3-ecb\ndes3-cbc"
 # define CIPHER_COMMANDS_3 "des3-pcbc\ndes3-ofb\ndes3-cfb\ndes3-ctr"
+# define RSA_PRIV_START "-----BEGIN RSA PRIVATE KEY-----"
+# define RSA_PRIV_END "-----END RSA PRIVATE KEY-----"
+# define RSA_PUB_START "-----BEGIN PUBLIC KEY-----"
+# define RSA_PUB_END "-----END PUBLIC KEY-----"
 
 #endif

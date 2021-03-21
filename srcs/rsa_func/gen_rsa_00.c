@@ -176,21 +176,17 @@ void 	extended_euclid(uint64_t a, uint64_t b, long *x)
 
 
 
-t_rsa_key gen_rsa(t_rsa_args *args, t_rsa_output *output)
+t_rsa_key
+gen_rsa_key_on_primes(uint32_t prime1, uint32_t prime2, uint32_t pub_e)
 {
 	t_rsa_key key;
 
 	ft_bzero(&key, sizeof(t_rsa_key));
-	key.prime1 = get_rand_prime();
-//	ft_printf("%u\n", key.prime1);
-	key.prime2 = get_rand_prime();
-//	ft_printf("%u\n", key.prime2);
-//	key.prime1 = 3383235047;
-//	key.prime2 = 3360900689;
-	key.modulus =(uint64_t)key.prime1 * (uint64_t)key.prime2;
-//	ft_printf("key.modulus = %llu\n", key.modulus);
+	key.prime1 = prime1;
+	key.prime2 = prime2;
+	key.modulus = (uint64_t)key.prime1 * (uint64_t)key.prime2;
 	uint64_t eiler = (uint64_t)(key.prime1 - 1) * (uint64_t)(key.prime2 - 1);
-	key.public_exponent = 0x10001;
+	key.public_exponent = pub_e;
 	long euklid = 0;
 	extended_euclid(key.public_exponent, eiler, &euklid);
 	if (euklid < 0)
@@ -201,10 +197,14 @@ t_rsa_key gen_rsa(t_rsa_args *args, t_rsa_output *output)
 	key.exponent2 = key.private_exponent % (key.prime2 - 1);
 	key.coefficient = get_pow_remainder(key.prime2, key.prime1 - 2, key.prime1);
 	return (key);
+}
 
+t_rsa_key gen_rand_rsa(uint32_t pub_e)
+{
+	uint32_t prime1;
+	uint32_t prime2;
 
-//	int i = 5;
-//	i++;
-//	if (i < 4)
-//		return;
+	prime1 = get_rand_prime();
+	prime2 = get_rand_prime();
+	return (gen_rsa_key_on_primes(prime1, prime2, pub_e));
 }

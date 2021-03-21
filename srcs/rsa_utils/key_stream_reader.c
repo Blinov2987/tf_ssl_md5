@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   entrance_to_rsa.c                                  :+:      :+:    :+:   */
+/*   key_stream_reader.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 21:54:33 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/21 15:18:26 by gemerald         ###   ########.fr       */
+/*   Created: 2021/03/21 16:41:19 by gemerald          #+#    #+#             */
+/*   Updated: 2021/03/21 16:41:19 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "rsa.h"
 
-void		entrance_to_rsa(t_rsa_args *args)
+t_list  *read_der_form(int fd)
 {
-	t_rsa_output	output;
-	t_rsa_key key;
+	return (buffered_reader(fd));
+}
 
-	ft_bzero(&output, sizeof(t_crypt_output));
-	if (args->type == GEN_RSA) {
-	    key = gen_rand_rsa(65537);
-		rsa_private_pem_writer(&key, args);
-		int i = 0;
-		i++;
-	}
+t_list *read_pem_form(int fd)
+{
+	t_list *pem;
+
+	pem = buffered_reader(fd);
 }
