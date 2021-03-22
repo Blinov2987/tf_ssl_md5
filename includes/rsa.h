@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:25:22 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/21 16:15:05 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/22 20:01:06 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ t_asn convert_key_to_asn(void *mem, size_t size);
 t_list *collect_mem_to_output(t_asn asn[], size_t asn_size);
 t_rsa_key gen_rand_rsa(uint32_t pub_e);
 int 	rsa_priv_checker(t_rsa_key *key);
+t_list 	*des_hiding(t_list *der);
+void 	rsa_key_stream_write(int fd, t_list *key_der);
+void 	rsa_private_pem_des_writer(t_rsa_key *key, t_rsa_args *args);
 
 
 #endif

@@ -19,13 +19,14 @@ t_list			*get_pass_stdin(void)
 	char	confirmbuf[1024];
 	t_list	*pass_phrase;
 
+	//RPP_REQUIRE_TTY
 	ft_bzero(passbuf, 1024);
 	ft_bzero(confirmbuf, 1024);
 	if (readpassphrase("enter des encryption password:",
-			passbuf, 1024, RPP_REQUIRE_TTY) == NULL)
+			passbuf, 1024, RPP_ECHO_ON) == NULL)
 		return (NULL);
 	if (readpassphrase("Verifying - enter des encryption password:",
-			confirmbuf, 1024, RPP_REQUIRE_TTY) == NULL)
+			confirmbuf, 1024, RPP_ECHO_ON) == NULL)
 		return (NULL);
 	if (ft_strcmp(passbuf, confirmbuf))
 	{

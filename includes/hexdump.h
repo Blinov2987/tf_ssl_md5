@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   entrance_to_rsa.c                                  :+:      :+:    :+:   */
+/*   hexdump.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 21:54:33 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/22 20:23:50 by gemerald         ###   ########.fr       */
+/*   Created: 2021/03/22 20:58:51 by gemerald          #+#    #+#             */
+/*   Updated: 2021/03/22 21:01:02 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ssl.h"
-#include "rsa.h"
+#ifndef FT_SSL_HEXDUMP_H
+#define FT_SSL_HEXDUMP_H
 
-void		entrance_to_rsa(t_rsa_args *args)
-{
-	t_rsa_output	output;
-	t_rsa_key key;
+static const char g_sym[] = {
+	'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a',
+	'b', 'c', 'd', 'e', 'f'
+};
 
-	ft_bzero(&output, sizeof(t_crypt_output));
-	if (args->type == GEN_RSA) {
-	    key = gen_rand_rsa(65537);
-		rsa_private_pem_des_writer(&key, args);
-		int i = 0;
-		i++;
-	}
-}
+#endif

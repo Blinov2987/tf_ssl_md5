@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   entrance_to_rsa.c                                  :+:      :+:    :+:   */
+/*   ft_del_simple_list.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 21:54:33 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/22 20:23:50 by gemerald         ###   ########.fr       */
+/*   Created: 2021/03/22 20:39:27 by gemerald          #+#    #+#             */
+/*   Updated: 2021/03/22 20:39:27 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ssl.h"
-#include "rsa.h"
+#include "libft.h"
 
-void		entrance_to_rsa(t_rsa_args *args)
+static void		free_list(void *mem, size_t size)
 {
-	t_rsa_output	output;
-	t_rsa_key key;
-
-	ft_bzero(&output, sizeof(t_crypt_output));
-	if (args->type == GEN_RSA) {
-	    key = gen_rand_rsa(65537);
-		rsa_private_pem_des_writer(&key, args);
-		int i = 0;
-		i++;
+	if (!size)
+		size++;
+	if (mem)
+	{
+		free(mem);
+		mem = NULL;
 	}
+}
+
+void			ft_del_simple_list(t_list **begin)
+{
+	ft_lstdel(begin, &free_list);
 }

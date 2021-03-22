@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:58:12 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/21 15:18:26 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/22 19:47:47 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void 	rsa_public_pem_writer(t_rsa_key *key, t_rsa_args *args)
 	pem = base64_enc(der->content, der->content_size);
 	rsa_key_stream_write(fd, pem);
 	ft_putendl_fd(RSA_PUB_END, fd);
-	ft_lst_free(&der);
-	ft_lst_free(&pem);
+	ft_del_simple_list(&der);
+	ft_del_simple_list(&pem);
 }
 
 void 	rsa_private_pem_writer(t_rsa_key *key, t_rsa_args *args)
@@ -47,11 +47,11 @@ void 	rsa_private_pem_writer(t_rsa_key *key, t_rsa_args *args)
 	fd = 1;
 	der = NULL;
 	pem = NULL;
-	ft_putendl_fd(RSA_PRIV_START, fd);
 	der = get_priv_der_form(key);
+	ft_putendl_fd(RSA_PRIV_START, fd);
 	pem = base64_enc(der->content, der->content_size);
 	rsa_key_stream_write(fd, pem);
 	ft_putendl_fd(RSA_PRIV_END, fd);
-	ft_lst_free(&der);
-	ft_lst_free(&pem);
+	ft_del_simple_list(&der);
+	ft_del_simple_list(&pem);
 }

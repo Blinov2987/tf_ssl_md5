@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 16:41:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/21 16:48:02 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/22 19:42:22 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_list *cut_start_end(t_list **pem, size_t diff, size_t off)
 
 	new_size = (*pem)->content_size - diff;
 	new_mem = (uint8_t *)ft_safe_memalloc(new_size, "cut_priv");
-	ft_mem_copy(new_mem, (&((uint8_t *)(*pem)->content)[off], new_size);
+	ft_mem_copy(new_mem, (&((uint8_t *)(*pem)->content)[off]), new_size);
 	free((*pem)->content);
 	(*pem)->content = new_mem;
 	(*pem)->content_size = new_size;

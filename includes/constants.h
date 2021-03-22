@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 20:51:38 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/09 22:25:11 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/21 16:48:02 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 # define BASE64_FLAGS "deio"
 # define DES_FLAGS "adeikopsv"
 # define USAGE_STRING "usage: ft_ssl command [command opts] [command args]"
-# define STD_COMMANDS "Standard commands:\n"
+# define STD_COMMANDS "Standard commands:\ngenrsa\nrsa\nrsautl\n"
 # define DIGEST_COMMANDS "Message Digest commands:\nmd5\nsha256\nsha512\n"
 # define CIPHER_COMMANDS_0 "Cipher commands:\nbase64\ndes\ndes-ecb\ndes-cbc"
 # define CIPHER_COMMANDS_1 "des-pcbc\ndes-ofb\ndes-cfb\ndes-ctr"

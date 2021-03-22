@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/27 12:25:53 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/22 20:42:08 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,7 @@ void			print_base64_stdout(int fd, uint8_t *mem, size_t size);
 
 void			free_output(t_output *output);
 void			free_list(void *mem, size_t size);
+void			ft_del_simple_list(t_list **begin);
+void 			print_hex_dump(t_list *mem);
 
 #endif
