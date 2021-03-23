@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/22 20:42:08 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/23 19:07:52 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,10 @@ t_list			*get_random_bytes(void);
 void			fill_random_values(t_des_args *args);
 void			get_salt_from_content(t_des_args *args, t_crypt_output *output);
 
-void			rsa_branch(t_cmd_type cmd, int ac, char **av);
+void			split_on_rsa(t_cmd_type cmd, int ac, char **av);
 void			entrance_to_rsa(t_rsa_args *args);
+void			entrance_to_rsa_utl(t_rsa_args *args);
+void			entrance_to_gen_rsa(t_rsa_args *args);
 
 void			print_output(t_args *args, t_output *output);
 void			ft_print_by_size(char *str, size_t size, int fd);

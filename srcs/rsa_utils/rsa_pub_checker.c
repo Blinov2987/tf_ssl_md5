@@ -33,4 +33,5 @@ int rsa_pub_checker(t_list *pub_key)
 	if (key_mem[0] != 0x30 || ft_memcmp(&key_mem[seq_start],
 			g_pub_key_version, 16))
 		return (FALSE);
+	return (TRUE);
 }

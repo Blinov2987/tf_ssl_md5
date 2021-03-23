@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 10:48:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/10 21:54:25 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/23 19:11:44 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,8 @@ t_args				*take_hash_args(int ac, char **av);
 t_base64_args		*take_base64_args(int ac, char **av);
 t_des_args			*take_des_args(int ac, char **av);
 t_rsa_args			*take_rsa_args(int ac, char **av);
+t_rsa_args			*take_gen_rsa_args(int ac, char **av);
+t_rsa_args			*take_rsa_utl_args(int ac, char **av);
 int					take_command(char *command, t_args *args);
 int					validate_args(t_args **args);
 int					validate_args_base64(t_base64_args **args);

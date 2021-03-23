@@ -102,19 +102,41 @@ int		miller_rabin_cycle(uint32_t val, int k, uint32_t t, uint32_t s)
 		x = get_pow_remainder(x, t, val);
 		if (x == 1 || x == val - 1)
 		{
-//			write(1, "+", 1);
+			write(2, "+", 1);
 			continue;
 		}
 		if (!miller_rabin_step(s, x, val))
 			return (FALSE);
 		if (x != val - 1)
 			return FALSE;
-//		write(1, "+", 1);
+		write(2, "+", 1);
 	}
 	return (val);
 }
 
-int 	miller_rabin(uint32_t val, int k)
+int		miller_rabin_silent_cycle(uint32_t val, int k, uint32_t t, uint32_t s)
+{
+	int i;
+	uint32_t x;
+
+	i = -1;
+	while (++i < k)
+	{
+		x = get_rand_uint(val);
+		x = get_pow_remainder(x, t, val);
+		if (x == 1 || x == val - 1)
+		{
+			continue;
+		}
+		if (!miller_rabin_step(s, x, val))
+			return (FALSE);
+		if (x != val - 1)
+			return FALSE;
+	}
+	return (val);
+}
+
+int 	miller_rabin(uint32_t val, int k, uint8_t is_silent)
 {
 	uint32_t t;
 	uint32_t s;
@@ -130,7 +152,10 @@ int 	miller_rabin(uint32_t val, int k)
 		t /= 2;
 		s += 1;
 	}
-	return (miller_rabin_cycle(val, k, t, s));
+	if (is_silent)
+		return (miller_rabin_silent_cycle(val, k, t, s));
+	else
+		return (miller_rabin_cycle(val, k, t, s));
 }
 
 uint32_t  get_rand_prime(void)
@@ -142,11 +167,11 @@ uint32_t  get_rand_prime(void)
 	{
 		prime = 0;
 		prime = get_rand_uint(prime);
-		prime = miller_rabin(prime, 5);
-//		if (!prime)
-//			write(1, ".", 1);
+		prime = miller_rabin(prime, 5, 0);
+		if (!prime)
+			write(2, ".", 1);
 	}
-//	write(1, "\n", 1);
+	write(2, "\n", 1);
 	return (prime);
 }
 

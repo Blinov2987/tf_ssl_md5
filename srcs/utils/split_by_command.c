@@ -88,5 +88,5 @@ void		split_by_commands(int ac, char **av)
 	if (cmd.type == DES_COMMAND || cmd.type == DES3_COMMAND)
 		des_branch(cmd, ac, av);
 	if (cmd.type == RSA || cmd.type == RSAUTL || cmd.type == GEN_RSA)
-		rsa_branch(cmd, ac, av);
+		split_on_rsa(cmd, ac, av);
 }

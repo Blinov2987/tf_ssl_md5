@@ -6,17 +6,39 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:25:22 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/22 20:01:06 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/23 21:24:02 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_SSL_DES_RSA_H
-#define FT_SSL_DES_RSA_H
+# define FT_SSL_DES_RSA_H
+# define IN 0
+# define OUT 1
+# define PUBIN 2
+# define PUBOUT 3
+# define OUTFORM 4
+# define PASSOUT 5
+# define DES_RSA 6
+# define TEXT 7
+# define NOOUT 8
+# define MODULUS 9
+# define CHECK 10
+# define INFORM 11
+# define PASSIN 12
+# define INKEY 3
+# define ENCRYPT 4
+# define DECRYPT_UTL 5
+# define HEXDUMP 6
+
 
 static const char*	g_rsa_flags[] = {
 	"inform", "outform", "in", "i", "passin", "out", "o",
 	"passout", "des", "text", "noout", "modulus", "check",
-	"pubin", "pubout", "inkey", "encrypt", "decrypt", "hexdump"
+	"pubin", "pubout"
+};
+
+static const char*	g_rsa_utl_flags[] = {
+		"in", "i", "out", "o", "pubin", "inkey", "encrypt", "decrypt", "hexdump"
 };
 
 static const uint8_t g_der_bit_string[] = {
@@ -69,9 +91,12 @@ t_asn convert_key_to_asn(void *mem, size_t size);
 t_list *collect_mem_to_output(t_asn asn[], size_t asn_size);
 t_rsa_key gen_rand_rsa(uint32_t pub_e);
 int 	rsa_priv_checker(t_rsa_key *key);
+int 	miller_rabin(uint32_t val, int k, uint8_t is_silent);
 t_list 	*des_hiding(t_list *der);
 void 	rsa_key_stream_write(int fd, t_list *key_der);
 void 	rsa_private_pem_des_writer(t_rsa_key *key, t_rsa_args *args);
+int				contains_rsa_arg(const char *args_table[],
+		size_t table_size, char *str);
 
 
 #endif
