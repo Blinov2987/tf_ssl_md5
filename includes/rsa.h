@@ -6,12 +6,15 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:25:22 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/23 21:24:02 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/24 19:46:13 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_SSL_DES_RSA_H
 # define FT_SSL_DES_RSA_H
+
+#include "output.h"
+
 # define IN 0
 # define OUT 1
 # define PUBIN 2
@@ -86,7 +89,6 @@ t_rsa_key
 gen_rsa_key_on_primes(uint32_t prime1, uint32_t prime2, uint32_t pub_e);
 t_list *get_priv_der_form(t_rsa_key *key);
 t_list *get_pub_der_form(t_rsa_key *key);
-void 	rsa_private_pem_writer(t_rsa_key *key, t_rsa_args *args);
 t_asn convert_key_to_asn(void *mem, size_t size);
 t_list *collect_mem_to_output(t_asn asn[], size_t asn_size);
 t_rsa_key gen_rand_rsa(uint32_t pub_e);
@@ -97,6 +99,6 @@ void 	rsa_key_stream_write(int fd, t_list *key_der);
 void 	rsa_private_pem_des_writer(t_rsa_key *key, t_rsa_args *args);
 int				contains_rsa_arg(const char *args_table[],
 		size_t table_size, char *str);
-
+int		get_out_fd(t_rsa_args *args);
 
 #endif

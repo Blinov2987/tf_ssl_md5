@@ -26,7 +26,7 @@ t_list *get_pub_der_form(t_rsa_key *key)
 	final_der = (t_list *)ft_safe_memalloc(sizeof(t_list), "pub_der");
 	final_der->content_size = 20 + der->content_size;
 	final_der->content = ft_safe_memalloc(final_der->content_size, "pub_der");
-	ft_mem_copy(final_der->content, g_der_bit_string, 20);
+	ft_mem_copy(final_der->content, (void *)g_der_bit_string, 20);
 	ft_mem_copy(&((uint8_t *)final_der->content)[20], der->content, der->content_size);
 	free(der->content);
 	free(der);

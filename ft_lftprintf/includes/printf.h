@@ -82,5 +82,6 @@ int				find_decor(const char **p);
 void			start(char *str, int flag);
 int				ft_fprintf(char *file, const char *format, ...);
 int				ft_vprintf(const char *format, va_list ap);
+int				ft_sprintf(int fd, const char *format, ...);
 
 #endif

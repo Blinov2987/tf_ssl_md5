@@ -231,5 +231,6 @@ t_rsa_key gen_rand_rsa(uint32_t pub_e)
 
 	prime1 = get_rand_prime();
 	prime2 = get_rand_prime();
+	write(2, "e is 65537 (0x10001)\n", 21);
 	return (gen_rsa_key_on_primes(prime1, prime2, pub_e));
 }

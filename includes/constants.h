@@ -48,5 +48,7 @@
 # define RSA_PRIV_END "-----END RSA PRIVATE KEY-----"
 # define RSA_PUB_START "-----BEGIN PUBLIC KEY-----"
 # define RSA_PUB_END "-----END PUBLIC KEY-----"
+# define PROC_TYPE "Proc-Type: 4,ENCRYPTED"
+# define DEK_INFO "DEK-Info: DES-CBC,"
 
 #endif

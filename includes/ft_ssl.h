@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/23 19:07:52 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/24 21:32:18 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,13 @@ void			free_output(t_output *output);
 void			free_list(void *mem, size_t size);
 void			ft_del_simple_list(t_list **begin);
 void 			print_hex_dump(t_list *mem);
+void			get_pem_priv_form(t_rsa_args *args, t_rsa_output *out);
+void			get_pem_pub_form(t_rsa_args *args, t_rsa_output *out);
+void 			rsa_pem_writer(t_rsa_args *args, t_rsa_output *out, int fd);
+void 			rsa_public_pem_writer(t_rsa_args *args, t_rsa_output *out);
+void			free_rsa_out(t_rsa_output *output);
+void			free_rsa_args(t_rsa_args **args);
+void 	key_text_print(t_rsa_args *args, t_rsa_output *out, int fd);
+void 			modulus_print(t_rsa_output *out, int fd);
 
 #endif

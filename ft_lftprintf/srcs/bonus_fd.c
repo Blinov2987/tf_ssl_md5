@@ -12,6 +12,24 @@
 
 #include "printf.h"
 
+int			ft_sprintf(int fd, const char *format, ...)
+{
+	va_list			ap;
+	int				*conv;
+	int				read_symbols;
+
+	if (!format || !*format)
+		return (0);
+	conv = ft_new_integer_list(8);
+	conv[7] = fd;
+	va_start(ap, format);
+	read_symbols = format_str(format, ap, &conv, 0);
+	va_end(ap);
+	free(conv);
+	conv = NULL;
+	return (read_symbols);
+}
+
 int			ft_fprintf(char *file, const char *format, ...)
 {
 	va_list			ap;
