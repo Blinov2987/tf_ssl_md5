@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 19:18:51 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/22 21:29:18 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/25 22:41:58 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,32 @@ void 	rsa_private_pem_des_writer(t_rsa_key *key, t_rsa_args *args)
 	ft_putchar('\n');
 	ft_del_simple_list(&der);
 	ft_del_simple_list(&pem);
+}
+
+int des_showing(t_rsa_args *args, t_rsa_output *out)
+{
+	t_des_args des_args;
+
+	ft_bzero(&des_args, sizeof(t_des_args));
+	des_args.type = DES_COMMAND;
+	des_args.algo = CBC;
+	des_args.salt = out->salt_vector;
+	des_args.flag_d = 1;
+	if (args->pass_in)
+	{
+		des_args.pass_in_ascii = buffered_file_reader(args->pass_in);
+		if (!des_args.pass_in_ascii)
+			return (FALSE);
+	}
+	else
+		des_args.pass_in_ascii = get_pass_stdin();
+	des_args.key_vector = init_key_vector(&des_args);
+	pbkfd(&des_args, &des_args.key_vector);
+	des_args.key_vector.vector = take_uint64_from_uint8(des_args.salt->content);
+	out->der = general_cipher(out->raw_key->content, out->raw_key->content_size, &des_args);
+	free(des_args.key_vector.keys);
+	ft_del_simple_list(&des_args.pass_in_ascii);
+	return (TRUE);
 }
 
 t_list 	*des_hiding(t_list *der)

@@ -40,10 +40,10 @@ t_list	*base64_dec(void *mem, size_t size)
 	rounds = size;
 	while (((uint8_t *)mem)[--rounds] == 64)
 		offset++;
-	result = (t_list *)ft_safe_memalloc(sizeof(t_list), "base64_enc");
+	result = (t_list *)ft_safe_memalloc(sizeof(t_list), "base64_dec");
 	rounds = size / 4;
 	result->content_size = (3 * rounds) - offset;
-	result->content = ft_safe_memalloc(result->content_size, "base64_enc");
+	result->content = ft_safe_memalloc(result->content_size, "base64_dec");
 	base64_dec_wrap(mem, offset, result);
 	return (result);
 }

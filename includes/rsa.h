@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:25:22 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/24 19:46:13 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/25 21:14:38 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,7 @@ void 	rsa_private_pem_des_writer(t_rsa_key *key, t_rsa_args *args);
 int				contains_rsa_arg(const char *args_table[],
 		size_t table_size, char *str);
 int		get_out_fd(t_rsa_args *args);
+t_list *read_pem_form(t_list *pem);
+t_list *cut_start_end(t_list **pem, size_t diff, size_t off);
 
 #endif

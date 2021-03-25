@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:55:35 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/21 20:00:17 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/25 23:02:37 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_rsa_key convert_der_to_priv_key(t_list *der)
 	ft_bzero(&key, sizeof(t_rsa_key));
 	ft_bzero(nums, sizeof(uint64_t) * 9);
 	mem = (uint8_t *)der->content;
-	if (mem[0] != 30 || mem[1] != der->content_size - 2)
+	if (mem[0] != 0x30 || mem[1] != der->content_size - 2)
 		return (key);
 	i = -1;
 	cur_ind = 2;

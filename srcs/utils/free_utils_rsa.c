@@ -43,6 +43,7 @@ void		free_rsa_out(t_rsa_output *output)
 	ft_lstdel(&output->der, &free_list);
 	ft_lstdel(&output->pem, &free_list);
 	ft_lstdel(&output->salt_vector, &free_list);
+	ft_lstdel(&output->raw_key, &free_list);
 	ft_lstdel(&output->mem, &free_list);
 	ft_lstdel(&output->output_stream, &free_list);
 }

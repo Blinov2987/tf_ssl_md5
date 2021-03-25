@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 19:01:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/24 18:59:54 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/25 20:05:05 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct	s_rsa_output
 	t_list		*der;
 	t_list		*pem;
 	t_list		*salt_vector;
+	t_list		*raw_key;
 	t_list		*mem;
 	t_list		*output_stream;
 	t_rsa_key	key;

@@ -58,6 +58,7 @@ int				contains_rsa_arg(const char *args_table[],
 	{
 		if (!ft_strcmp(args_table[i], str))
 			return (i);
+		i++;
 	}
 	return (-1);
 }

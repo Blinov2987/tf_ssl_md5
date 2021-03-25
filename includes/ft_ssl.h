@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/24 21:32:18 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/25 21:44:26 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,5 +132,9 @@ void			free_rsa_out(t_rsa_output *output);
 void			free_rsa_args(t_rsa_args **args);
 void 	key_text_print(t_rsa_args *args, t_rsa_output *out, int fd);
 void 			modulus_print(t_rsa_output *out, int fd);
+int 	raw_key_convert_to_rsa_key(t_rsa_args *args, t_rsa_output *output);
+void		get_8byte_from_ascii(t_list *ascii);
+int des_showing(t_rsa_args *args, t_rsa_output *out);
+t_rsa_key convert_der_to_priv_key(t_list *der);
 
 #endif
