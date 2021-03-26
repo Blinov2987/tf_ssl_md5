@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:25:22 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/25 21:14:38 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/26 21:09:27 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,14 @@ t_list *collect_mem_to_output(t_asn asn[], size_t asn_size);
 t_rsa_key gen_rand_rsa(uint32_t pub_e);
 int 	rsa_priv_checker(t_rsa_key *key);
 int 	miller_rabin(uint32_t val, int k, uint8_t is_silent);
-t_list 	*des_hiding(t_list *der);
 void 	rsa_key_stream_write(int fd, t_list *key_der);
 void 	rsa_private_pem_des_writer(t_rsa_key *key, t_rsa_args *args);
 int				contains_rsa_arg(const char *args_table[],
 		size_t table_size, char *str);
 int		get_out_fd(t_rsa_args *args);
-t_list *read_pem_form(t_list *pem);
-t_list *cut_start_end(t_list **pem, size_t diff, size_t off);
+int cut_start_end(t_list **pem, size_t diff, size_t off);
+int 	rsa_priv_checker(t_rsa_key *key);
+t_rsa_key convert_der_to_pub_key(t_list *der);
+int rsa_pub_checker(t_list *pub_key);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:58:12 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/24 20:05:29 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/26 18:45:57 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void 	rsa_pem_writer(t_rsa_args *args, t_rsa_output *out, int fd)
 	t_list *pem;
 
 	pem = out->pem;
-	ft_putendl_fd(pem->content, fd);
+	ft_putstr_fd(pem->content, fd);
 	pem = pem->next;
 	if (args->des)
 	{
@@ -67,10 +67,10 @@ void 	rsa_pem_writer(t_rsa_args *args, t_rsa_output *out, int fd)
 		ft_putstr_fd(pem->content, fd);
 		pem = pem->next;
 		print_hex(pem->content, 8, fd);
-		ft_putendl_fd("\n", fd);
+		ft_putstr_fd("\n\n", fd);
 		pem = pem->next;
 	}
 	rsa_key_stream_write(fd, pem);
 	pem = pem->next;
-	ft_putendl_fd(pem->content, fd);
+	ft_putstr_fd(pem->content, fd);
 }

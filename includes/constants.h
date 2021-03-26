@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 20:51:38 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/21 16:48:02 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/26 18:49:15 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,12 @@
 # define CIPHER_COMMANDS_3 "des3-pcbc\ndes3-ofb\ndes3-cfb\ndes3-ctr"
 # define RSA_PRIV_START "-----BEGIN RSA PRIVATE KEY-----\n"
 # define RSA_PRIV_END "\n-----END RSA PRIVATE KEY-----"
+# define RSA_PRIV_END_OUT "-----END RSA PRIVATE KEY-----\n"
 # define RSA_PUB_START "-----BEGIN PUBLIC KEY-----\n"
 # define RSA_PUB_END "\n-----END PUBLIC KEY-----"
+# define RSA_PUB_END_OUT "-----END PUBLIC KEY-----\n"
 # define PROC_TYPE "Proc-Type: 4,ENCRYPTED"
 # define DEK_INFO "DEK-Info: DES-CBC,"
+# define ENCR_KEY "Proc-Type: 4,ENCRYPTED\nDEK-Info: DES-CBC,"
 
 #endif

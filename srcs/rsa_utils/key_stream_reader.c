@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 16:41:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/25 20:41:10 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/26 19:44:54 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t get_end_offset(uint8_t *mem, size_t size)
 	return (offset);
 }
 
-t_list *cut_start_end(t_list **pem, size_t diff, size_t off)
+int cut_start_end(t_list **pem, size_t diff, size_t off)
 {
 	uint8_t *new_mem;
 	size_t	new_size;
@@ -44,25 +44,22 @@ t_list *cut_start_end(t_list **pem, size_t diff, size_t off)
 	free((*pem)->content);
 	(*pem)->content = new_mem;
 	(*pem)->content_size = new_size;
-	return (*pem);
+	return (TRUE);
 }
 
-t_list *read_pem_form(t_list *pem)
+int read_pem_form(t_list *pem, t_rsa_output *output)
 {
 	size_t endl_offset;
 
 	if (pem->content_size < 50)
-	{
-		ft_lst_free(&pem);
-		return (NULL);
-	}
+		return (FALSE);
 	endl_offset = get_end_offset(pem->content, pem->content_size);
 	if ((!ft_memcmp(pem->content, RSA_PRIV_START, 32) && (
 			!ft_memcmp(&((uint8_t *)pem->content)[(pem->content_size - 30
 			- endl_offset)],
 					RSA_PRIV_END, 30))))
 	{
-		ft_lstadd_back(&pem, ft_lstnew("PRIV", 5));
+		output->is_private_key_found = 1;
 		return (cut_start_end(&pem, 62 + endl_offset, 32));
 	}
 	else if ((!ft_memcmp(pem->content, RSA_PUB_START, 27) && (
@@ -72,5 +69,5 @@ t_list *read_pem_form(t_list *pem)
 	{
 		return (cut_start_end(&pem, 52 + endl_offset, 27));
 	}
-	return (NULL);
+	return (FALSE);
 }

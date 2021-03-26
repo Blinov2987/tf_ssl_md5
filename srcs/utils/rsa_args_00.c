@@ -91,7 +91,7 @@ void			save_rsa_state(uint8_t saved_args[], t_rsa_args *args)
 	saved_args[MODULUS] = args->modulus;
 	saved_args[CHECK] = args->check;
 	saved_args[INFORM] = args->inform;
-	saved_args[PASSIN] = args->outform;
+	saved_args[PASSIN] = args->passin;
 }
 
 void			pars_args_rsa(int ac, char **av,

@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 21:54:33 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/25 21:02:58 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/26 20:27:20 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,18 @@ static void rsa_printer(t_rsa_args *args, t_rsa_output *output)
 	if (args->modulus)
 		modulus_print(output, fd);
 	if (args->check)
-		ft_putendl_fd("RSA key ok", fd);
+	{
+		if (rsa_priv_checker(&output->key))
+			ft_putendl_fd("RSA key ok", fd);
+		else
+			return ;
+	}
 	if (!args->noout)
 	{
+		if (!args->pubout && !args->pubin)
+			get_pem_priv_form(args, output);
+		else
+			get_pem_pub_form(args, output);
 		ft_putendl_fd("writing RSA key", 2);
 		rsa_pem_writer(args, output, fd);
 	}
@@ -39,7 +48,8 @@ int		get_key_from_user(t_rsa_args *args, t_rsa_output *output)
 		output->raw_key = buffered_file_reader(args->input_files);
 	else
 		output->raw_key = buffered_reader(1);
-	output->raw_key = read_pem_form(output->raw_key);
+	if (!(read_pem_form(output->raw_key, output)))
+		return (FALSE);
 	if (!output->raw_key)
 	{
 		ft_putendl_fd("unable to load Key", 2);
@@ -47,26 +57,30 @@ int		get_key_from_user(t_rsa_args *args, t_rsa_output *output)
 	}
 	if (!raw_key_convert_to_rsa_key(args, output))
 		return (FALSE);
+	return (TRUE);
 }
 
 void		entrance_to_rsa(t_rsa_args *args)
 {
 	t_rsa_output	output;
 
-	if (args->pubin && args->check)
-	{
-		ft_putendl_fd("Only private keys can be checked", 2);
-		return ;
-	}
 	ft_bzero(&output, sizeof(t_rsa_output));
-	if (get_key_from_user(args, &output))
+	if (!get_key_from_user(args, &output))
 	{
 		free_rsa_out(&output);
 		return ;
 	}
-	if (args->check)
+	if ((args->pubin && args->check) || (args->check && !output.is_private_key_found))
 	{
-
+		ft_putendl_fd("Only private keys can be checked", 2);
+		return ;
 	}
+	if (output.is_private_key_found && args->pubin)
+	{
+		ft_putendl_fd("unable to load Public Key", 2);
+		return ;
+	}
+	ft_del_simple_list(&output.der);
+	rsa_printer(args, &output);
 	free_rsa_out(&output);
 }

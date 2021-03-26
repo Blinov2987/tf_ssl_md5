@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 18:55:35 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/25 23:02:37 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/26 21:16:35 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,22 @@
 uint64_t  get_field(uint8_t *mem, size_t size)
 {
 	uint64_t result;
-	uint8_t part[8];
+	uint8_t part[16];
 	size_t border;
 	size_t i;
 	size_t j;
 
 	result = 0;
-	ft_bzero(part, 8);
-	if (mem[0] != 2)
-		return 0;
+	ft_bzero(part, 16);
 	border = mem[1];
+	if (mem[0] != 2 || border > 16)
+		return 0;
 	i = 2;
-	j = 0;
+	j = border;
 	while (i < (2 + border) && i < size)
 	{
-		part[j] = mem[i];
+		part[--j] = mem[i];
 		i++;
-		j++;
 	}
 	result = *(uint64_t *)part;
 	return (result);
@@ -57,6 +56,22 @@ void 	fill_rsa_pub_key(uint64_t nums[], t_rsa_key *key)
 	key->public_exponent = nums[1];
 }
 
+t_rsa_key convert_der_to_pub_key(t_list *der)
+{
+	t_rsa_key key;
+	uint64_t nums[2];
+	uint8_t *mem;
+
+	ft_bzero(&key, sizeof(t_rsa_key));
+	ft_bzero(nums, sizeof(uint64_t) * 2);
+	mem = (uint8_t *)der->content;
+	if (!rsa_pub_checker(der))
+		return (key);
+	nums[0] = get_field(&mem[22], der->content_size);
+	nums[1] = get_field(&mem[24 + mem[23]], der->content_size);
+	fill_rsa_pub_key(nums, &key);
+}
+
 t_rsa_key convert_der_to_priv_key(t_list *der)
 {
 	t_rsa_key key;
@@ -75,11 +90,8 @@ t_rsa_key convert_der_to_priv_key(t_list *der)
 	while (++i < 9 && cur_ind < der->content_size)
 	{
 		nums[i] = get_field(&mem[cur_ind], der->content_size);
-		cur_ind += mem[cur_ind  + 1];
+		cur_ind += (mem[cur_ind  + 1] + 2);
 	}
-	if (i == 2)
-		fill_rsa_pub_key(nums, &key);
-	else
-		fill_rsa_priv_key(nums, &key);
+	fill_rsa_priv_key(nums, &key);
 	return (key);
 }

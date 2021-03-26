@@ -41,6 +41,7 @@ typedef struct	s_rsa_output
 	t_list		*raw_key;
 	t_list		*mem;
 	t_list		*output_stream;
+	uint8_t		is_private_key_found;
 	t_rsa_key	key;
 }				t_rsa_output;
 

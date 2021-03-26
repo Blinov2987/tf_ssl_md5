@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:17:46 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/25 21:44:26 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/26 19:26:54 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,5 +136,7 @@ int 	raw_key_convert_to_rsa_key(t_rsa_args *args, t_rsa_output *output);
 void		get_8byte_from_ascii(t_list *ascii);
 int des_showing(t_rsa_args *args, t_rsa_output *out);
 t_rsa_key convert_der_to_priv_key(t_list *der);
+int read_pem_form(t_list *pem, t_rsa_output *out);;
+int des_hiding(t_rsa_args *args, t_rsa_output *out);
 
 #endif

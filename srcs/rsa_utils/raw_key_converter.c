@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:03:11 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/25 22:51:12 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/26 20:40:12 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,33 +30,56 @@ void 	get_salt_from_raw(t_rsa_output *out)
 	get_8byte_from_ascii(out->salt_vector);
 }
 
-void 	cut_proc_type_on_raw(t_rsa_output *out)
+int 	verify_key_filling(t_rsa_output *out)
 {
+	if (out->is_private_key_found)
+	{
+		return (out->key.modulus && out->key.prime1 && out->key.prime2
+		&& out->key.public_exponent && out->key.private_exponent
+		&& out->key.exponent1 && out->key.exponent2 && out->key.coefficient);
+	}
+	else
+		return (out->key.modulus && out->key.public_exponent);
+}
 
+void 	decode_base64_key(t_rsa_output *output)
+{
+	t_list *raw;
+
+	in_base64_prism(output->raw_key->content,
+			&output->raw_key->content_size);
+	raw = base64_dec(output->raw_key->content,
+			output->raw_key->content_size);
+	ft_del_simple_list(&output->raw_key);
+	output->raw_key = raw;
 }
 
 int 	raw_key_convert_to_rsa_key(t_rsa_args *args, t_rsa_output *output)
 {
-	if ((!args->pubin && !output->raw_key->next)
+	if ((!args->pubin && !output->is_private_key_found)
 	|| output->raw_key->content_size < 42)
 		return priv_key_error();
-	if (!ft_memcmp("Proc-Type: 4,ENCRYPTED\nDEK-Info: DES-CBC,",
-			output->raw_key->content, 41))
+	if (!ft_memcmp(ENCR_KEY, output->raw_key->content, 41))
 	{
 		if (output->raw_key->content_size < 70)
 			return priv_key_error();
 		get_salt_from_raw(output);
 		cut_start_end(&output->raw_key, 59, 59);
-		in_base64_prism(output->raw_key->content,
-				&output->raw_key->content_size);
-		output->raw_key = base64_dec(output->raw_key->content,
-				output->raw_key->content_size);
-		if (!output->raw_key->content_size)
-			return priv_key_error();
+	}
+	decode_base64_key(output);
+	if (!output->raw_key->content_size)
+		return priv_key_error();
+	if (output->salt_vector)
+	{
 		if (!des_showing(args, output))
 			return priv_key_error();
-		output->key = convert_der_to_priv_key(output->der);
-		int i = 0;
-		i++;
 	}
+	else
+		output->der = ft_lstnew(output->raw_key->content,
+				output->raw_key->content_size);
+	if (output->is_private_key_found)
+		output->key = convert_der_to_priv_key(output->der);
+	else
+		output->key = convert_der_to_pub_key(output->der);
+	return (verify_key_filling(output));
 }

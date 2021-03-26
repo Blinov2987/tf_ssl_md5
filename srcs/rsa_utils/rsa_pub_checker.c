@@ -24,7 +24,7 @@ int rsa_pub_checker(t_list *pub_key)
 	seq_start = 1;
 	while (++seq_start < pub_key->content_size)
 	{
-		if (key_mem[seq_start] == 30)
+		if (key_mem[seq_start] == 0x30)
 			break ;
 	}
 	if (seq_start == pub_key->content_size
