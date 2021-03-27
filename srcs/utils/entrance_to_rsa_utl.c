@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 21:59:53 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/23 21:59:53 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 08:26:58 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@
 void		entrance_to_rsa_utl(t_rsa_args *args)
 {
 	t_rsa_output	output;
-	t_rsa_key key;
 
-	ft_bzero(&output, sizeof(t_crypt_output));
-	if (args->type == GEN_RSA) {
-		key = gen_rand_rsa(65537);
-		rsa_private_pem_des_writer(&key, args);
-		int i = 0;
-		i++;
+	ft_bzero(&output, sizeof(t_rsa_output));
+	if (!get_key_from_user(args, &output))
+	{
+		free_rsa_out(&output);
+		return ;
+	}
+	if (args->decrypt && output.is_private_key_found)
+	{
+		ft_putendl_fd("A private key is needed for this operation", 2);
+		free_rsa_out(&output);
+		return ;
 	}
 }

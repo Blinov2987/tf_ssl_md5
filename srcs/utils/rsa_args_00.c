@@ -131,5 +131,10 @@ t_rsa_args	*take_rsa_args(int ac, char **av)
 	i = 1;
 	while (++i < ac)
 		pars_args_rsa(ac, av, &i, args);
+	if (args->input_files)
+	{
+		args->in_key = args->input_files;
+		args->input_files = NULL;
+	}
 	return (args);
 }

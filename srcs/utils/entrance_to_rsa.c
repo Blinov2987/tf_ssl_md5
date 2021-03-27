@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 21:54:33 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/26 20:27:20 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 08:19:06 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ static void rsa_printer(t_rsa_args *args, t_rsa_output *output)
 
 int		get_key_from_user(t_rsa_args *args, t_rsa_output *output)
 {
-	if (args->input_files)
-		output->raw_key = buffered_file_reader(args->input_files);
+	if (args->in_key)
+		output->raw_key = buffered_file_reader(args->in_key);
 	else
 		output->raw_key = buffered_reader(1);
 	if (!(read_pem_form(output->raw_key, output)))

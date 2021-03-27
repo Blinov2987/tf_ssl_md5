@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 19:29:35 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/20 11:38:44 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 08:48:41 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ uint32_t get_rand_uint(uint32_t val)
 	return (rand);
 }
 
-int		get_pow_remainder(uint32_t x, uint32_t pow, uint32_t mod)
+uint64_t 		get_pow_remainder(uint64_t x, uint64_t pow, uint64_t mod)
 {
 	uint64_t rem;
 	uint64_t general_rem;

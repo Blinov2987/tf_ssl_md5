@@ -70,6 +70,7 @@ t_rsa_key convert_der_to_pub_key(t_list *der)
 	nums[0] = get_field(&mem[22], der->content_size);
 	nums[1] = get_field(&mem[24 + mem[23]], der->content_size);
 	fill_rsa_pub_key(nums, &key);
+	return (key);
 }
 
 t_rsa_key convert_der_to_priv_key(t_list *der)
