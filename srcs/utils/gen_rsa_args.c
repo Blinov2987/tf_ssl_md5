@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:08:04 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/23 21:56:22 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:44:06 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ void			pars_args_gen_rsa(int ac, char **av,
 						ft_strlen(av[*cur_pos]) + 1));
 }
 
-t_rsa_args	*take_gen_rsa_args(int ac, char **av)
+t_rsa_args		*take_gen_rsa_args(int ac, char **av)
 {
 	int				i;
-	t_rsa_args	*args;
+	t_rsa_args		*args;
 
 	args = ft_safe_memalloc(sizeof(t_rsa_args), "take_gen_rsa_args");
 	i = 1;

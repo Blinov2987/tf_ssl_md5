@@ -13,7 +13,7 @@
 #include "ft_ssl.h"
 #include "rsa.h"
 
-int 	rsa_priv_equ(t_rsa_key key1, t_rsa_key key2)
+int		rsa_priv_equ(t_rsa_key key1, t_rsa_key key2)
 {
 	return (key1.private_exponent == key2.private_exponent
 	&& key1.modulus == key2.modulus
@@ -22,11 +22,12 @@ int 	rsa_priv_equ(t_rsa_key key1, t_rsa_key key2)
 	&& key1.coefficient == key2.coefficient);
 }
 
-int 	rsa_priv_checker(t_rsa_key *key)
+int		rsa_priv_checker(t_rsa_key *key)
 {
 	t_rsa_key key2;
 
-	key2 = gen_rsa_key_on_primes(key->prime1, key->prime2, key->public_exponent);
+	key2 = gen_rsa_key_on_primes(key->prime1,
+			key->prime2, key->public_exponent);
 	if (!rsa_priv_equ(*key, key2))
 		return (FALSE);
 	return (TRUE);

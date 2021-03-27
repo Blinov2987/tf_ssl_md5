@@ -6,19 +6,19 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 20:59:16 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/24 21:33:00 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:27:15 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "rsa.h"
 
-void 			modulus_print(t_rsa_output *out, int fd)
+void			modulus_print(t_rsa_output *out, int fd)
 {
 	ft_sprintf(fd, "Modulus=%llX\n", out->key.modulus);
 }
 
-static void 	pub_printer(t_rsa_output *out, int fd)
+static void		pub_printer(t_rsa_output *out, int fd)
 {
 	ft_putendl_fd("Private-Key: (64 bit)", fd);
 	ft_sprintf(fd, "Modulus: %llu (%#llx)\n",
@@ -27,7 +27,7 @@ static void 	pub_printer(t_rsa_output *out, int fd)
 			out->key.public_exponent, out->key.public_exponent);
 }
 
-static void 	priv_printer(t_rsa_output *out, int fd)
+static void		priv_printer(t_rsa_output *out, int fd)
 {
 	ft_putendl_fd("Private-Key: (64 bit)", fd);
 	ft_sprintf(fd, "Modulus: %llu (%#llx)\n", out->key.modulus,
@@ -46,7 +46,7 @@ static void 	priv_printer(t_rsa_output *out, int fd)
 			out->key.coefficient);
 }
 
-void 	key_text_print(t_rsa_args *args, t_rsa_output *out, int fd)
+void			key_text_print(t_rsa_args *args, t_rsa_output *out, int fd)
 {
 	if (args->pubin)
 		pub_printer(out, fd);

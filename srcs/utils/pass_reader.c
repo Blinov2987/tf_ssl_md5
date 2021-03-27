@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 20:12:45 by gemerald          #+#    #+#             */
-/*   Updated: 2021/02/27 16:03:28 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:13:42 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ t_list			*get_pass_stdin(void)
 	char	confirmbuf[1024];
 	t_list	*pass_phrase;
 
-	//RPP_REQUIRE_TTY
 	ft_bzero(passbuf, 1024);
 	ft_bzero(confirmbuf, 1024);
 	if (readpassphrase("enter des encryption password:",
-			passbuf, 1024, RPP_ECHO_ON) == NULL)
+			passbuf, 1024, RPP_REQUIRE_TTY) == NULL)
 		return (NULL);
 	if (readpassphrase("Verifying - enter des encryption password:",
-			confirmbuf, 1024, RPP_ECHO_ON) == NULL)
+			confirmbuf, 1024, RPP_REQUIRE_TTY) == NULL)
 		return (NULL);
 	if (ft_strcmp(passbuf, confirmbuf))
 	{

@@ -13,8 +13,6 @@
 #ifndef FT_SSL_DES_OUTPUT_H
 # define FT_SSL_DES_OUTPUT_H
 
-# include "rsa.h"
-
 typedef struct	s_crypt_output
 {
 	t_list		*pointers_to_free;
@@ -32,18 +30,6 @@ typedef struct	s_output_streams
 	t_list		*file_stream;
 	t_list		*file_hash;
 }				t_output;
-
-typedef struct	s_rsa_output
-{
-	t_list		*der;
-	t_list		*pem;
-	t_list		*salt_vector;
-	t_list		*raw_key;
-	t_list		*mem;
-	t_list		*output_stream;
-	uint8_t		is_private_key_found;
-	t_rsa_key	key;
-}				t_rsa_output;
 
 void			free_crypt_output(t_crypt_output *output);
 

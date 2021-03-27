@@ -6,14 +6,14 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 21:54:33 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/27 08:19:06 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 18:03:15 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "rsa.h"
 
-static void rsa_printer(t_rsa_args *args, t_rsa_output *output)
+static void		rsa_printer(t_rsa_args *args, t_rsa_output *output)
 {
 	int fd;
 
@@ -42,7 +42,7 @@ static void rsa_printer(t_rsa_args *args, t_rsa_output *output)
 		close(fd);
 }
 
-int		get_key_from_user(t_rsa_args *args, t_rsa_output *output)
+int				get_key_from_user(t_rsa_args *args, t_rsa_output *output)
 {
 	if (args->in_key)
 		output->raw_key = buffered_file_reader(args->in_key);
@@ -60,7 +60,7 @@ int		get_key_from_user(t_rsa_args *args, t_rsa_output *output)
 	return (TRUE);
 }
 
-void		entrance_to_rsa(t_rsa_args *args)
+void			entrance_to_rsa(t_rsa_args *args)
 {
 	t_rsa_output	output;
 
@@ -70,7 +70,8 @@ void		entrance_to_rsa(t_rsa_args *args)
 		free_rsa_out(&output);
 		return ;
 	}
-	if ((args->pubin && args->check) || (args->check && !output.is_private_key_found))
+	if ((args->pubin && args->check) || (args->check
+	&& !output.is_private_key_found))
 	{
 		ft_putendl_fd("Only private keys can be checked", 2);
 		return ;

@@ -78,7 +78,7 @@ void			pars_args_rsa_utl(int ac, char **av,
 						ft_strlen(av[*cur_position]) + 1));
 }
 
-t_rsa_args	*take_rsa_utl_args(int ac, char **av)
+t_rsa_args		*take_rsa_utl_args(int ac, char **av)
 {
 	int			i;
 	t_rsa_args	*args;

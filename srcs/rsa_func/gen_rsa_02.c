@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_del_simple_list.c                               :+:      :+:    :+:   */
+/*   gen_rsa_02.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 20:39:27 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/22 20:39:27 by gemerald         ###   ########.fr       */
+/*   Created: 2021/03/27 17:07:54 by gemerald          #+#    #+#             */
+/*   Updated: 2021/03/27 17:14:37 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_ssl.h"
+#include "rsa.h"
 
-static void		free_list(void *mem, size_t size)
+int		miller_rabin_silent_cycle(uint32_t val, int k, uint32_t t, uint32_t s)
 {
-	if (!size)
-		size++;
-	if (mem)
+	int			i;
+	uint32_t	x;
+
+	i = -1;
+	while (++i < k)
 	{
-		free(mem);
-		mem = NULL;
+		x = get_rand_uint(val);
+		x = get_pow_remainder(x, t, val);
+		if (x == 1 || x == val - 1)
+		{
+			continue;
+		}
+		if (!miller_rabin_step(s, x, val))
+			return (FALSE);
+		if (x != val - 1)
+			return (FALSE);
 	}
-}
-
-void			ft_del_simple_list(t_list **begin)
-{
-	ft_lstdel(begin, &free_list);
+	return (val);
 }

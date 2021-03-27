@@ -13,10 +13,10 @@
 #include "ft_ssl.h"
 #include "rsa.h"
 
-int rsa_pub_checker(t_list *pub_key)
+int		rsa_pub_checker(t_list *pub_key)
 {
-	uint8_t *key_mem;
-	uint32_t seq_start;
+	uint8_t		*key_mem;
+	uint32_t	seq_start;
 
 	if (pub_key->content_size < 34)
 		return (FALSE);

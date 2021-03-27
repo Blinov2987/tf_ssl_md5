@@ -6,33 +6,21 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 20:51:28 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/22 21:28:51 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:23:46 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "hexdump.h"
+#include "rsa.h"
 
-void 	print_one_byte(uint8_t byte)
+void	print_one_byte(uint8_t byte, int fd)
 {
-	ft_putchar(g_sym[byte >> 4]);
-	ft_putchar(g_sym[byte & 0xf]);
+	ft_putchar_fd(g_sym[byte >> 4], fd);
+	ft_putchar_fd(g_sym[byte & 0xf], fd);
 }
 
-void 	print_byte_row(uint8_t *mem, size_t bound)
-{
-	size_t i;
-
-	i = 0;
-	while (i < 16 && i < bound)
-	{
-		print_one_byte(mem[i]);
-		ft_putchar(' ');
-		i++;
-	}
-}
-
-void	print_hex_row(uint8_t *mem, size_t bound)
+void	print_hex_row(uint8_t *mem, size_t bound, int fd)
 {
 	size_t i;
 
@@ -40,35 +28,35 @@ void	print_hex_row(uint8_t *mem, size_t bound)
 	while (i < 16 && i < bound)
 	{
 		if (mem[i] >= 0x20 && mem[i] <= 0x7e)
-			ft_putchar(mem[i]);
+			ft_putchar_fd(mem[i], fd);
 		else
-			ft_putchar('.');
+			ft_putchar_fd('.', fd);
 		i++;
 	}
 }
 
-void 	print_stage(uint32_t stage)
+void	print_stage(uint32_t stage, int fd)
 {
-	print_one_byte((stage & 0xff00) >> 8);
-	print_one_byte(stage & 0xff);
-	ft_putstr(" - ");
+	print_one_byte((stage & 0xff00) >> 8, fd);
+	print_one_byte(stage & 0xff, fd);
+	ft_putstr_fd(" - ", fd);
 }
 
-void 	print_border(size_t bound)
+void	print_border(size_t bound, int fd)
 {
 	int i;
 
 	if (bound >= 16)
-		ft_putstr("   ");
+		ft_putstr_fd("   ", fd);
 	else
 	{
 		i = ((16 - bound) * 3) + 3;
 		while (--i >= 0)
-			ft_putchar(' ');
+			ft_putchar_fd(' ', fd);
 	}
 }
 
-void 	print_hex_dump(t_list *mem)
+void	print_hex_dump(t_list *mem, int fd)
 {
 	uint32_t	stage;
 	size_t		i;
@@ -83,11 +71,11 @@ void 	print_hex_dump(t_list *mem)
 		bound = (long)mem->content_size - i;
 		if (bound <= 0)
 			break ;
-		print_stage(stage);
-		print_byte_row(&hex[i], bound);
-		print_border(bound);
-		print_hex_row(&hex[i], bound);
-		ft_putchar('\n');
+		print_stage(stage, fd);
+		print_byte_row(&hex[i], bound, fd);
+		print_border(bound, fd);
+		print_hex_row(&hex[i], bound, fd);
+		ft_putchar_fd('\n', fd);
 		stage += 0x10;
 		i += 16;
 	}

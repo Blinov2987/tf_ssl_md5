@@ -14,29 +14,11 @@
 #include "rsa.h"
 #include "base64.h"
 
-void 	rsa_key_stream_write(int fd, t_list *key_der)
+void	rsa_key_stream_write(int fd, t_list *key_der)
 {
 	out_base64_prism(key_der->content, &key_der->content_size);
 	print_base64_stdout(fd, key_der->content, key_der->content_size);
 }
-
-//void 	rsa_public_pem_writer(t_rsa_args *args, t_rsa_output *out)
-//{
-//	t_list *der;
-//	t_list *pem;
-//	int fd;
-//
-//	fd = 1;
-//	der = NULL;
-//	pem = NULL;
-//	ft_putendl_fd(RSA_PUB_START, fd);
-//	der = get_pub_der_form(key);
-//	pem = base64_enc(der->content, der->content_size);
-//	rsa_key_stream_write(fd, pem);
-//	ft_putendl_fd(RSA_PUB_END, fd);
-//	ft_del_simple_list(&der);
-//	ft_del_simple_list(&pem);
-//}
 
 int		get_out_fd(t_rsa_args *args)
 {
@@ -53,7 +35,7 @@ int		get_out_fd(t_rsa_args *args)
 	return (fd);
 }
 
-void 	rsa_pem_writer(t_rsa_args *args, t_rsa_output *out, int fd)
+void	rsa_pem_writer(t_rsa_args *args, t_rsa_output *out, int fd)
 {
 	t_list *pem;
 

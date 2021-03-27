@@ -6,13 +6,13 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:12:27 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/23 21:56:22 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:44:06 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 
-void 		rsa_utl_branch(t_cmd_type cmd, int ac, char **av)
+void	rsa_utl_branch(t_cmd_type cmd, int ac, char **av)
 {
 	t_rsa_args *args;
 
@@ -24,7 +24,7 @@ void 		rsa_utl_branch(t_cmd_type cmd, int ac, char **av)
 	free_rsa_args(&args);
 }
 
-void 		gen_rsa_branch(t_cmd_type cmd, int ac, char **av)
+void	gen_rsa_branch(t_cmd_type cmd, int ac, char **av)
 {
 	t_rsa_args *args;
 
@@ -36,7 +36,7 @@ void 		gen_rsa_branch(t_cmd_type cmd, int ac, char **av)
 	free_rsa_args(&args);
 }
 
-void 		rsa_branch(t_cmd_type cmd, int ac, char **av)
+void	rsa_branch(t_cmd_type cmd, int ac, char **av)
 {
 	t_rsa_args *args;
 
@@ -48,9 +48,8 @@ void 		rsa_branch(t_cmd_type cmd, int ac, char **av)
 	free_rsa_args(&args);
 }
 
-void		split_on_rsa(t_cmd_type cmd, int ac, char **av)
+void	split_on_rsa(t_cmd_type cmd, int ac, char **av)
 {
-
 	if (cmd.type == RSA)
 		rsa_branch(cmd, ac, av);
 	if (cmd.type == GEN_RSA)

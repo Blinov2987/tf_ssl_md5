@@ -6,17 +6,17 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 21:15:14 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/20 14:40:13 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:21:46 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "rsa.h"
 
-t_asn convert_key_to_asn(void *mem, size_t size)
+t_asn	convert_key_to_asn(void *mem, size_t size)
 {
-	uint64_t num;
-	t_asn asn;
+	uint64_t	num;
+	t_asn		asn;
 
 	ft_bzero(&asn, sizeof(asn));
 	ft_bzero(asn.mem, 16);
@@ -35,32 +35,13 @@ t_asn convert_key_to_asn(void *mem, size_t size)
 	return (asn);
 }
 
-//void* convert_asn_to_key(void *mem, size_t size)
-//{
-//	uint64_t num;
-//	uint8_t *byte;
-//	size_t over_flow_protect;
-//
-//	num = 0;
-//	over_flow_protect = size;
-//	byte = mem;
-//
-//	while (--size >= 0 && size < over_flow_protect)
-//	{
-//		num <<= 8;
-//		num = num | byte[size];
-//	}
-//	return &num;
-//}
-
-
-
-size_t get_sequence_size(t_asn asn[], size_t asn_size)
+size_t	get_sequence_size(t_asn asn[], size_t asn_size)
 {
-	size_t size;
-	int i = -1;
+	size_t	size;
+	int		i;
 
 	size = 2;
+	i = -1;
 	while (++i < asn_size && asn[i].size)
 	{
 		size += asn[i].size;
@@ -69,10 +50,10 @@ size_t get_sequence_size(t_asn asn[], size_t asn_size)
 	return (size);
 }
 
-void 	fill_der_chunk(uint8_t *mem, t_asn asn)
+void	fill_der_chunk(uint8_t *mem, t_asn asn)
 {
-	int asn_i;
-	size_t mem_i;
+	int		asn_i;
+	size_t	mem_i;
 
 	mem_i = 2;
 	asn_i = asn.size;
@@ -87,13 +68,13 @@ void 	fill_der_chunk(uint8_t *mem, t_asn asn)
 	}
 }
 
-t_list *collect_mem_to_output(t_asn asn[], size_t asn_size)
+t_list	*collect_mem_to_output(t_asn asn[], size_t asn_size)
 {
-	t_list *mem;
-	size_t size;
-	uint8_t *mem_ptr;
-	size_t asn_i;
-	size_t mem_i;
+	t_list	*mem;
+	size_t	size;
+	uint8_t	*mem_ptr;
+	size_t	asn_i;
+	size_t	mem_i;
 
 	asn_i = 0;
 	size = get_sequence_size(asn, asn_size);
@@ -113,17 +94,16 @@ t_list *collect_mem_to_output(t_asn asn[], size_t asn_size)
 	return (mem);
 }
 
-t_list *get_priv_der_form(t_rsa_key *key)
+t_list	*get_priv_der_form(t_rsa_key *key)
 {
-	t_list *der;
-	t_asn asn[9];
+	t_list	*der;
+	t_asn	asn[9];
 
 	ft_bzero(asn, (sizeof(t_asn) * 9));
 	asn[0].size = 1;
 	ft_bzero(asn[0].mem, 16);
 	asn[1] = convert_key_to_asn(&key->modulus, sizeof(uint64_t));
 	asn[2] = convert_key_to_asn(&key->public_exponent, sizeof(uint32_t));
-//	test = *(uint64_t *)convert_asn_to_key(asn[2].mem, asn[2].size);
 	asn[3] = convert_key_to_asn(&key->private_exponent, sizeof(uint64_t));
 	asn[4] = convert_key_to_asn(&key->prime1, sizeof(uint32_t));
 	asn[5] = convert_key_to_asn(&key->prime2, sizeof(uint32_t));

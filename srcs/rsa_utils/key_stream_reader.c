@@ -6,26 +6,20 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 16:41:19 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/26 19:44:54 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:26:21 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl.h"
 #include "rsa.h"
 
-t_list  *read_der_form(int fd)
-{
-	return (buffered_reader(fd));
-}
-
-size_t get_end_offset(uint8_t *mem, size_t size)
+size_t		get_end_offset(uint8_t *mem, size_t size)
 {
 	size_t offset;
 
 	offset = 0;
 	while (--size > 0)
 	{
-
 		if (!ft_isspace(mem[size]))
 			break ;
 		offset++;
@@ -33,9 +27,9 @@ size_t get_end_offset(uint8_t *mem, size_t size)
 	return (offset);
 }
 
-int cut_start_end(t_list **pem, size_t diff, size_t off)
+int			cut_start_end(t_list **pem, size_t diff, size_t off)
 {
-	uint8_t *new_mem;
+	uint8_t	*new_mem;
 	size_t	new_size;
 
 	new_size = (*pem)->content_size - diff;
@@ -47,7 +41,7 @@ int cut_start_end(t_list **pem, size_t diff, size_t off)
 	return (TRUE);
 }
 
-int read_pem_form(t_list *pem, t_rsa_output *output)
+int			read_pem_form(t_list *pem, t_rsa_output *output)
 {
 	size_t endl_offset;
 

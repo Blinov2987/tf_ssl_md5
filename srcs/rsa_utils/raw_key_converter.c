@@ -6,7 +6,7 @@
 /*   By: gemerald <gemerald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:03:11 by gemerald          #+#    #+#             */
-/*   Updated: 2021/03/26 20:40:12 by gemerald         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:30:18 by gemerald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		priv_key_error(void)
 	return (FALSE);
 }
 
-void 	get_salt_from_raw(t_rsa_output *out)
+void	get_salt_from_raw(t_rsa_output *out)
 {
 	out->salt_vector = ft_safe_memalloc(sizeof(t_list), "get_salt");
 	out->salt_vector->content = ft_safe_memalloc(16, "get_salt");
@@ -30,7 +30,7 @@ void 	get_salt_from_raw(t_rsa_output *out)
 	get_8byte_from_ascii(out->salt_vector);
 }
 
-int 	verify_key_filling(t_rsa_output *out)
+int		verify_key_filling(t_rsa_output *out)
 {
 	if (out->is_private_key_found)
 	{
@@ -42,7 +42,7 @@ int 	verify_key_filling(t_rsa_output *out)
 		return (out->key.modulus && out->key.public_exponent);
 }
 
-void 	decode_base64_key(t_rsa_output *output)
+void	decode_base64_key(t_rsa_output *output)
 {
 	t_list *raw;
 
@@ -54,26 +54,23 @@ void 	decode_base64_key(t_rsa_output *output)
 	output->raw_key = raw;
 }
 
-int 	raw_key_convert_to_rsa_key(t_rsa_args *args, t_rsa_output *output)
+int		raw_key_convert_to_rsa_key(t_rsa_args *args, t_rsa_output *output)
 {
 	if ((!args->pubin && !output->is_private_key_found)
 	|| output->raw_key->content_size < 42)
-		return priv_key_error();
+		return (priv_key_error());
 	if (!ft_memcmp(ENCR_KEY, output->raw_key->content, 41))
 	{
 		if (output->raw_key->content_size < 70)
-			return priv_key_error();
+			return (priv_key_error());
 		get_salt_from_raw(output);
 		cut_start_end(&output->raw_key, 59, 59);
 	}
 	decode_base64_key(output);
 	if (!output->raw_key->content_size)
-		return priv_key_error();
-	if (output->salt_vector)
-	{
-		if (!des_showing(args, output))
-			return priv_key_error();
-	}
+		return (priv_key_error());
+	if (output->salt_vector && !des_showing(args, output))
+		return (priv_key_error());
 	else
 		output->der = ft_lstnew(output->raw_key->content,
 				output->raw_key->content_size);
